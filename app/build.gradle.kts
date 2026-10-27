@@ -17,7 +17,6 @@ android {
         applicationId = "com.recime.challenge"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        // CI sets VERSION_CODE (run number) so every Play upload has a unique, increasing code.
         versionCode = providers.environmentVariable("VERSION_CODE").map(String::toInt).getOrElse(1)
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -29,7 +28,6 @@ android {
     }
 
     testOptions {
-        // Robolectric tests need the merged resources and manifest of the app.
         unitTests.isIncludeAndroidResources = true
     }
 
@@ -45,19 +43,38 @@ android {
     }
 
     buildTypes {
+        create("benchmark") {
+            initWith(getByName("release"))
+            isDebuggable = false
+            matchingFallbacks += "release"
+            signingConfig = signingConfigs.getByName("debug")
+        }
         release {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            // Without a keystore (local/PR builds) the release stays unsigned but is still minified.
             signingConfig = signingConfigs.findByName("release")
+        }
+    }
+
+    sourceSets {
+        getByName("benchmark") {
+            kotlin.srcDir("src/debug/kotlin")
+            assets.srcDir("src/debug/assets")
         }
     }
 }
 
+ksp {
+    arg("room.schemaLocation", "${projectDir}/schemas")
+}
+
 composeCompiler {
-    // Domain models hold List fields, which Compose infers as unstable; mark them stable explicitly.
     stabilityConfigurationFiles.add(rootProject.layout.projectDirectory.file("compose_stability.conf"))
+    if (providers.gradleProperty("composeReports").isPresent) {
+        reportsDestination.set(layout.buildDirectory.dir("compose-reports"))
+        metricsDestination.set(layout.buildDirectory.dir("compose-metrics"))
+    }
 }
 
 dependencies {
@@ -69,7 +86,10 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.paging.compose)
-    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.paging)
+    ksp(libs.androidx.room.compiler)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.hilt.android)
@@ -78,6 +98,7 @@ dependencies {
     implementation(libs.retrofit.kotlinx.serialization)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging)
+    implementation(libs.androidx.profileinstaller)
 
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
@@ -86,6 +107,7 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.androidx.paging.testing)
     testImplementation(libs.robolectric)
+    testImplementation(libs.okhttp.mockwebserver)
     testImplementation(libs.androidx.compose.ui.test.junit4)
 
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -103,6 +125,11 @@ kover {
                     "com.recime.challenge.ui.favorites.FavoritesViewModel",
                     "com.recime.challenge.ui.detail.RecipeDetailViewModel",
                 )
+            }
+        }
+        verify {
+            rule {
+                minBound(80)
             }
         }
     }

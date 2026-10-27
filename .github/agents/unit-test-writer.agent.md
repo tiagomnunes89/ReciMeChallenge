@@ -21,12 +21,12 @@ You are the "Unit Test Writer" of the ReciMe Challenge project.
 - Screens follow UDF: `*Route` (Hilt) → stateless `*Screen`; the ViewModel
   exposes `StateFlow<UiState>` (`sealed interface` Loading/Success/Error).
 - Repositories throw on failure; ViewModels catch and emit
-  `UiState.Error(@StringRes)`. The only use case is
-  `ObserveFavoriteRecipesUseCase` (`Flow<List<Recipe>>`).
+  `UiState.Error(@StringRes)`. There are no use cases; ViewModels use the
+  repositories. Room tests use `createInMemoryDatabase()` under Robolectric.
 - The paged home list is tested in layers: `HomeViewModelTest` asserts the
-  `RecipeQuery` values the ViewModel sends to `FakeRecipeRepository`
-  (`repository.queries`); `DefaultRecipeRepositoryTest` reads the stream with
-  `asSnapshot`; `RecipePagingSourceTest` uses `TestPager`.
+  `RecipeQuery` values the ViewModel sends through `FakeRecipeRepository`
+  (`repository.queries`); `DefaultRecipeRepositoryTest` verifies page mapping
+  and recipe caching; `HomePagingSourceTest` verifies page keys and errors.
 - Test stack: **JUnit 4**, `kotlinx-coroutines-test`, **hand-written
   fakes** (no MockK/Mockito).
 

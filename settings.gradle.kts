@@ -26,3 +26,4 @@ rootProject.name = "ReciMeChallenge"
 
 include(":app")
 include(":designsystem")
+include(":benchmark")

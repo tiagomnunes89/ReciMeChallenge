@@ -1,6 +1,5 @@
-import dev.detekt.gradle.extensions.DetektExtension
+import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 
-// Plugins are declared here (apply false) so every module shares one plugin classloader.
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.android.library) apply false
@@ -13,11 +12,12 @@ plugins {
 }
 
 subprojects {
-    apply(plugin = "dev.detekt")
+    pluginManager.apply("io.gitlab.arturbosch.detekt")
     extensions.configure<DetektExtension> {
-        config.setFrom(rootProject.file("config/detekt/detekt.yml"))
-        buildUponDefaultConfig.set(true)
-        autoCorrect.set(false)
-        parallel.set(true)
+        config.setFrom(rootProject.layout.projectDirectory.file("config/detekt/detekt.yml"))
+        buildUponDefaultConfig = true
+        autoCorrect = false
+        parallel = true
+        source.from("src/debug/kotlin", "src/testDebug/kotlin")
     }
 }

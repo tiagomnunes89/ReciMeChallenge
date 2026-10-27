@@ -10,6 +10,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
+import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
@@ -106,17 +107,20 @@ class RecipeDetailViewModelTest {
     }
 
     @Test
-    fun `favorite action failure exposes an error`() = runTest {
+    fun `favorite action failure keeps recipe content and emits a transient error`() = runTest {
         favorites.toggleFailure = IllegalStateException("write failed")
         val viewModel = createViewModel()
         collectState(viewModel)
+        val errors = mutableListOf<Int>()
+        backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
+            viewModel.favoriteActionErrors.collect { errors += it }
+        }
 
         viewModel.onFavoriteClick()
+        runCurrent()
 
-        assertEquals(
-            RecipeDetailUiState.Error(R.string.common_error_generic),
-            viewModel.uiState.value,
-        )
+        assertEquals(RecipeDetailUiState.Success(recipe), viewModel.uiState.value)
+        assertEquals(listOf(R.string.common_error_generic), errors)
     }
 
     @Test

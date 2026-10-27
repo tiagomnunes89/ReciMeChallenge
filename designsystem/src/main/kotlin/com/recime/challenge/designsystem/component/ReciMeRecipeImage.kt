@@ -11,10 +11,6 @@ import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 
-/**
- * Remote image with memory/disk caching and automatic downsampling to the composable's size,
- * so large photos never inflate memory while scrolling long lists.
- */
 @Composable
 fun ReciMeRecipeImage(
     imageUrl: String?,

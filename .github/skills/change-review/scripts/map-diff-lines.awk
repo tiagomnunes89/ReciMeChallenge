@@ -1,7 +1,3 @@
-# Reads a unified diff and prints "file|line|content" for each ADDED line
-# (RIGHT side of the PR). The line number is the one in the new file.
-#
-# Usage: awk -f map-diff-lines.awk pr.diff > map.txt
 
 /^diff --git / { file = ""; next }
 /^\+\+\+ / {
@@ -13,7 +9,6 @@
   next
 }
 /^@@ / {
-  # @@ -a,b +c,d @@
   hunk = $0
   sub(/^@@ -[0-9]+(,[0-9]+)? \+/, "", hunk)
   sub(/[ ,].*$/, "", hunk)

@@ -19,12 +19,11 @@ internal class FakeRecipeApi(
         val includeIngredients: List<String>?,
         val excludeIngredients: List<String>?,
         val instruction: String?,
-        val page: Int,
-        val pageSize: Int,
+        val cursor: String?,
+        val limit: Int,
     )
 
     val searchRequests = mutableListOf<SearchRequest>()
-    var getRecipesCalls = 0
 
     override suspend fun searchRecipes(
         text: String?,
@@ -33,22 +32,19 @@ internal class FakeRecipeApi(
         includeIngredients: List<String>?,
         excludeIngredients: List<String>?,
         instruction: String?,
-        page: Int,
-        pageSize: Int,
+        cursor: String?,
+        limit: Int,
     ): RecipesResponseDto {
         searchRequests += SearchRequest(
-            text, vegetarian, servings, includeIngredients, excludeIngredients, instruction, page, pageSize,
+            text, vegetarian, servings, includeIngredients, excludeIngredients, instruction, cursor, limit,
         )
         failure?.let { throw it }
-        return pages[page - 1]
+        return pages.firstOrNull { it.nextCursor == cursor } ?: pages.first()
     }
 
-    override suspend fun getRecipe(id: String): RecipeDto =
-        pages.flatMap { it.recipes }.firstOrNull { it.id == id }
+    override suspend fun getRecipe(id: String): RecipeDto {
+        failure?.let { throw it }
+        return pages.flatMap { it.recipes }.firstOrNull { it.id == id }
             ?: throw HttpException(Response.error<Any>(404, "not found".toResponseBody()))
-
-    override suspend fun getRecipes(ids: List<String>): RecipesResponseDto {
-        getRecipesCalls++
-        return RecipesResponseDto(pages.flatMap { it.recipes }.filter { it.id in ids })
     }
 }

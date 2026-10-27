@@ -11,6 +11,13 @@ android {
         minSdk = libs.versions.minSdk.get().toInt()
     }
 
+    composeCompiler {
+        if (providers.gradleProperty("composeReports").isPresent) {
+            reportsDestination.set(layout.buildDirectory.dir("compose-reports"))
+            metricsDestination.set(layout.buildDirectory.dir("compose-metrics"))
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

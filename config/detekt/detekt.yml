@@ -21,7 +21,7 @@ style:
     active: false
   UnusedParameter:
     active: false
-  UnusedPrivateFunction:
+  UnusedPrivateMember:
     active: false
   WildcardImport:
     active: false

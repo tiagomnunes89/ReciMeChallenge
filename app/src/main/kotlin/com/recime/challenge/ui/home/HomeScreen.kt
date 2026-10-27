@@ -11,7 +11,6 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyGridScope
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -33,11 +32,11 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.paging.LoadState
@@ -45,6 +44,7 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
+import com.recime.challenge.R
 import com.recime.challenge.designsystem.component.ReciMeCategoryTabs
 import com.recime.challenge.designsystem.component.ReciMeEmptyState
 import com.recime.challenge.designsystem.component.ReciMeHomeBar
@@ -54,7 +54,7 @@ import com.recime.challenge.designsystem.component.ReciMeSearchBar
 import com.recime.challenge.designsystem.theme.ReciMeTheme
 import com.recime.challenge.designsystem.theme.ReciMeTokens
 import com.recime.challenge.domain.model.Recipe
-import com.recime.challenge.R
+import com.recime.challenge.domain.model.DietaryAttribute
 import com.recime.challenge.ui.toUserMessageRes
 import kotlinx.coroutines.launch
 
@@ -78,9 +78,9 @@ fun HomeRoute(
         onAllRecipesClick = { scope.launch { drawerState.close() } },
     ) {
         HomeScreen(
-            filters = { filters },
+            filters = filters,
             recipes = recipes,
-            onFiltersChange = viewModel::onFiltersChange,
+            onFiltersChange = { viewModel.onEvent(HomeEvent.FiltersChanged(it)) },
             onRecipeClick = onRecipeClick,
             onMenuClick = { scope.launch { drawerState.open() } },
             modifier = modifier,
@@ -90,7 +90,7 @@ fun HomeRoute(
 
 @Composable
 fun HomeScreen(
-    filters: () -> SearchFilters,
+    filters: SearchFilters,
     recipes: LazyPagingItems<Recipe>,
     onFiltersChange: (SearchFilters) -> Unit,
     onRecipeClick: (recipeId: String) -> Unit,
@@ -105,15 +105,28 @@ fun HomeScreen(
             columns = GridCells.Adaptive(minSize = GRID_MIN_CELL_WIDTH),
             modifier = Modifier
                 .padding(padding)
-                .fillMaxSize(),
-            contentPadding = PaddingValues(start = 24.dp, end = 24.dp, bottom = 32.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
-            verticalArrangement = Arrangement.spacedBy(24.dp),
+                .fillMaxSize()
+                .testTag("recipe_grid"),
+            contentPadding = PaddingValues(
+                start = ReciMeTokens.screenPadding,
+                end = ReciMeTokens.screenPadding,
+                bottom = ReciMeTokens.screenBottomPadding,
+            ),
+            horizontalArrangement = Arrangement.spacedBy(ReciMeTokens.gridSpacing),
+            verticalArrangement = Arrangement.spacedBy(ReciMeTokens.gridRowSpacing),
         ) {
             fullSpanItem(key = "header") {
-                HomeHeader(filtersProvider = filters, onFiltersChange = onFiltersChange, onMenuClick = onMenuClick)
+                HomeHeader(
+                    filters = filters,
+                    onFiltersChange = onFiltersChange,
+                    onMenuClick = onMenuClick,
+                )
             }
-            recipeContent(recipes = recipes, onRecipeClick = onRecipeClick)
+            recipeContent(
+                recipes = recipes,
+                filters = filters,
+                onRecipeClick = onRecipeClick,
+            )
         }
     }
 }
@@ -124,12 +137,14 @@ private fun LazyGridScope.fullSpanItem(key: String, content: @Composable () -> U
 
 private fun LazyGridScope.recipeContent(
     recipes: LazyPagingItems<Recipe>,
+    filters: SearchFilters,
     onRecipeClick: (recipeId: String) -> Unit,
 ) {
     val refreshState = recipes.loadState.refresh
     when {
         recipes.itemCount > 0 -> {
-            recipeItems(recipes, onRecipeClick)
+            refreshErrorNotice(recipes)
+            recipeItems(recipes, filters, onRecipeClick)
             appendState(recipes)
         }
         refreshState is LoadState.Loading -> fullSpanItem(key = "loading") { LoadingIndicator() }
@@ -152,12 +167,9 @@ private fun LazyGridScope.recipeContent(
     }
 }
 
-/**
- * Stable keys keep scroll position and item state across refreshes; the content type lets Compose
- * reuse recipe-card compositions instead of recomposing them from scratch.
- */
 private fun LazyGridScope.recipeItems(
     recipes: LazyPagingItems<Recipe>,
+    filters: SearchFilters,
     onRecipeClick: (recipeId: String) -> Unit,
 ) {
     items(
@@ -165,15 +177,29 @@ private fun LazyGridScope.recipeItems(
         key = recipes.itemKey { it.id },
         contentType = recipes.itemContentType { RECIPE_CONTENT_TYPE },
     ) { index ->
-        recipes[index]?.let { recipe -> RecipeGridCard(recipe = recipe, onClick = onRecipeClick) }
+        recipes[index]
+            ?.takeIf {
+                recipe -> !filters.vegetarianOnly ||
+                    DietaryAttribute.VEGETARIAN in recipe.dietaryAttributes
+            }
+            ?.let { recipe -> RecipeGridCard(recipe = recipe, onClick = onRecipeClick) }
+    }
+}
+
+private fun LazyGridScope.refreshErrorNotice(recipes: LazyPagingItems<Recipe>) {
+    if (recipes.loadState.refresh !is LoadState.Error) return
+    fullSpanItem(key = "refresh-error") {
+        InlineError(message = stringResource(R.string.home_showing_saved_recipes), onRetry = recipes::retry)
     }
 }
 
 private fun LazyGridScope.appendState(recipes: LazyPagingItems<Recipe>) {
     when (val appendState = recipes.loadState.append) {
-        is LoadState.Loading -> fullSpanItem(key = "append-loading") { LoadingIndicator(Modifier.padding(16.dp)) }
+        is LoadState.Loading -> fullSpanItem(key = "append-loading") {
+            LoadingIndicator(Modifier.padding(ReciMeTokens.inlinePadding))
+        }
         is LoadState.Error -> fullSpanItem(key = "append-error") {
-            AppendError(message = stringResource(appendState.error.toUserMessageRes()), onRetry = recipes::retry)
+            InlineError(message = stringResource(appendState.error.toUserMessageRes()), onRetry = recipes::retry)
         }
         is LoadState.NotLoading -> Unit
     }
@@ -184,17 +210,17 @@ private fun LoadingIndicator(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .padding(vertical = 24.dp),
+            .padding(vertical = ReciMeTokens.sectionSpacing),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) { CircularProgressIndicator(color = MaterialTheme.colorScheme.primary) }
 }
 
 @Composable
-private fun AppendError(message: String, onRetry: () -> Unit) {
+private fun InlineError(message: String, onRetry: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp),
+            .padding(vertical = ReciMeTokens.inlinePadding),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(text = message, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodyMedium)
@@ -204,14 +230,12 @@ private fun AppendError(message: String, onRetry: () -> Unit) {
 
 @Composable
 private fun HomeHeader(
-    filtersProvider: () -> SearchFilters,
+    filters: SearchFilters,
     onFiltersChange: (SearchFilters) -> Unit,
     onMenuClick: () -> Unit,
 ) {
-    // Read here, not in HomeScreen, so typing only recomposes the header and never the recipe grid.
-    val filters = filtersProvider()
     var expanded by rememberSaveable { mutableStateOf(false) }
-    Column(verticalArrangement = Arrangement.spacedBy(24.dp)) {
+    Column(verticalArrangement = Arrangement.spacedBy(ReciMeTokens.sectionSpacing)) {
         ReciMeHomeBar(onMenuClick = onMenuClick, modifier = Modifier.fillMaxWidth())
         Text(
             text = stringResource(R.string.home_headline),
@@ -254,24 +278,24 @@ private fun AdvancedFilters(
     filters: SearchFilters,
     onFiltersChange: (SearchFilters) -> Unit,
 ) {
-    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        KitField(
+    Column(verticalArrangement = Arrangement.spacedBy(ReciMeTokens.inlinePadding)) {
+        FilterField(
             value = filters.servings,
             onValueChange = { onFiltersChange(filters.copy(servings = it)) },
             placeholder = stringResource(R.string.home_filter_servings),
             keyboardType = KeyboardType.Number,
         )
-        KitField(
+        FilterField(
             value = filters.includeIngredients,
             onValueChange = { onFiltersChange(filters.copy(includeIngredients = it)) },
             placeholder = stringResource(R.string.home_filter_include),
         )
-        KitField(
+        FilterField(
             value = filters.excludeIngredients,
             onValueChange = { onFiltersChange(filters.copy(excludeIngredients = it)) },
             placeholder = stringResource(R.string.home_filter_exclude),
         )
-        KitField(
+        FilterField(
             value = filters.instructionText,
             onValueChange = { onFiltersChange(filters.copy(instructionText = it)) },
             placeholder = stringResource(R.string.home_filter_instructions),
@@ -280,7 +304,7 @@ private fun AdvancedFilters(
 }
 
 @Composable
-private fun KitField(
+private fun FilterField(
     value: String,
     onValueChange: (String) -> Unit,
     placeholder: String,
@@ -305,7 +329,6 @@ private fun KitField(
 
 @Composable
 internal fun RecipeGridCard(recipe: Recipe, onClick: (recipeId: String) -> Unit) {
-    // `onClick` is passed as-is (not wrapped per item) so every card receives the same stable lambda.
     ReciMeRecipeCard(
         title = recipe.title,
         accent = stringResource(R.string.common_serves, recipe.servings),
@@ -316,7 +339,7 @@ internal fun RecipeGridCard(recipe: Recipe, onClick: (recipeId: String) -> Unit)
     )
 }
 
-internal val GRID_MIN_CELL_WIDTH = 160.dp
+internal val GRID_MIN_CELL_WIDTH = ReciMeTokens.gridMinCellWidth
 private const val RECIPE_CONTENT_TYPE = "recipe"
 
 @Preview(showBackground = true, backgroundColor = 0xFFF2F2F2, heightDp = 900)
@@ -324,7 +347,7 @@ private const val RECIPE_CONTENT_TYPE = "recipe"
 private fun HomeScreenSuccessPreview() {
     ReciMeTheme {
         HomeScreen(
-            filters = { SearchFilters() },
+            filters = SearchFilters(),
             recipes = rememberPreviewPagingItems(),
             onFiltersChange = {},
             onRecipeClick = {},
@@ -337,7 +360,7 @@ private fun HomeScreenSuccessPreview() {
 private fun HomeScreenEmptyPreview() {
     ReciMeTheme {
         HomeScreen(
-            filters = { SearchFilters(text = "sushi") },
+            filters = SearchFilters(text = "sushi"),
             recipes = rememberPreviewPagingItems(recipes = emptyList()),
             onFiltersChange = {},
             onRecipeClick = {},
@@ -350,7 +373,7 @@ private fun HomeScreenEmptyPreview() {
 private fun HomeScreenErrorPreview() {
     ReciMeTheme {
         HomeScreen(
-            filters = { SearchFilters() },
+            filters = SearchFilters(),
             recipes = rememberPreviewPagingItems(
                 recipes = emptyList(),
                 refresh = LoadState.Error(IllegalStateException("offline")),

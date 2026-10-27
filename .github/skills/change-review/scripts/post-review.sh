@@ -1,13 +1,4 @@
 #!/usr/bin/env bash
-# Posts inline comments on a PR from an NDJSON file
-# (one line = one JSON: {"path":"...","line":N,"side":"RIGHT","body":"..."}).
-# One POST per comment. Uses neither gh, jq, nor python.
-#
-# Usage:
-#   ./post-review.sh <pr-number> <file.ndjson> [--dry-run]
-#
-# --dry-run lists what would be posted, without sending anything.
-# Token: $GITHUB_TOKEN or `git credential fill`. Never printed.
 set -euo pipefail
 PR="${1:-}"; FILE="${2:-}"; MODE="${3:-}"
 if [[ -z "$PR" || -z "$FILE" ]]; then echo "usage: $0 <pr> <file.ndjson> [--dry-run]" >&2; exit 1; fi
@@ -39,7 +30,6 @@ if [[ -z "$TOKEN" ]]; then
 fi
 [[ -n "$TOKEN" ]] || { echo "error: no token (export GITHUB_TOKEN)" >&2; exit 1; }
 
-# commit_id is required for inline comments: use the PR's HEAD.
 PR_JSON="$REPO_ROOT/.review-tmp/pr_${PR}.json"
 if [[ -f "$PR_JSON" ]]; then
   SHA=$(tr -d '\n' < "$PR_JSON" | tr '{' '\n' | grep -A8 '"head"' | grep -m1 '"sha"' | sed -E 's/.*"sha": *"([0-9a-f]+)".*/\1/')
@@ -52,7 +42,6 @@ OK=0; FAIL=0; TMP="$(mktemp)"
 trap 'rm -f "$TMP"; unset TOKEN' EXIT
 while IFS= read -r line || [[ -n "$line" ]]; do
   [[ -z "$line" ]] && continue
-  # add commit_id to the line's JSON (strip the trailing brace and reopen).
   printf '%s' "${line%\}}" > "$TMP"
   printf ',"commit_id":"%s"}' "$SHA" >> "$TMP"
   CODE=$(curl -s -o /dev/null -w '%{http_code}' -X POST \

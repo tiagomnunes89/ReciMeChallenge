@@ -7,4 +7,12 @@ data class RecipeQuery(
     val includeIngredients: List<String> = emptyList(),
     val excludeIngredients: List<String> = emptyList(),
     val instructionContains: String = "",
-)
+) {
+        val isUnfiltered: Boolean
+        get() = text.isBlank() &&
+            !vegetarianOnly &&
+            servings == null &&
+            includeIngredients.isEmpty() &&
+            excludeIngredients.isEmpty() &&
+            instructionContains.isBlank()
+}

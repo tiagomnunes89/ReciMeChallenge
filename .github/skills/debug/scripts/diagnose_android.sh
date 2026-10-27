@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Collects local evidence of an Android failure. Does not change the project.
 set -uo pipefail
 
 REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"

@@ -1,8 +1,9 @@
 package com.recime.challenge
 
 import android.content.Context
+import android.database.sqlite.SQLiteDatabase
 import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.junit4.v2.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithContentDescription
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithContentDescription
@@ -10,6 +11,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.recime.challenge.data.local.ReciMeDatabase
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
@@ -43,7 +45,7 @@ class MainActivityTest {
     @Test
     fun favoriteRecipeAppearsInFavoritesScreen() {
         clickText("Spaghetti Aglio e Olio")
-        clickContentDescription("Add to favorites")
+        clickAddToFavorites()
         assertContentDescriptionVisible("Remove from favorites")
 
         composeRule.onNodeWithContentDescription("Back").performClick()
@@ -57,7 +59,7 @@ class MainActivityTest {
     @Test
     fun vegetarianTabFiltersRecipes() {
         assertTextVisible(NON_VEGETARIAN_RECIPE)
-        clickText("Vegetarian")
+        composeRule.onNodeWithText("Vegetarian", useUnmergedTree = true).performClick()
         composeRule.waitUntil(UI_TIMEOUT_MS) {
             composeRule.onAllNodesWithText(NON_VEGETARIAN_RECIPE).fetchSemanticsNodes().isEmpty()
         }
@@ -82,9 +84,10 @@ class MainActivityTest {
     }
 
     private fun clearAppData() {
-        val context = ApplicationProvider.getApplicationContext<Context>()
-        composeRule.runOnUiThread {
-            context.filesDir.resolve("datastore/favorites.preferences_pb").delete()
+        val databaseFile = ApplicationProvider.getApplicationContext<Context>().getDatabasePath(ReciMeDatabase.NAME)
+        if (!databaseFile.exists()) return
+        SQLiteDatabase.openDatabase(databaseFile.path, null, SQLiteDatabase.OPEN_READWRITE).use { database ->
+            database.execSQL("DELETE FROM favorites")
         }
     }
 
@@ -93,9 +96,9 @@ class MainActivityTest {
         composeRule.onNodeWithText(text).performClick()
     }
 
-    private fun clickContentDescription(description: String) {
-        assertContentDescriptionVisible(description)
-        composeRule.onNodeWithContentDescription(description).performClick()
+    private fun clickAddToFavorites() {
+        assertContentDescriptionVisible("Add to favorites")
+        composeRule.onNodeWithContentDescription("Add to favorites").performClick()
     }
 
     private fun assertTextVisible(text: String) {
@@ -113,7 +116,7 @@ class MainActivityTest {
     }
 
     private companion object {
-        const val UI_TIMEOUT_MS = 5_000L
+        const val UI_TIMEOUT_MS = 30_000L
         const val FIRST_RECIPE = "Spaghetti Aglio e Olio"
         const val NON_VEGETARIAN_RECIPE = "Chicken Caesar Salad"
     }

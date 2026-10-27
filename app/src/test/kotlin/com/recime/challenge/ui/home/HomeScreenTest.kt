@@ -46,7 +46,7 @@ class HomeScreenTest {
         composeRule.setContent {
             ReciMeTheme {
                 HomeScreen(
-                    filters = { filters },
+                    filters = filters,
                     recipes = recipes(),
                     onFiltersChange = onFiltersChange,
                     onRecipeClick = onRecipeClick,
@@ -75,7 +75,7 @@ class HomeScreenTest {
     fun `refresh failure shows an error and retry loads the recipes`() {
         setScreen(recipes = { rememberFlakyPagingItems() })
 
-        composeRule.onNodeWithText(string(R.string.common_error_generic)).assertIsDisplayed()
+        composeRule.onNodeWithText(string(R.string.common_error_offline)).assertIsDisplayed()
         composeRule.onNodeWithText(string(R.string.common_try_again)).performClick()
 
         composeRule.onNodeWithText("Spaghetti Aglio e Olio").assertIsDisplayed()
@@ -90,7 +90,20 @@ class HomeScreenTest {
         )
 
         composeRule.onNodeWithText("Spaghetti Aglio e Olio").assertIsDisplayed()
-        composeRule.onNodeWithText(string(R.string.common_error_generic)).assertIsDisplayed()
+        composeRule.onNodeWithText(string(R.string.common_error_offline)).assertIsDisplayed()
+        composeRule.onNodeWithText(string(R.string.common_try_again)).assertIsDisplayed()
+    }
+
+    @Test
+    fun `refresh failure keeps the saved recipes and says they are not up to date`() {
+        setScreen(
+            recipes = {
+                rememberPreviewPagingItems(refresh = LoadState.Error(IOException("offline")))
+            },
+        )
+
+        composeRule.onNodeWithText("Spaghetti Aglio e Olio").assertIsDisplayed()
+        composeRule.onNodeWithText(string(R.string.home_showing_saved_recipes)).assertIsDisplayed()
         composeRule.onNodeWithText(string(R.string.common_try_again)).assertIsDisplayed()
     }
 
@@ -141,8 +154,7 @@ class HomeScreenTest {
         composeRule.onNodeWithText(string(R.string.home_filter_servings)).assertDoesNotExist()
     }
 
-    /** A real [Pager] whose first load fails, so the screen's retry path is exercised end to end. */
-    @Composable
+        @Composable
     private fun rememberFlakyPagingItems(): LazyPagingItems<Recipe> {
         val flow = remember {
             val source = FlakyPagingSource()

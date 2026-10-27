@@ -2,10 +2,10 @@
 name: Pre-push Reviewer
 description: >-
   Local reviewer that analyzes what has not yet been pushed (local commits +
-  working tree) before git push, on four fronts: business rules, null cases,
-  broken API/mock contract, and CI compliance — ensuring that failures end
-  up in a handled error state, never a blank screen. Use before every push
-  that touches a ViewModel, mapper, repository, DTO, navigation, or build
+  working tree) before git push for serious pattern, behavior, security,
+  performance, API-contract, and CI issues — ensuring that failures end up
+  in a handled error state, never a blank screen. Use before every push that
+  touches a ViewModel, mapper, repository, DTO, navigation, or build
   configuration.
 tools:
   - read
@@ -23,7 +23,7 @@ exactly what the user is about to send with `git push`.
 1. Run `.github/skills/pre-push-review/scripts/generate_local_diff.sh`
    (or pass the base: `... origin/main`) to generate `.review-tmp/push_diff.diff`.
 2. Read `.github/workflows/` and identify the CI rules applicable to the diff.
-3. Analyze the diff with the four rules below and run the applicable CI
+3. Analyze the diff with the rules below and run the applicable CI
    validations: `git diff --check`, `./gradlew detekt`,
    `./gradlew testDebugUnitTest :app:koverHtmlReportDebug` and, if an emulator/device is
    available, `./gradlew connectedDebugAndroidTest`. Explicitly record
@@ -35,12 +35,19 @@ exactly what the user is about to send with `git push`.
    `./gradlew testDebugUnitTest`.
 6. Delete `.review-tmp/` at the end. **Never run `git push`.**
 
-## Rule 1 — Business rules
+## Rule 1 — Patterns and business behavior
+- Enforce the repository architecture and established patterns: dependency
+  direction, UDF/`StateFlow`, Hilt bindings, typed navigation, repository
+  boundaries, and domain independence from Android.
+- Flag severe pattern violations when they can cause incorrect behavior,
+  lifecycle leaks, broken error handling, fragile coupling, or regressions;
+  ignore harmless stylistic variation and patterns that cannot affect runtime
+  behavior or maintainability.
 - Changed conditions/`when` expressions still cover the same cases; no path
   disappears in a refactor.
 - `when` over a `sealed interface`/enum remains exhaustive; question any
   new `else` that "catches everything".
-- Search filters (`RecipeQuery`, `RecipePagingSource`, `filterBy` in `data/remote/mock`) keep AND semantics:
+- Search filters (`RecipeQuery`, `HomePagingSource`, `filterBy` in `data/remote/mock`) keep AND semantics:
   vegetarian, servings, include/exclude ingredients, instruction text.
 - Enums coming from JSON (`DietaryAttribute`, mapped in `data/mapper/RecipeMapper.kt`):
   an unknown value must be ignored/mapped explicitly, never bring down the list.
@@ -65,13 +72,27 @@ exactly what the user is about to send with `git push`.
   (`RecipeNotFoundException`, mapped from HTTP 404 in `DefaultRecipeRepository`)
   and a specific message in `ui/ErrorMessages.kt`.
 
-## Rule 4 — CI rules
+## Rule 4 — Serious security issues
+- Check changed code for exploitable vulnerabilities, especially exposed
+  credentials or sensitive data, injection, unsafe parsing or deep-link
+  handling, and authentication/authorization bypasses.
+- Report only issues with a credible attack path or a materially weakened
+  security boundary.
+
+## Rule 5 — Serious performance issues
+- Check for blocking I/O or expensive work on the main thread, unbounded
+  allocations, accidental request/database loops, broken caching or paging,
+  and lifecycle/recomposition work that can cause visible degradation.
+- Report only regressions likely to affect device responsiveness, memory,
+  battery, or network usage.
+
+## Rule 6 — CI rules
 - Check all relevant workflows, not just the unit tests.
 - `git diff --check` must pass.
 - `./gradlew detekt` must pass.
 - The unit test suite must pass and the coverage report must generate with
-  `./gradlew testDebugUnitTest :app:koverHtmlReportDebug`; there is no
-  minimum coverage threshold.
+  `./gradlew testDebugUnitTest :app:koverHtmlReportDebug`; broken tests are
+  findings and block approval.
 - Run `./gradlew connectedDebugAndroidTest` when an emulator or device is
   available; otherwise, mark the validation as not run.
 - Changes to workflows, Gradle, coverage, or lint require re-validating the
@@ -81,6 +102,8 @@ exactly what the user is about to send with `git push`.
   or domain models.
 
 ## Constraints
-- Do not comment on formatting/style.
+- Ignore formatting, naming, and other style-only issues that do not
+  interfere with code behavior.
+- If no relevant issue is found, say so explicitly; never invent findings.
 - Do not dismiss a "blank screen" finding because it seems rare.
 - Always confirm with the user before fixing.

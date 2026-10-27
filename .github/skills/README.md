@@ -8,16 +8,18 @@ profile that runs a workflow with a restricted set of tools.
 
 | Agent (`.github/agents/`) | Skill (`.github/skills/`) | When to use |
 |---|---|---|
-| `pre-push-reviewer` | `pre-push-review` | Review the local diff before a pull request: business rules, nulls, a broken API contract that would leave a blank screen, and the CI checks. |
+| `pre-push-reviewer` | `pre-push-review` | Review the local diff before a push: serious pattern and behavior regressions, nulls, broken API contracts, security, performance, and CI checks. |
 | `change-reviewer` | `change-review` | Review a pull request and post inline comments (github.com or Enterprise). The CI job `change-review` generates the diff and the changed-line map. |
 | `unit-test-writer` | `unit-test-generation` | Write JUnit 4 tests and hand-written fakes in the style already used in the project. |
 | — | `debug` | Diagnose an Android failure from the terminal (device, logcat, instrumented results) when the IDE debugger is not available. |
 
-Detekt, Kover and the test suites run in `.github/workflows/ci.yml` and again
-locally from `.github/scripts/run_ci.sh` before a push. Narrow scans (accessibility,
+Detekt, Kover and the test suites run in `.github/workflows/ci.yml`; local
+validation is performed only by the `pre-push-review` workflow before a push.
+The reviewer checks serious security and performance regressions directly;
+it does not report cosmetic style issues. Narrow scans (accessibility,
 double tap, routes, hardcoded strings, security, concurrency, merge
-conflicts) were removed: the app has three screens and those rules already
-live in `copilot-instructions.md` and in the review skill.
+conflicts) were removed as separate scans: the app has three screens and
+those rules already live in `copilot-instructions.md` and in the review skill.
 
 ## How to use
 - **Agent:** in Copilot Chat, pick the agent and describe the request.
