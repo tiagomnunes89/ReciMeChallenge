@@ -1,0 +1,138 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Spaghetti Aglio e Olio",
+      "description": "Classic Italian pasta with garlic, chili and olive oil.",
+      "servings": 2,
+      "ingredients": [
+        "spaghetti",
+        "garlic",
+        "olive oil",
+        "chili flakes",
+        "parsley"
+      ],
+      "instructions": [
+        "Boil the spaghetti in salted water until al dente.",
+        "Sauté sliced garlic and chili flakes in olive oil.",
+        "Toss the pasta in the pan and finish with chopped parsley."
+      ],
+      "dietary_attributes": [
+        "vegetarian",
+        "vegan"
+      ],
+      "image_url": "file:///android_asset/images/spaghetti.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Chicken Caesar Salad",
+      "description": "Crisp romaine with grilled chicken, parmesan and croutons.",
+      "servings": 4,
+      "ingredients": [
+        "chicken breast",
+        "romaine lettuce",
+        "parmesan",
+        "croutons",
+        "caesar dressing"
+      ],
+      "instructions": [
+        "Grill the chicken breast until cooked through, then slice.",
+        "Toss lettuce with dressing and top with chicken, parmesan and croutons."
+      ],
+      "dietary_attributes": [],
+      "image_url": "file:///android_asset/images/caesar.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Veggie Buddha Bowl",
+      "description": "Colorful bowl with roasted vegetables, quinoa and tahini.",
+      "servings": 2,
+      "ingredients": [
+        "quinoa",
+        "sweet potato",
+        "chickpeas",
+        "spinach",
+        "tahini"
+      ],
+      "instructions": [
+        "Roast the sweet potato and chickpeas at 200°C for 25 minutes.",
+        "Cook the quinoa according to the package.",
+        "Assemble the bowl with spinach and drizzle with tahini."
+      ],
+      "dietary_attributes": [
+        "vegetarian",
+        "vegan",
+        "gluten_free"
+      ],
+      "image_url": "file:///android_asset/images/bowl.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Margherita Pizza",
+      "description": "Thin crust pizza with tomato, mozzarella and fresh basil.",
+      "servings": 4,
+      "ingredients": [
+        "pizza dough",
+        "tomato sauce",
+        "mozzarella",
+        "basil",
+        "olive oil"
+      ],
+      "instructions": [
+        "Preheat the oven to 250°C with a baking stone inside.",
+        "Stretch the dough, spread the tomato sauce and add the mozzarella.",
+        "Bake for 8 minutes and top with fresh basil."
+      ],
+      "dietary_attributes": [
+        "vegetarian"
+      ],
+      "image_url": "file:///android_asset/images/pizza.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Grilled Salmon with Lemon",
+      "description": "Juicy salmon fillets with lemon, dill and steamed green beans.",
+      "servings": 2,
+      "ingredients": [
+        "salmon fillet",
+        "lemon",
+        "dill",
+        "green beans",
+        "olive oil"
+      ],
+      "instructions": [
+        "Season the salmon with salt, lemon zest and dill.",
+        "Grill for 4 minutes on each side.",
+        "Serve with steamed green beans and lemon wedges."
+      ],
+      "dietary_attributes": [
+        "gluten_free"
+      ],
+      "image_url": "file:///android_asset/images/salmon.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Creamy Mushroom Risotto",
+      "description": "Slow-cooked arborio rice with mushrooms and parmesan.",
+      "servings": 4,
+      "ingredients": [
+        "arborio rice",
+        "mushrooms",
+        "vegetable stock",
+        "parmesan",
+        "onion",
+        "butter"
+      ],
+      "instructions": [
+        "Sauté the onion and mushrooms in butter until golden.",
+        "Add the rice and stir in the hot stock one ladle at a time.",
+        "Finish with parmesan and butter, stirring until creamy."
+      ],
+      "dietary_attributes": [
+        "vegetarian",
+        "gluten_free"
+      ],
+      "image_url": "file:///android_asset/images/risotto.jpg"
+    }
+  ]
+}

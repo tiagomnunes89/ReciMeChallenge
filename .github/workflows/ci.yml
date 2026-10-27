@@ -1,0 +1,153 @@
+name: Android CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: android-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  JAVA_VERSION: '17'
+
+jobs:
+  detekt:
+    name: Detekt
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Run Detekt
+        run: ./gradlew detekt --stacktrace
+
+      - name: Upload Detekt reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: detekt-reports
+          path: '**/build/reports/detekt/'
+          if-no-files-found: ignore
+
+  unit-tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Run unit tests and coverage report
+        run: ./gradlew testDebugUnitTest :app:koverHtmlReportDebug --stacktrace
+
+      - name: Build minified release bundle (unsigned)
+        run: ./gradlew :app:bundleRelease --stacktrace
+
+      - name: Upload unit-test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-reports
+          path: '**/build/reports/tests/testDebugUnitTest/'
+          if-no-files-found: ignore
+
+      - name: Upload ViewModel coverage report (informational, no threshold)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: viewmodel-coverage
+          path: app/build/reports/kover/
+          if-no-files-found: ignore
+
+  ui-tests:
+    name: UI tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Run instrumented UI tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: Pixel 2
+          emulator-options: -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect
+          disable-animations: true
+          script: ./gradlew connectedDebugAndroidTest --stacktrace
+
+      - name: Upload UI-test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-test-reports
+          path: |
+            **/build/reports/androidTests/connected/
+            **/build/outputs/androidTest-results/connected/
+          if-no-files-found: ignore
+
+  change-review:
+    name: Change review
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate changed files and diff
+        run: |
+          git diff --check "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}"
+          git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}"
+
+      - name: Generate review diff and changed-line map
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: .github/skills/change-review/scripts/generate_diff.sh "${{ github.event.pull_request.number }}"
+
+      - name: Upload review context
+        uses: actions/upload-artifact@v4
+        with:
+          name: change-review-${{ github.event.pull_request.number }}
+          path: |
+            .review-tmp/pr_${{ github.event.pull_request.number }}.diff
+            .review-tmp/pr_${{ github.event.pull_request.number }}_map.txt
+            .review-tmp/pr_${{ github.event.pull_request.number }}_files.json
+          if-no-files-found: error

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="designsystem_search">Search</string>
+    <string name="designsystem_back">Back</string>
+    <string name="designsystem_menu">Menu</string>
+    <string name="designsystem_favorite_add">Add to favorites</string>
+    <string name="designsystem_favorite_remove">Remove from favorites</string>
+    <string name="designsystem_open_recipe">Open %1$s</string>
+</resources>
