@@ -62,11 +62,15 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Run unit tests and coverage report
+      - name: Run unit tests and generate coverage report
         run: ./gradlew testDebugUnitTest :app:koverHtmlReportDebug --stacktrace
 
-      - name: Build minified release bundle (unsigned)
-        run: ./gradlew :app:bundleRelease --stacktrace
+      - name: Check coverage threshold (advisory)
+        continue-on-error: true
+        run: ./gradlew :app:koverVerifyDebug --stacktrace
+
+      - name: Build minified release bundle and benchmark APK (unsigned)
+        run: ./gradlew :app:bundleRelease :benchmark:assemble --stacktrace
 
       - name: Upload unit-test reports
         if: always()
@@ -76,13 +80,29 @@ jobs:
           path: '**/build/reports/tests/testDebugUnitTest/'
           if-no-files-found: ignore
 
-      - name: Upload ViewModel coverage report (informational, no threshold)
+      - name: Upload ViewModel coverage report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: viewmodel-coverage
           path: app/build/reports/kover/
           if-no-files-found: ignore
+
+  quality-gate:
+    name: Quality gate
+    if: always()
+    needs: [detekt, unit-tests, ui-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require all quality checks to pass
+        env:
+          DETEKT_RESULT: ${{ needs.detekt.result }}
+          UNIT_TESTS_RESULT: ${{ needs.unit-tests.result }}
+          UI_TESTS_RESULT: ${{ needs.ui-tests.result }}
+        run: |
+          test "$DETEKT_RESULT" = success
+          test "$UNIT_TESTS_RESULT" = success
+          test "$UI_TESTS_RESULT" = success
 
   ui-tests:
     name: UI tests
@@ -101,16 +121,29 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      - name: Enable KVM hardware acceleration
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Build app and instrumented test APKs
+        run: ./gradlew :app:assembleDebug :app:assembleDebugAndroidTest --stacktrace
+
       - name: Run instrumented UI tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 35
-          target: google_apis
+          api-level: 34
+          target: default
           arch: x86_64
-          profile: Pixel 2
-          emulator-options: -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect
+          profile: pixel_5
+          cores: 4
+          ram-size: 4096M
+          emulator-options: -no-window -no-audio -no-boot-anim -no-snapshot -gpu swiftshader_indirect -camera-back none -camera-front none
+          force-avd-creation: true
+          emulator-boot-timeout: 600
           disable-animations: true
-          script: ./gradlew connectedDebugAndroidTest --stacktrace
+          script: ./gradlew :app:connectedDebugAndroidTest --stacktrace
 
       - name: Upload UI-test reports
         if: always()

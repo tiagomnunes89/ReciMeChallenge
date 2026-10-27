@@ -1,13 +1,12 @@
 package com.recime.challenge.data.remote.di
 
-import com.recime.challenge.common.dispatchers.DefaultDispatcherProvider
-import com.recime.challenge.common.dispatchers.DispatcherProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 import kotlinx.serialization.json.Json
+import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -22,10 +21,6 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideDispatcherProvider(): DispatcherProvider = DefaultDispatcherProvider()
-
-    @Provides
-    @Singleton
     fun provideJson(): Json = Json {
         ignoreUnknownKeys = true
         explicitNulls = false
@@ -33,9 +28,13 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient =
+    fun provideOkHttpClient(
+        interceptors: @JvmSuppressWildcards Set<Interceptor>,
+    ): OkHttpClient =
         OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC })
+            .addInterceptor(com.recime.challenge.data.remote.RetryInterceptor())
+            .apply { interceptors.forEach(::addInterceptor) }
             .build()
 
     @Provides

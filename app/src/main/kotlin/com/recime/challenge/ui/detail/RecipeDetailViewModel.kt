@@ -14,11 +14,12 @@ import javax.inject.Inject
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
@@ -39,9 +40,11 @@ class RecipeDetailViewModel @Inject constructor(
 
     private val recipeId = savedStateHandle.toRoute<RecipeDetailDestination>().recipeId
     private val retryCount = MutableStateFlow(0)
-    private val favoriteActionError = MutableStateFlow<Int?>(null)
+    private val _favoriteActionErrors = MutableSharedFlow<Int>(extraBufferCapacity = 1)
 
-    private val contentState: StateFlow<RecipeDetailUiState> = retryCount
+    val favoriteActionErrors = _favoriteActionErrors.asSharedFlow()
+
+    val uiState: StateFlow<RecipeDetailUiState> = retryCount
         .flatMapLatest { loadRecipe() }
         .stateIn(
             scope = viewModelScope,
@@ -49,21 +52,7 @@ class RecipeDetailViewModel @Inject constructor(
             initialValue = RecipeDetailUiState.Loading,
         )
 
-    val uiState: StateFlow<RecipeDetailUiState> = combine(
-        contentState,
-        favoriteActionError,
-    ) { state, error ->
-        error?.let(RecipeDetailUiState::Error) ?: state
-    }.stateIn(
-        scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(5_000),
-        initialValue = RecipeDetailUiState.Loading,
-    )
-
-    fun onRetry() {
-        favoriteActionError.value = null
-        retryCount.update { it + 1 }
-    }
+    fun onRetry() = retryCount.update { it + 1 }
 
     fun onFavoriteClick() {
         viewModelScope.launch {
@@ -72,7 +61,7 @@ class RecipeDetailViewModel @Inject constructor(
             } catch (exception: CancellationException) {
                 throw exception
             } catch (exception: Exception) {
-                favoriteActionError.value = exception.toUserMessageRes()
+                _favoriteActionErrors.emit(exception.toUserMessageRes())
             }
         }
     }

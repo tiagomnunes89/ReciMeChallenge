@@ -95,7 +95,6 @@ fun ReciMeRecipeCard(
         }
         ReciMeRecipeImage(
             imageUrl = imageUrl,
-            // The title is already read by the card, so the photo is decorative.
             contentDescription = null,
             modifier = Modifier
                 .size(photoSize)

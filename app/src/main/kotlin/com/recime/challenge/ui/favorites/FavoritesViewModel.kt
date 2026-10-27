@@ -2,7 +2,7 @@ package com.recime.challenge.ui.favorites
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.recime.challenge.domain.usecase.ObserveFavoriteRecipesUseCase
+import com.recime.challenge.domain.repository.FavoritesRepository
 import com.recime.challenge.ui.toUserMessageRes
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -21,7 +21,7 @@ import kotlinx.coroutines.flow.update
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
 class FavoritesViewModel @Inject constructor(
-    private val observeFavoriteRecipes: ObserveFavoriteRecipesUseCase,
+    private val favorites: FavoritesRepository,
 ) : ViewModel() {
 
     private val retryCount = MutableStateFlow(0)
@@ -30,18 +30,14 @@ class FavoritesViewModel @Inject constructor(
         .flatMapLatest { loadFavorites() }
         .stateIn(
             scope = viewModelScope,
-            started = SharingStarted.WhileSubscribed(STOP_TIMEOUT_MS),
+            started = SharingStarted.WhileSubscribed(5_000),
             initialValue = FavoritesUiState.Loading,
         )
 
     fun onRetry() = retryCount.update { it + 1 }
 
-    private fun loadFavorites(): Flow<FavoritesUiState> = observeFavoriteRecipes()
+    private fun loadFavorites(): Flow<FavoritesUiState> = favorites.observeFavoriteRecipes()
         .map<_, FavoritesUiState>(FavoritesUiState::Success)
         .onStart { emit(FavoritesUiState.Loading) }
         .catch { emit(FavoritesUiState.Error(it.toUserMessageRes())) }
-
-    private companion object {
-        const val STOP_TIMEOUT_MS = 5_000L
-    }
 }

@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class RecipesResponseDto(
     val recipes: List<RecipeDto>,
-    @SerialName("has_next") val hasNext: Boolean = false,
+    @SerialName("next_cursor") val nextCursor: String? = null,
 )
 
 @Serializable

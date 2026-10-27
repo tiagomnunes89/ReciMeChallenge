@@ -36,7 +36,6 @@ internal val previewRecipes = listOf(
     ),
 )
 
-/** Builds a [LazyPagingItems] with a fixed content and load states, for previews and UI tests. */
 @Composable
 internal fun rememberPreviewPagingItems(
     recipes: List<Recipe> = previewRecipes,

@@ -12,8 +12,8 @@ description: >-
 ## Goal
 Generate (or complete) tests that follow exactly the style of the existing
 tests (`ui/home/HomeViewModelTest`, `data/repository/DefaultRecipeRepositoryTest`,
-`data/remote/mock/RecipeFilteringTest`, `data/repository/DataStoreFavoritesRepositoryTest`,
-`domain/usecase/ObserveFavoriteRecipesUseCaseTest`), to increase coverage without
+`data/remote/mock/RecipeFilteringTest`, `data/repository/RoomFavoritesRepositoryTest`,
+`ui/home/HomePagingSourceTest`), to increase coverage without
 creating a divergent style.
 
 ## How to use
@@ -21,7 +21,7 @@ creating a divergent style.
 /unit-test-generation <target-file-path>
 ```
 Example:
-`/unit-test-generation app/src/main/kotlin/com/recime/challenge/domain/usecase/ObserveFavoriteRecipesUseCase.kt`
+`/unit-test-generation app/src/main/kotlin/com/recime/challenge/data/repository/RoomFavoritesRepository.kt`
 
 ## Workflow
 1. Read the target and identify dependencies, states and `when` branches.
@@ -41,8 +41,8 @@ Example:
 - ViewModel: `Dispatchers.setMain(UnconfinedTestDispatcher())` in `@Before`
   and `resetMain()` in `@After`; collect `stateIn(WhileSubscribed)` in
   `backgroundScope`; time with `advanceTimeBy`/`runCurrent`.
-- DataStore: `PreferenceDataStoreFactory.create(scope = backgroundScope, produceFile = ...)`
-  with `TemporaryFolder`.
+- Room: `createInMemoryDatabase()` (`testing/TestDatabase.kt`) in a Robolectric test with
+  `@Config(sdk = [35])`; close it in `@After`.
 - Backtick names describing the behavior.
 - Fixtures: `previewRecipes` (`app/src/main/kotlin/.../ui/home/PreviewData.kt`).
 - File mirroring the package of the target under `app/src/test/kotlin/com/recime/challenge/`,
@@ -52,4 +52,5 @@ Example:
 - Do not use libraries outside the stack; do not test private details.
 - Robolectric only where Android is required: ViewModels that use `toRoute`
   (see `RecipeDetailViewModelTest`) and Compose screen tests.
-- Do not remove existing tests.
+- Remove tests only when the production path they cover is removed, and replace
+  them with coverage for the path that now executes.

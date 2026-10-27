@@ -51,8 +51,9 @@ fun ReciMeEmptyState(
         )
         Text(
             text = message,
-            style = MaterialTheme.typography.bodyLarge.copy(color = ReciMeTokens.inkMuted),
+            style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Center,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         if (actionLabel != null && onAction != null) {
             ReciMeButton(text = actionLabel, onClick = onAction)

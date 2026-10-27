@@ -18,27 +18,31 @@ import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.recime.challenge.R
 import com.recime.challenge.designsystem.component.ReciMeDetailBar
 import com.recime.challenge.designsystem.component.ReciMeEmptyState
 import com.recime.challenge.designsystem.component.ReciMeRecipeImage
 import com.recime.challenge.designsystem.theme.ReciMeTheme
 import com.recime.challenge.designsystem.theme.ReciMeTokens
 import com.recime.challenge.domain.model.Recipe
-import com.recime.challenge.R
 import com.recime.challenge.ui.home.previewRecipes
 
 @Composable
@@ -48,11 +52,19 @@ fun RecipeDetailRoute(
     viewModel: RecipeDetailViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val snackbarHostState = remember { SnackbarHostState() }
+    val resources = LocalResources.current
+    LaunchedEffect(viewModel) {
+        viewModel.favoriteActionErrors.collect {
+            snackbarHostState.showSnackbar(resources.getString(it))
+        }
+    }
     RecipeDetailScreen(
         uiState = uiState,
         onBackClick = onBackClick,
         onRetry = viewModel::onRetry,
         onFavoriteClick = viewModel::onFavoriteClick,
+        snackbarHostState = snackbarHostState,
         modifier = modifier,
     )
 }
@@ -64,10 +76,12 @@ fun RecipeDetailScreen(
     onRetry: () -> Unit,
     modifier: Modifier = Modifier,
     onFavoriteClick: () -> Unit = {},
+    snackbarHostState: SnackbarHostState = remember { SnackbarHostState() },
 ) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
-        containerColor = ReciMeTokens.screenAlt,
+        containerColor = MaterialTheme.colorScheme.background,
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             ReciMeDetailBar(
                 onBackClick = onBackClick,
@@ -100,17 +114,20 @@ fun RecipeDetailScreen(
 private fun RecipeDetailContent(recipe: Recipe, modifier: Modifier = Modifier) {
     LazyColumn(
         modifier = modifier.fillMaxSize(),
-        contentPadding = PaddingValues(horizontal = 50.dp, vertical = 8.dp),
+        contentPadding = PaddingValues(
+            horizontal = ReciMeTokens.detailHorizontalPadding,
+            vertical = ReciMeTokens.inlinePadding,
+        ),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(ReciMeTokens.inlinePadding),
     ) {
         item {
             ReciMeRecipeImage(
                 imageUrl = recipe.imageUrl,
                 contentDescription = recipe.title,
                 modifier = Modifier
-                    .size(241.dp)
-                    .shadow(24.dp, CircleShape)
+                    .size(ReciMeTokens.detailImageSize)
+                    .shadow(ReciMeTokens.cardElevation, CircleShape)
                     .clip(CircleShape),
             )
         }
@@ -120,7 +137,7 @@ private fun RecipeDetailContent(recipe: Recipe, modifier: Modifier = Modifier) {
                 style = MaterialTheme.typography.headlineMedium,
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.padding(top = 24.dp),
+                modifier = Modifier.padding(top = ReciMeTokens.sectionSpacing),
             )
         }
         item {
@@ -143,6 +160,7 @@ private fun RecipeDetailContent(recipe: Recipe, modifier: Modifier = Modifier) {
             Text(
                 text = stringResource(R.string.detail_instruction_step, index + 1, step),
                 style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onBackground,
                 modifier = Modifier.fillMaxWidth(),
             )
         }
@@ -154,9 +172,9 @@ private fun DetailSection(title: String, body: String?) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 16.dp),
+            .padding(top = ReciMeTokens.contentSpacing),
         horizontalAlignment = Alignment.Start,
-        verticalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(ReciMeTokens.inlinePadding),
     ) {
         Text(
             text = title,
@@ -166,7 +184,11 @@ private fun DetailSection(title: String, body: String?) {
             color = MaterialTheme.colorScheme.onBackground,
         )
         if (body != null) {
-            Text(text = body, style = MaterialTheme.typography.bodyMedium)
+            Text(
+                text = body,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onBackground,
+            )
         }
     }
 }
@@ -176,16 +198,25 @@ private fun IngredientRow(ingredient: String) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 4.dp),
-        horizontalArrangement = Arrangement.spacedBy(12.dp),
+            .padding(vertical = ReciMeTokens.tightPadding),
+        horizontalArrangement = Arrangement.spacedBy(ReciMeTokens.contentSpacing),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Box(
             modifier = Modifier
-                .size(14.dp)
-                .border(1.5.dp, MaterialTheme.colorScheme.primary, MaterialTheme.shapes.extraSmall),
+                .size(ReciMeTokens.ingredientMarkerSize)
+                .border(
+                    ReciMeTokens.ingredientMarkerStroke,
+                    MaterialTheme.colorScheme.primary,
+                    MaterialTheme.shapes.extraSmall,
+                ),
         )
-        Text(text = ingredient, style = MaterialTheme.typography.bodyMedium.copy(color = ReciMeTokens.inkMuted))
+        Text(
+            text = ingredient,
+            style = MaterialTheme.typography.bodyMedium.copy(
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            ),
+        )
     }
 }
 

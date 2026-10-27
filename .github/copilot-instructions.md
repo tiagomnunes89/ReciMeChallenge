@@ -10,22 +10,24 @@ generating code.
 - Kotlin 2.x, Jetpack Compose + Material 3, Gradle Kotlin DSL with Version
   Catalog (`gradle/libs.versions.toml`).
 - Dependency injection: **Hilt**. Async: Coroutines + `StateFlow`.
-- Network: Retrofit + kotlinx.serialization; the API is simulated by
-  `MockRecipeApi` (reads `assets/recipes.json`).
-- Persistence: **DataStore Preferences**, only for favorites.
+- Network: Retrofit + kotlinx.serialization; the debug API is simulated by
+  `MockApiInterceptor` (reads `assets/recipes.json`).
+- Persistence: **Room**, for recipe records and favorites; catalog pages are
+  loaded through PagingSource and are not persisted as a catalog cache.
 - Navigation: Navigation Compose with typed routes (`@Serializable`).
 - Tests: **JUnit 4**, `kotlinx-coroutines-test`, **hand-written fakes**
   (no mocking libraries) and Robolectric when the ViewModel or screen needs
   Android (`toRoute`, Compose UI tests). On-device tests live in
   `app/src/androidTest` and use the Compose test APIs.
 - Quality: **Detekt** (`config/detekt/detekt.yml`, `maxIssues: 0`) and
-  **Kover** (ViewModel coverage report, no threshold); both run in CI (`ci.yml`).
+  **Kover** (ViewModel coverage report with an advisory 80% target); both run in
+  CI (`ci.yml`).
 - minSdk 26, compileSdk 37, targetSdk 36. Build: `./gradlew assembleDebug`;
   tests: `./gradlew testDebugUnitTest`; lint: `./gradlew detekt`. Use JDK 17.
 
 ## Architecture
 - Clean Architecture with two modules: `:app` (packages `domain`, `data`,
-  `ui`, `common`) and `:designsystem` (theme and reusable components).
+  `ui`) and `:designsystem` (theme and reusable components).
 - Dependency rule: `ui` → `domain`; `data` → `domain`; `domain` does not
   import `data`, `ui` or Compose. `:designsystem` never depends on `:app`.
 - Unidirectional flow: the `ViewModel` exposes `StateFlow<UiState>`; the UI
@@ -36,13 +38,14 @@ generating code.
   `LoadResult.Error` → `LazyPagingItems.loadState` → `retry()`. Never leave
   the screen blank or stuck on "loading".
 - Repositories are interfaces in the `domain` package, bound via `@Binds`
-  in `data/di`. Only add a use case when it combines several sources (today:
-  `ObserveFavoriteRecipesUseCase`).
+  in `data/di`. ViewModels may inject repositories directly for a single
+  repository operation; add a use case only when it combines several sources
+  or contains reusable business logic.
 
 ## Where things live
 - `app/src/main/kotlin/com/recime/challenge/`: `domain/`, `data/`,
-  `data/remote/` (Retrofit contract, DTOs, mock API), `ui/{home,detail,
-  favorites,navigation}`, `common/`.
+  `data/remote/` (Retrofit contract, DTOs and debug mock boundary),
+  `ui/{home,detail,favorites,navigation}`.
 - `designsystem/`: theme and reusable components; it never imports
   `domain` models.
 - `app/src/test/`: unit and Robolectric tests, mirroring the main packages.

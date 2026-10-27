@@ -1,19 +1,4 @@
 #!/usr/bin/env bash
-# Generates the local diff of your changes before the push, with no external
-# API: compares HEAD against the divergence point from the base. Base
-# detection (when none is passed):
-#   1. upstream of the current branch (@{u})  -> what has not been pushed yet;
-#   2. origin/main;
-#   3. the remote's default branch (origin/HEAD);
-#   4. HEAD~1.
-#
-# Usage:
-#   ./generate_local_diff.sh               # detects the base
-#   ./generate_local_diff.sh origin/main   # forces the base
-#
-# Output (in .review-tmp/):
-#   push_diff.diff           unified diff (unpushed commits + working tree)
-#   push_changed_files.txt   changed files
 
 set -euo pipefail
 
