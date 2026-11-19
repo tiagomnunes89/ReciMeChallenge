@@ -185,15 +185,15 @@ Useful checks:
 
 ## 📸 Screenshots
 
-> The app has a paged home grid, inline filters (see more / see less), an empty search state, a recipe detail screen, and a favorites list.
+Captured on a Pixel emulator from the debug build.
 
-| Home | Home with filters | Empty search |
+| Home | Filters | Empty search |
 |:---:|:---:|:---:|
-| Recipe grid, search field, All / Vegetarian tabs | Servings, include, exclude, and instruction filters | "Item not found" when the query matches nothing |
+| ![Home grid with search and category tabs](docs/screenshots/home.png) | ![Expanded servings, ingredient and instruction filters](docs/screenshots/home-filters.png) | ![Empty search result](docs/screenshots/home-empty.png) |
 
-| Recipe detail | Favorites | Error + retry |
-|:---:|:---:|:---:|
-| About, ingredients, instructions, favorite | Saved recipes, or the empty-state message | Failed load with Try again |
+| Recipe detail | Favorites |
+|:---:|:---:|
+| ![Recipe detail with ingredients and instructions](docs/screenshots/detail.png) | ![Favorites with a saved recipe](docs/screenshots/favorites.png) |
 
 ---
 
