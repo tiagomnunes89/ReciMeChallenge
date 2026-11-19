@@ -23,11 +23,11 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
@@ -43,6 +43,7 @@ class RecipeDetailViewModel @Inject constructor(
 
     private val recipeId = savedStateHandle.toRoute<RecipeDetailDestination>().recipeId
     private val retryCount = MutableStateFlow(0)
+    private val favoriteOverride = MutableStateFlow<Boolean?>(null)
     private val _favoriteActionErrors = MutableSharedFlow<Int>(extraBufferCapacity = 1)
 
     val favoriteActionErrors = _favoriteActionErrors.asSharedFlow()
@@ -59,11 +60,16 @@ class RecipeDetailViewModel @Inject constructor(
 
     fun onFavoriteClick() {
         viewModelScope.launch {
+            val isFavorite = (uiState.value as? RecipeDetailUiState.Success)?.isFavorite == true
+            favoriteOverride.value = !isFavorite
             try {
                 favoritesRepository.toggleFavorite(recipeId)
+                favoriteOverride.value = null
             } catch (exception: CancellationException) {
+                favoriteOverride.value = null
                 throw exception
             } catch (exception: Exception) {
+                favoriteOverride.value = null
                 if (BuildConfig.DEBUG) {
                     Log.e("RecipeDetailViewModel", "Unable to toggle favorite", exception)
                 }
@@ -78,8 +84,12 @@ class RecipeDetailViewModel @Inject constructor(
     private fun loadRecipe(): Flow<RecipeDetailUiState> = flow {
         val recipe = recipes.getRecipe(recipeId)
         emitAll(
-            favoritesRepository.observeFavoriteIds()
-                .map { ids -> recipe.toUiState(isFavorite = recipeId in ids) },
+            combine(
+                favoritesRepository.observeFavoriteIds(),
+                favoriteOverride,
+            ) { ids, override ->
+                recipe.toUiState(isFavorite = override ?: (recipeId in ids))
+            },
         )
     }
         .distinctUntilChanged()

@@ -8,6 +8,7 @@ import com.recime.challenge.domain.repository.RecipeRepository
 import com.recime.challenge.ui.home.previewRecipes
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
 
 internal class FakeRecipeRepository(var recipes: List<Recipe> = previewRecipes) : RecipeRepository {
@@ -43,7 +44,7 @@ internal class FakeFavoritesRepository(
     override fun observeFavoriteIds(): Flow<Set<String>> = flow {
         subscriptionCount++
         observeFailure?.let { throw it }
-        emit(favoriteIds.value)
+        emitAll(favoriteIds)
     }
 
     override fun observeFavoriteRecipes(): Flow<List<Recipe>> = flow {
@@ -55,5 +56,10 @@ internal class FakeFavoritesRepository(
     override suspend fun toggleFavorite(id: String) {
         toggleFailure?.let { throw it }
         lastToggledId = id
+        favoriteIds.value = if (id in favoriteIds.value) {
+            favoriteIds.value - id
+        } else {
+            favoriteIds.value + id
+        }
     }
 }

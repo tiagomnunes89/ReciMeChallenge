@@ -139,8 +139,33 @@ class RecipeDetailViewModelTest {
         collectState(viewModel)
 
         viewModel.onFavoriteClick()
+        runCurrent()
 
         assertEquals(recipe.id, favorites.lastToggledId)
-        assertEquals(RecipeDetailUiState.Success(recipe), viewModel.uiState.value)
+        assertEquals(RecipeDetailUiState.Success(recipe, isFavorite = true), viewModel.uiState.value)
+    }
+
+    @Test
+    fun `favorite action immediately updates state and reverts on failure`() = runTest {
+        favorites.toggleFailure = IllegalStateException("write failed")
+        val viewModel = createViewModel()
+        collectState(viewModel)
+
+        viewModel.onFavoriteClick()
+        runCurrent()
+
+        assertEquals(RecipeDetailUiState.Success(recipe, isFavorite = false), viewModel.uiState.value)
+    }
+
+    @Test
+    fun `removing a favorite immediately updates state`() = runTest {
+        favorites.favoriteIds.value = setOf(recipe.id)
+        val viewModel = createViewModel()
+        collectState(viewModel)
+
+        viewModel.onFavoriteClick()
+        runCurrent()
+
+        assertEquals(RecipeDetailUiState.Success(recipe, isFavorite = false), viewModel.uiState.value)
     }
 }
