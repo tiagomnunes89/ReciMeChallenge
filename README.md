@@ -190,10 +190,8 @@ Captured on a Pixel emulator from the debug build.
 | Home | Filters | Empty search |
 |:---:|:---:|:---:|
 | ![Home grid with search and category tabs](docs/screenshots/home.png) | ![Expanded servings, ingredient and instruction filters](docs/screenshots/home-filters.png) | ![Empty search result](docs/screenshots/home-empty.png) |
-
-| Recipe detail | Favorites |
-|:---:|:---:|
-| ![Recipe detail with ingredients and instructions](docs/screenshots/detail.png) | ![Favorites with a saved recipe](docs/screenshots/favorites.png) |
+| Recipe detail | Favorites | |
+| ![Recipe detail with ingredients and instructions](docs/screenshots/detail.png) | ![Favorites with a saved recipe](docs/screenshots/favorites.png) | |
 
 ---
 
