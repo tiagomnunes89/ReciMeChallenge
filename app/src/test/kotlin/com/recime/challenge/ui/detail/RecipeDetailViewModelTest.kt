@@ -5,12 +5,14 @@ import com.recime.challenge.R
 import com.recime.challenge.testing.FakeFavoritesRepository
 import com.recime.challenge.testing.FakeRecipeRepository
 import com.recime.challenge.ui.home.previewRecipes
+import java.io.IOException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.resetMain
+import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
 import org.junit.After
@@ -39,7 +41,7 @@ class RecipeDetailViewModelTest {
     private fun createViewModel(): RecipeDetailViewModel =
         RecipeDetailViewModel(
             recipes = recipes,
-            favorites = favorites,
+            favoritesRepository = favorites,
             savedStateHandle = SavedStateHandle(
                 mapOf("recipeId" to recipe.id),
             ),
@@ -81,6 +83,15 @@ class RecipeDetailViewModelTest {
     }
 
     @Test
+    fun `a canceled recipe load does not become an error`() = runTest {
+        recipes.failure = IOException("Canceled")
+        val viewModel = createViewModel()
+        collectState(viewModel)
+
+        assertEquals(RecipeDetailUiState.Loading, viewModel.uiState.value)
+    }
+
+    @Test
     fun `favorite observation failure exposes an error`() = runTest {
         favorites.observeFailure = IllegalStateException("favorites failed")
         val viewModel = createViewModel()
@@ -106,17 +117,20 @@ class RecipeDetailViewModelTest {
     }
 
     @Test
-    fun `favorite action failure exposes an error`() = runTest {
+    fun `favorite action failure keeps recipe content and emits a transient error`() = runTest {
         favorites.toggleFailure = IllegalStateException("write failed")
         val viewModel = createViewModel()
         collectState(viewModel)
+        val errors = mutableListOf<Int>()
+        backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
+            viewModel.favoriteActionErrors.collect { errors += it }
+        }
 
         viewModel.onFavoriteClick()
+        runCurrent()
 
-        assertEquals(
-            RecipeDetailUiState.Error(R.string.common_error_generic),
-            viewModel.uiState.value,
-        )
+        assertEquals(RecipeDetailUiState.Success(recipe), viewModel.uiState.value)
+        assertEquals(listOf(R.string.common_error_generic), errors)
     }
 
     @Test

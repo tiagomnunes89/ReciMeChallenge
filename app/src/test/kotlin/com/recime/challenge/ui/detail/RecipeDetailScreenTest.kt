@@ -5,8 +5,8 @@ import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import com.recime.challenge.designsystem.theme.ReciMeTheme
 import com.recime.challenge.R
+import com.recime.challenge.designsystem.theme.ReciMeTheme
 import com.recime.challenge.ui.home.previewRecipes
 import org.junit.Assert.assertEquals
 import org.junit.Rule

@@ -1,0 +1,3078 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Spaghetti Aglio e Olio",
+      "description": "Classic Italian pasta with garlic, chili and olive oil.",
+      "servings": 2,
+      "ingredients": [
+        "spaghetti",
+        "garlic",
+        "olive oil",
+        "chili flakes",
+        "parsley"
+      ],
+      "instructions": [
+        "Boil the spaghetti in salted water until al dente.",
+        "Sauté sliced garlic and chili flakes in olive oil.",
+        "Toss the pasta in the pan and finish with chopped parsley."
+      ],
+      "dietary_attributes": [
+        "vegetarian",
+        "vegan"
+      ],
+      "image_url": "file:///android_asset/images/spaghetti.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Chicken Caesar Salad",
+      "description": "Crisp romaine with grilled chicken, parmesan and croutons.",
+      "servings": 4,
+      "ingredients": [
+        "chicken breast",
+        "romaine lettuce",
+        "parmesan",
+        "croutons",
+        "caesar dressing"
+      ],
+      "instructions": [
+        "Grill the chicken breast until cooked through, then slice.",
+        "Toss lettuce with dressing and top with chicken, parmesan and croutons."
+      ],
+      "dietary_attributes": [],
+      "image_url": "file:///android_asset/images/caesar.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Veggie Buddha Bowl",
+      "description": "Colorful bowl with roasted vegetables, quinoa and tahini.",
+      "servings": 2,
+      "ingredients": [
+        "quinoa",
+        "sweet potato",
+        "chickpeas",
+        "spinach",
+        "tahini"
+      ],
+      "instructions": [
+        "Roast the sweet potato and chickpeas at 200°C for 25 minutes.",
+        "Cook the quinoa according to the package.",
+        "Assemble the bowl with spinach and drizzle with tahini."
+      ],
+      "dietary_attributes": [
+        "vegetarian",
+        "vegan",
+        "gluten_free"
+      ],
+      "image_url": "file:///android_asset/images/bowl.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Margherita Pizza",
+      "description": "Thin crust pizza with tomato, mozzarella and fresh basil.",
+      "servings": 4,
+      "ingredients": [
+        "pizza dough",
+        "tomato sauce",
+        "mozzarella",
+        "basil",
+        "olive oil"
+      ],
+      "instructions": [
+        "Preheat the oven to 250°C with a baking stone inside.",
+        "Stretch the dough, spread the tomato sauce and add the mozzarella.",
+        "Bake for 8 minutes and top with fresh basil."
+      ],
+      "dietary_attributes": [
+        "vegetarian"
+      ],
+      "image_url": "file:///android_asset/images/pizza.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Grilled Salmon with Lemon",
+      "description": "Juicy salmon fillets with lemon, dill and steamed green beans.",
+      "servings": 2,
+      "ingredients": [
+        "salmon fillet",
+        "lemon",
+        "dill",
+        "green beans",
+        "olive oil"
+      ],
+      "instructions": [
+        "Season the salmon with salt, lemon zest and dill.",
+        "Grill for 4 minutes on each side.",
+        "Serve with steamed green beans and lemon wedges."
+      ],
+      "dietary_attributes": [
+        "gluten_free"
+      ],
+      "image_url": "file:///android_asset/images/salmon.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Creamy Mushroom Risotto",
+      "description": "Slow-cooked arborio rice with mushrooms and parmesan.",
+      "servings": 4,
+      "ingredients": [
+        "arborio rice",
+        "mushrooms",
+        "vegetable stock",
+        "parmesan",
+        "onion",
+        "butter"
+      ],
+      "instructions": [
+        "Sauté the onion and mushrooms in butter until golden.",
+        "Add the rice and stir in the hot stock one ladle at a time.",
+        "Finish with parmesan and butter, stirring until creamy."
+      ],
+      "dietary_attributes": [
+        "vegetarian",
+        "gluten_free"
+      ],
+      "image_url": "file:///android_asset/images/risotto.jpg"
+    },
+    {
+      "id": "7",
+      "title": "BEEF LOK LAK (Lok Lak Sach Ko)",
+      "description": "Homestyle beef ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "1 kg Beef Tenderloin",
+        "5 cloves Garlic",
+        "2 tablespoons Oil",
+        "1.5 tablespoon Palm Sugar",
+        "1 tsp Sea Salt",
+        "2 tablespoons White Wine",
+        "2 tablespoons Oyster Sauce",
+        "2 tablespoons Soy Sauce",
+        "1.5 tablespoon Sesame Seed Oil",
+        "500g Lettuce",
+        "400g Tomato",
+        "200g Onion",
+        "4 Eggs",
+        "1.5 tablespoon Sea Salt",
+        "1 tablespoon Kampot Pepper",
+        "1 tablespoon Lime juice"
+      ],
+      "instructions": [
+        "Fry the eggs sunny-side up and set aside. Finely chop the garlic. Wash the lettuce leaves and drain well. Thinly slice the onion and tomatoes.",
+        "Cut the beef tenderloin into 2–3 cm cubes. Marinate with sea salt, palm sugar, Chinese cooking wine, oyster sauce, soy sauce, and sesame oil. Mix well.",
+        "Heat a frying pan on high heat with cooking oil.",
+        "Add chopped garlic and stir until the garlic browns lightly.",
+        "Add the marinated beef (with all the marinade) and cook for 5–7 minutes, depending on how rare you want the beef.",
+        "Dry roast the black Kampot peppercorns in a frying pan over medium-low heat for 2–3 minutes until fragrant. Grind the roasted pepper, place it in a bowl, then add sea salt and lime juice. Mix well.",
+        "On a serving plate, arrange a bed of lettuce, then layer tomatoes, then onions. Spoon the cooked beef over the vegetables and place fried eggs on top. Serve with the Kampot pepper sauce and fragrant steamed rice.",
+        "Sear hot and fast, Lok Lak is at its best when the beef stays tender and juicy, with a bold, bright dipping sauce to cut through the richness."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/t2b8bn1779737789.jpg"
+    },
+    {
+      "id": "8",
+      "title": "Antiguan Breakfast (Chop Up and ‘Saltfish’)",
+      "description": "Homestyle breakfast ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "4 Egg Plants",
+        "8 oz Callaloo",
+        "1 lb Pumpkin",
+        "3 cloves Chopped Garlic",
+        "1 Diced Onion",
+        "2 oz Butter",
+        "1/2 tsp Salt",
+        "1/4 tsp Black Pepper"
+      ],
+      "instructions": [
+        "Peel and chop eggplant and pumpkin into medium-sized pieces.",
+        "Heat butter and add onions and garlic in a medium sized pot set to medium to high heat. Sauté for 2 minutes until softened but not browned.",
+        "Add pumpkin and eggplant. Sauté for an additional two to three minutes.",
+        "Add water just to cover the vegetables. Bring to a boil, reduce heat to a simmer and cook until the vegetables are soft.",
+        "Add the chopped spinach, stir and cook for an additional 3 minutes.",
+        "Pour the vegetable mixture into a colander and let drain.",
+        "After vegetable mixture has been drained return it to the pot and mash vigorously with a potato masher or a thick whisk.",
+        "Add salt and pepper. Adjust seasoning to taste."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/jvjnoh1780086318.jpg"
+    },
+    {
+      "id": "9",
+      "title": "Belgian Waterzooi Chicken",
+      "description": "Homestyle chicken ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "1 Chicken Legs",
+        "1 Chicken Breast",
+        "3 Cups Water",
+        "1 small Carrots",
+        "2 Leek",
+        "1 Celery",
+        "100g Potatoes",
+        "2 cloves Garlic",
+        "1 Sprig Rosemary",
+        "1 1/2 cups Cream",
+        "2 Bay Leaf",
+        "1 tablespoon Unsalted Butter",
+        "1 Egg Yolks",
+        "Pinch Pepper",
+        "Pinch Salt"
+      ],
+      "instructions": [
+        "Put the chicken, water and one garlic clove in a large saucepan.",
+        "Place it over medium-high heat until boiling.",
+        "Then turn the heat low, cover the pan and simmer the chicken for 10 minutes.",
+        "Remove the chicken leg and breast.",
+        "Keep the fresh chicken stock for later.",
+        "Let the chicken cool.",
+        "Then dice the chicken breast up.",
+        "Pick the meat off the leg.",
+        "Discard any bones and skin.",
+        "Slice the leek, celery and carrot finely (julienne).",
+        "Add the butter, rosemary and bay leaves to a large pan and place it over medium heat until melted.",
+        "Then add the sliced vegetables. Season with pepper and salt."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/nmxec11782498644.jpg"
+    },
+    {
+      "id": "10",
+      "title": "Apple Pie",
+      "description": "Homestyle dessert ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "4 Apples",
+        "2 Eggs",
+        "125ml Sugar",
+        "1 1/2 cups Flour",
+        "1/2 tsp Salt",
+        "1 tsp Bicarbonate Of Soda",
+        "250ml Sour Milk"
+      ],
+      "instructions": [
+        "Peel and clean apples/rhubarb, cut in to a slices",
+        "beat eggs and sugar together into a light foam",
+        "Mix together flour, salt and baking powder",
+        "Add  the dry ingredients to the egg mixture and add sour milk gradually while stirring,  Add berries.",
+        "Pour dough in to a butter greased pan. Sprinkle over sugar (and cinnamon). Bake at 180 C for 30 minute"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/stnxzp1784835840.jpg"
+    },
+    {
+      "id": "11",
+      "title": "Jamaican Curry Goat",
+      "description": "Jamaican goat with bold flavor.",
+      "servings": 2,
+      "ingredients": [
+        "3 Lbs Goat Meat",
+        "2.5 tbsp Jamaican Curry Powder",
+        "1/2 tsp Ground Ginger",
+        "1/2 tsp All-purpose Seasoning",
+        "1/4 tsp Allspice",
+        "1 chopped Onion",
+        "6 cloves sliced Garlic",
+        "3 sprigs Thyme",
+        "2 tablespoons Oil",
+        "1 1/4 cup Water",
+        "1 Scotch Bonnet",
+        "1 large Russet Potato",
+        "To taste Salt",
+        "To taste Pepper"
+      ],
+      "instructions": [
+        "Equipment",
+        "6QT Pressure cooker",
+        "Instructions",
+        "Rinse goat meat with vinegar and water.",
+        "Season goat meat with 1 ½ tablespoon curry powder, all-purpose seasoning, ground ginger, allspice, onion, garlic cloves, and thyme. Marinate for at least 4 hours or up to overnight.",
+        "Remove onion and garlic from goat and set aside.",
+        "Set an electric pressure cooker, like an Instant Pot, on high sauté and add oil.",
+        "Add goat meat and brown, about 2-3 minutes per side.",
+        "Remove goat from insert and add 1 tablespoon oil and remaining curry powder and sauté for about 10 seconds.",
+        "Then add onions and garlic and sauté until softened.",
+        "About 4 minutes.",
+        "If the onions look dry, add a little water and continue to sauté."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/uc9qp11764796575.jpg"
+    },
+    {
+      "id": "12",
+      "title": "Kelem dolmasi",
+      "description": "Homestyle lamb ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "500g Lamb Mince",
+        "1 large Cabbage",
+        "8 oz Onion",
+        "Pinch Salt",
+        "Pinch Pepper",
+        "1/2 tsp Turmeric",
+        "1/2 tsp Cinnamon",
+        "2 tablespoons Cilantro",
+        "2 tablespoons Dill",
+        "2 oz Rice",
+        "2 oz Chickpeas",
+        "3 oz Lamb Fat",
+        "1 tablespoon Tomato Puree",
+        "3  tablespoons Water"
+      ],
+      "instructions": [
+        "First boil the rice for eight minutes. Meanwhile, peel and finely chop the onion. Then chop the herbs.",
+        "The recipe didn't really say what to do with the chickpeas (also known of course as garbanzo beans), beyond soaking them overnight and rinsing them.",
+        "I used canned chickpeas, since I've never actually seen them dried.",
+        "I decided to chop/mash them slightly so they would better incorporate into the filling.",
+        "Chickpeas (or garbanzo beans) roughly chopped",
+        "Now mince the lamb (I used my mini food processor).",
+        "Here's where I ran into another problem: what to do with the lamb fat this recipe calls for?",
+        "Mince it?",
+        "Melt it?",
+        "Does lamb fat even melt?",
+        "I decided to mince mine.",
+        "Thankfully, my husband doesn't actually read this blog because he'd be horrified if he knew I put fat in the dolma on purpose."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/7vdtqi1780160088.jpg"
+    },
+    {
+      "id": "13",
+      "title": "Achiote Oil (Aceite Achiotado) Recipe",
+      "description": "Homestyle miscellaneous ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "2 cups Vegetable Oil",
+        "4 tablespoons Achiote Seeds"
+      ],
+      "instructions": [
+        "Heat the vegetable or olive oil and Achiote seeds in a small skillet over medium heat for about 2 to 3 minutes.",
+        "Don't let the seeds turn black. Remove the skillet from the heat and let stand for 5 minutes more. Strain the oil and store for up to 15 days at room temperature in a jar with a tight lid."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/iuws3q1783801530.jpg"
+    },
+    {
+      "id": "14",
+      "title": "Macaroni Pie",
+      "description": "Homestyle pasta ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "250g Macaroni",
+        "1 tablespoon Butter",
+        "375g Cheddar Cheese",
+        "1 Egg",
+        "250ml Milk",
+        "2 tsp Ground Onion",
+        "1 tsp Mustard",
+        "1 tsp Pepper",
+        "1 tsp Salt",
+        "1/2 tsp Cayenne Pepper",
+        "2 tablespoons Breadcrumbs",
+        "2 tsp Butter",
+        "2 tablespoons Cheddar Cheese"
+      ],
+      "instructions": [
+        "Bring water to a boil and add the broken-up macaroni, elbows, and salt. Cook uncovered until tender but not overcooked (about 8 minutes).",
+        "Preheat a moderately hot oven to 350F, 180C, or Gas Mark 4.",
+        "Drain the macaroni thoroughly, put it back into the same hot saucepan cooked in, and mix in the butter.",
+        "Grate the cheese and mix it with the macaroni while it is still warm.",
+        "Whisk the egg until fluffy, and add the milk, onion powder, white pepper, salt, pepper sauce, and mustard. Pour in with the macaroni and mix.",
+        "Place in a greased ovenproof casserole dish. Top with butter, some grated cheese, and fine breadcrumbs. Bake in the center of the oven for about 30-45 minutes, depending on the dish’s depth."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/kpiu4t1782242131.jpg"
+    },
+    {
+      "id": "15",
+      "title": "Bai Sach Chrouk – Grilled Pork with Rice",
+      "description": "Homestyle pork ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "650g Pork Shoulder",
+        "1/4 cup Coconut Milk",
+        "3  tablespoons Soy Sauce",
+        "2 tablespoons Oyster Sauce",
+        "2 tablespoons Honey",
+        "4 cloves Garlic",
+        "1 tsp Black Pepper",
+        "2 cups Jasmine Rice",
+        "4 cups Water",
+        "1 tablespoon Vegetable Oil",
+        "1 sliced Cucumber",
+        "Garnish Cilantro Leaves"
+      ],
+      "instructions": [
+        "In a large bowl, combine the coconut milk, soy sauce, oyster sauce, honey, minced garlic, and black pepper to make the marinade.",
+        "Add the thinly sliced pork shoulder to the marinade, ensuring each piece is fully coated, then cover and refrigerate for at least 30 minutes to allow the flavors to penetrate.",
+        "While the pork marinates, rinse the jasmine rice under cold water until the water runs clear to remove excess starch, which helps prevent clumping.",
+        "In a medium pot, combine the rinsed rice and 4 cups of water, bring to a boil over high heat, then reduce to a simmer, cover, and cook for 15 minutes until the water is absorbed and the rice is tender.",
+        "Heat a grill pan or outdoor grill to medium-high heat (about 400°F) and lightly brush with vegetable oil to prevent sticking.",
+        "Remove the pork from the marinade, shaking off any excess, and place it on the hot grill, cooking for 3-4 minutes per side until nicely charred and cooked through with an internal temperature of 145°F.",
+        "Tip: Avoid overcrowding the grill pan to ensure even browning and proper caramelization of the marinade.",
+        "Once the pork is grilled, let it rest for 5 minutes before slicing to retain its juices and tenderness.",
+        "Tip: If you prefer a saucier dish, simmer the leftover marinade in a small saucepan for 5 minutes until slightly thickened and drizzle it over the pork.",
+        "Fluff the cooked rice with a fork to separate the grains and serve it warm alongside the grilled pork slices.",
+        "Arrange the thinly sliced cucumber and fresh cilantro leaves on top as a refreshing garnish.",
+        "Tip: For an extra kick, serve with a side of pickled vegetables or a squeeze of lime juice to balance the rich, savory flavors."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/f0cdwk1782688162.jpg"
+    },
+    {
+      "id": "16",
+      "title": "Acaraje black-eyed pea fritters with shrimp filling",
+      "description": "Homestyle seafood ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "800g Black Eyed Peas",
+        "1 clove Garlic",
+        "1 Green Chilli",
+        "1 small finely diced Red Onions",
+        "2 tablespoons Plain Flour",
+        "1 tsp Salt",
+        "1 tsp Chilli Powder",
+        "1 tsp Baking Powder",
+        "For frying Vegetable Oil",
+        "1 sliced Red Onions",
+        "1 tablespoon chopped Ginger",
+        "2 cloves Garlic",
+        "1 chopped Red Chilli",
+        "150g Raw tiger prawns",
+        "1 tablespoon Vegetable Oil",
+        "2 Plum Tomatoes",
+        "1 tablespoon chopped Coriander",
+        "Juice of 1 Lime"
+      ],
+      "instructions": [
+        "step 1",
+        "Make the filling by placing the onion, ginger, garlic, chilli, and some salt into food processor.",
+        "Purée until smooth.",
+        "Heat the oil in a frying pan and pour the purée into it.",
+        "Fry for 5 mins or until cooked through.",
+        "Add the prawns, tomatoes and chopped coriander.",
+        "Squeeze in the lime and add salt to taste.",
+        "Cook for 3 mins, or until the prawns have cooked through.",
+        "Remove from the heat.",
+        "step 2",
+        "Drain and rinse the black-eyed peas.",
+        "Pour into a food processor with the garlic and chili."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/dxs5t71782678369.jpg"
+    },
+    {
+      "id": "17",
+      "title": "Almojábanas (Colombian Cheese Bread)",
+      "description": "Homestyle side ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "1 1/4 cup Cornmeal",
+        "3 Cups Queso Fresco",
+        "1 cup Mozzarella",
+        "2 tablespoons Butter",
+        "1 tsp Baking Powder",
+        "1/4 tsp Salt",
+        "2 Eggs",
+        "4 tablespoons Milk"
+      ],
+      "instructions": [
+        "Preheat the oven to 400° F.",
+        "Mix the masarepa and cheese in a food processor.",
+        "Add the remaining ingredients and mix well.",
+        "Divide into 8 equal-size portions and shape into a ball.",
+        "Place on a greased baking sheet and bake for about 25 to 30 minutes, or until they are golden. Serve warm."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/ymk7gt1783803106.jpg"
+    },
+    {
+      "id": "18",
+      "title": "Baked brie with sorrel jam",
+      "description": "Homestyle starter ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 cup Dried Sorrel",
+        "2 cups Brown Sugar",
+        "1 tsp Ground Ginger",
+        "1/4 cup Cinnamon",
+        "1 vanilla pod",
+        "Zest of 1 Orange",
+        "Boiled Water",
+        "1 beaten Egg",
+        "1 Slice Puff Pastry",
+        "2 Lbs Brie",
+        "To serve Sorrel Jam",
+        "1 tsp Water"
+      ],
+      "instructions": [
+        "Sorrel jam instructions",
+        "Combine sugar, sorrel, lemon zest, water in a medium sized pot.",
+        "Bring to a boil as petal becomes soft",
+        "Reduce heat, and cook until thickened.",
+        "Let it rest before using on brie",
+        "Baked brie instructions",
+        "You can slice the brie in half to create a sandwich-like effect. Or you can leave the brie wheel intact and just trim the top rind of the wheel.",
+        "Add a generous portion of jam to the top of the wheel, or one side of the sandwich",
+        "Roll dough out with a rolling pin on a floured surface",
+        "Trim excess dough. You can also use it to decorate .",
+        "Wrap the pastry up around the sides and over the top of cheese wheel, wrapping completely and pressing the edges of dough together to form a tightly sealed package.",
+        "Carefully flip the dough-wrapped cheese over, so that the gathered dough is on the bottom.Place the package, seam side down, on a baking sheet sprayed with non-stick cooking spray."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/fg7d641784666908.jpg"
+    },
+    {
+      "id": "19",
+      "title": "Vegan Lasagna",
+      "description": "Italian vegan with bold flavor.",
+      "servings": 2,
+      "ingredients": [
+        "1 cups green red lentils",
+        "1 Carrots",
+        "1 onion",
+        "1 small zucchini",
+        "sprinking coriander",
+        "150g spinach",
+        "10 lasagne sheets",
+        "35g vegan butter",
+        "4 tablespoons flour",
+        "300ml soya milk",
+        "1.5 teaspoons mustard",
+        "1 teaspoon vinegar"
+      ],
+      "instructions": [
+        "Preheat oven to 180 degrees celcius.",
+        "Boil vegetables for 5-7 minutes, until soft. Add lentils and bring to a gentle simmer, adding a stock cube if desired. Continue cooking and stirring until the lentils are soft, which should take about 20 minutes.",
+        "Blanch spinach leaves for a few minutes in a pan, before removing and setting aside.",
+        "Top up the pan with water and cook the lasagne sheets. When cooked, drain and set aside.",
+        "To make the sauce, melt the butter and add the flour, then gradually add the soya milk along with the mustard and the vinegar. Cook and stir until smooth and then assemble the lasagne as desired in a baking dish.",
+        "Bake in the preheated oven for about 25 minutes."
+      ],
+      "dietary_attributes": [
+        "vegan",
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg"
+    },
+    {
+      "id": "20",
+      "title": "Black Beans Hotpot",
+      "description": "Homestyle vegetarian ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "400g Black Beans",
+        "1 large Onion",
+        "1 Green Pepper",
+        "1 Red Pepper",
+        "1/3 cup Celery",
+        "4 Cloves Crushed Garlic",
+        "1 1/2 tsp Ground Cumin",
+        "1 tablespoon Oregano",
+        "1 1/2 tsp Salt",
+        "2 tsp Black Pepper",
+        "5 Cups Water"
+      ],
+      "instructions": [
+        "Add all the ingredients in the Instant pot, Lock the lid on and set the Instant Pot to High Pressure for 35 minutes.",
+        "Once the beans are done cooking, let the pressure release naturally for 20 minutes before releasing the remaining pressure.",
+        "Open and serve!",
+        "Let the beans get cool completely before saving them in the fridge or freezer."
+      ],
+      "dietary_attributes": [
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/81ahfr1784394567.jpg"
+    },
+    {
+      "id": "21",
+      "title": "Barbados Pepperpot",
+      "description": "Homestyle beef ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "2 Pigs Trotters",
+        "2 Lbs Oxtail",
+        "Splash Lime juice",
+        "3 cloves Garlic",
+        "2 Scotch Bonnet",
+        "1 large Onion",
+        "1 Cinnamon Stick",
+        "2 Cloves",
+        "Pinch Sugar",
+        "Pinch Salt",
+        "Sprinkling Basil",
+        "Sprinkling Thyme",
+        "2 Lbs Beef"
+      ],
+      "instructions": [
+        "Wash the stewing steak and place it in the mixing bowl with the lemon or lime juice.",
+        "Set that to one side; while you slice the garlic into tiny slices, slice the onion. Chop the basil and thyme.",
+        "Now you need to be very careful when you slice the scotch bonnet peppers; you want these in fine pieces, which you can either do with a long knife trying not to touch the pepper, or you can wear rubber gloves to cut it up.",
+        "Wash your hands straight afterward and do not touch your eyes; these peppers really burn your hands and eyes if they make contact with the skin!",
+        "Now rinse the lime or lemon juice off the stewing steak. And cut the meat into cubes.",
+        "Also, chop the pig’s trotters and the oxtail into cubes.",
+        "Fill the large saucepan with water and bring to a boil.",
+        "Add the pig’s trotters.",
+        "When the pig’s trotters have boiled, drain the excess water, and now add the stewing steak and cover with fresh hot water.",
+        "Now add your chopped garlic, onion, and peppers.",
+        "Now add the cinnamon stick, cloves, basil, and thyme and a pinch of salt and sugar to taste.",
+        "Now simmer until the meat is tender. The flavor of this dish comes out over a few days and therefore gets tastier each time you reheat it; make sure you always reheat the entire pot to boiling point."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/5tf8j11782236249.jpg"
+    },
+    {
+      "id": "22",
+      "title": "Flija Layered Pancake / Crepe",
+      "description": "Homestyle breakfast ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 kg Flour",
+        "1 L Water",
+        "1 tsp Salt",
+        "220g Melted Butter",
+        "200ml Vegetable Oil",
+        "5 tablespoons Greek Yogurt",
+        "220g Melted Butter",
+        "200ml Vegetable Oil",
+        "3  tablespoons Clotted Cream",
+        "220g Melted Butter",
+        "500ml Sour Cream",
+        "3  tablespoons Olive Oil"
+      ],
+      "instructions": [
+        "1",
+        "Prepare the Flour Batter",
+        "Mix together the flour, water and salt ensuring all the lumps are dissolved. The mixture should be thick but still of a pouring consistency, add a little extra water if required. Put to one side.",
+        "2",
+        "Prepare the Batter Filling",
+        "Mix together the butter, oil and chosen yogurt / cream ensuring all the lumps are dissolved.",
+        "The mixture should be runny, leave to rest for 10 minutes before given it another good mix.",
+        "The consistency should be similar to custard.",
+        "Put to one side.",
+        "3",
+        "Baking",
+        "Preheat the gill to a medium setting (I use mark 4 of 6)."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/eqnf3p1779649407.jpg"
+    },
+    {
+      "id": "23",
+      "title": "Bengali Chicken Curry with Potatoes",
+      "description": "Homestyle chicken ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "2 tablespoons Olive Oil",
+        "2 diced Onion",
+        "1 tablespoon Ginger Garlic Paste",
+        "2 diced Tomato",
+        "1 tsp Cayenne Pepper",
+        "1 tsp Curry Powder",
+        "1 tsp Garam Masala",
+        "1 tsp Ground Turmeric",
+        "1 tsp Ground Cumin",
+        "4 Chicken Breast",
+        "2 large Red Potatoes",
+        "1/2 cup Cilantro"
+      ],
+      "instructions": [
+        "Heat the olive oil in a large skillet over medium-high heat.",
+        "Cook and stir the onions in the hot oil until translucent, about 5 minutes.",
+        "Add the ginger-garlic paste and continue cooking another 5 minutes.",
+        "Reduce heat to medium; stir the tomatoes into the mixture and cook until the tomatoes are pulpy, 5 to 10 minutes.",
+        "Season with the cayenne pepper, curry powder, garam masala, turmeric, and cumin; cook and stir another 5 minutes.",
+        "Add the chicken and potatoes to the mixture in the skillet; simmer, stirring occasionally, until the potatoes are tender and the chicken is no longer pink in the center, about 20 minutes.",
+        "Sprinkle the cilantro over the mixture and continue simmering another 10 minutes.",
+        "Serve hot."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/9ya6o71780262651.jpg"
+    },
+    {
+      "id": "24",
+      "title": "Apple pie pops",
+      "description": "Homestyle dessert ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 tablespoon Sugar",
+        "1 1/2 cups All purpose flour",
+        "1 tsp Salt",
+        "4 oz Unsalted Butter",
+        "1 tablespoon Shortening",
+        "1/4 cup Cold Water",
+        "1 lb Apples",
+        "1/4 cup Brown Sugar",
+        "1 tsp Cinnamon",
+        "3  tablespoons Unsalted Butter",
+        "1/2 tsp Ground Nutmeg",
+        "1/2 tsp Salt",
+        "3/4 teaspoon Lemon Juice",
+        "Topping Sugar",
+        "1 Egg",
+        "2 tsp Water"
+      ],
+      "instructions": [
+        "Need Lollipop sticks",
+        "Instructions for crust",
+        "Combine the flour, sugar, and salt to a food processor bowl. Mix using the pulse setting.",
+        "Add butter and shortening and pulse about 10 -12 times until the texture is changed to small pebbles.",
+        "Add ¾ of the ice water and pulse a few more times until the dough takes the shape of a ball.",
+        "Add more water as needed.",
+        "Don't overmix.",
+        "Don't worry if the dough isn't completely blended.",
+        "You will use your rolling pin to finish creating the crust.",
+        "Place dough ball onto the counter and flatten into a flat disc. Wrap it in plastic wrap and refrigerate for at least an hour or overnight.",
+        "Instructions for pie filling",
+        "Heat butter over medium heat, until just golden brown"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/ax643t1784731109.jpg"
+    },
+    {
+      "id": "25",
+      "title": "Mbuzi Choma (Roasted Goat)",
+      "description": "Kenyan goat with bold flavor.",
+      "servings": 2,
+      "ingredients": [
+        "1 kg Goat Meat",
+        "1 kg Corn Flour",
+        "2 Tomatoes",
+        "Pinch Salt",
+        "1 Onion",
+        "1 Green Chilli",
+        "1  bunch Coriander Leaves"
+      ],
+      "instructions": [
+        "Steps for the Meat:",
+        "Roast meat over medium heat for 50 minutes and salt it as you turn it.",
+        "Steps for Ugali:",
+        "Bring the water and salt to a boil in a heavy-bottomed saucepan. Stir in the cornmeal slowly, letting it fall through the fingers of your hand.",
+        "Reduce heat to medium-low and continue stirring regularly, smashing any lumps with a spoon, until the mush pulls away from the sides of the pot and becomes very thick, about 10 minutes.",
+        "Remove from heat and allow to cool.",
+        "Place the ugali into a large serving bowl. Wet your hands with water, form a ball and serve.",
+        "Steps for Kachumbari: Mix the tomatoes, onions, chili and coriander leaves in a bowl.",
+        "Serve and enjoy!"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/cuio7s1555492979.jpg"
+    },
+    {
+      "id": "26",
+      "title": "Leg of Lamb Armenian-Style",
+      "description": "Homestyle lamb ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 Lamb Leg",
+        "1 Bulb Garlic",
+        "1 Bulb Garlic",
+        "1 1/2 cup Parsley",
+        "1 cup Onion",
+        "1 tablespoon Black Pepper",
+        "1 cup Balsamic Vinegar",
+        "1/2 cup Olive Oil",
+        "1/4 cup Mint",
+        "To taste Salt"
+      ],
+      "instructions": [
+        "Place all of the above ingredients into your roaster pan at least two days before you want to eat.",
+        "Stir occasionally throughout the days to distribute marinade evenly.",
+        "Bake at a 350-degree oven for 1 hour to 1 1/2 hours or until meat is not red when sliced.",
+        "You can also make these on skewers if you wish to go through the process of spearing the meat with other veggies to grill. Freezes well."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/vy6k391780090969.jpg"
+    },
+    {
+      "id": "27",
+      "title": "Ají de Aguacate Recipe (Colombian Spicy Avocado Sauce)",
+      "description": "Homestyle miscellaneous ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "2 Avocado",
+        "1 Habanero Pepper",
+        "1 Egg",
+        "Juice of 2 Lime",
+        "To taste Salt",
+        "2 tablespoons Vinegar",
+        "1 chopped Onion",
+        "2 chopped Scallions",
+        "4 tablespoons Cilantro"
+      ],
+      "instructions": [
+        "Place all the ingredients in a food processor. Process until the mixture is well combined.",
+        "If the mixture is too thick, add more lime juice until you reach the desired consistency."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/jyvy8u1783800448.jpg"
+    },
+    {
+      "id": "28",
+      "title": "Macaroni Pudding",
+      "description": "Homestyle pasta ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "4 cups Macaroni",
+        "4 cups Evaporated Milk",
+        "1 cup Water",
+        "3 Cups Sugar",
+        "2 tsp Salt",
+        "4 Eggs",
+        "1/4 cup Butter",
+        "1 cup Raisins",
+        "2 1/2 Tsp Nutmeg",
+        "2 tablespoons Vanilla"
+      ],
+      "instructions": [
+        "Add macaroni to large pan with sufficient water to cover (approximately 4 cups).",
+        "Add salt and bring to boil until tender (approximately 25 -30 minutes).",
+        "Meanwhile, beat eggs and sugar together, then add vanilla and nutmeg.",
+        "Mix well and set aside.",
+        "In a separate medium sauce pan, heat evaporated milk plus 1 cup of water and butter to almost a boiling point.",
+        "Remove from heat and add to sugar mixture.",
+        "Drain cooked macaroni.",
+        "Add macaroni and raisins to the milk mixture and stir well.",
+        "(This mixture will have quite a bit of liquid, but this will form a nice custard textured pudding once baked.)",
+        "Grease a large baking dish with butter or margarine, add the macaroni mixture and sprinkle with additional nutmeg.",
+        "Bake at 350° F for 1 hour or until golden brown.",
+        "(Pudding should be firm enough to cut, but moist and not dry)."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/hbte551782770868.jpg"
+    },
+    {
+      "id": "29",
+      "title": "Belgian Stoemp",
+      "description": "Homestyle pork ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "2 Sausages",
+        "450g Potatoes",
+        "200g Savoy Cabbage",
+        "3 cloves Garlic",
+        "1 Handfull Parsley",
+        "1 small finely diced Onion",
+        "3  tablespoons Unsalted Butter",
+        "1 cup Beer",
+        "60ml Whole Milk",
+        "Pinch Nutmeg",
+        "Pinch Pepper",
+        "Pinch Salt"
+      ],
+      "instructions": [
+        "Add the chopped potatoes and garlic to a high pan and fill it with tap water until the potatoes are fully submerged.",
+        "Add some salt. Then place the pan over high heat and bring the potatoes to a boil. Cook them until tender. In the meantime rinse and drain the savoy cabbage. Slice it up finely.",
+        "Add a tablespoon of butter to a large non-stick pan. Place it over medium-high heat. Once melted, add the savoy cabbage. Season with a pinch of pepper and salt.",
+        "Stir fry the cabbage for 15 to 20 minutes or until the cabbage is soft and tender.",
+        "Then turn the heat off and take the cabbage off the heat.",
+        "In the meantime, pan fry the sausages (or sliced bacon if you are using both) in a non-stick pan in a tablespoon of butter or oil until golden brown and cooked through.",
+        "Transfer the sausages (and bacon) to a plate and cover with a lid or tinfoil to keep the meat warm.",
+        "In the same greasy pan, add the sliced onion and extra butter and cook it gently over medium heat for 10 minutes until softened.",
+        "(I often add diced bacon as well, if I only serve the stoemp with sausages.)",
+        "Then add the beer and turn the heat up.",
+        "Let the beer reduce until you get a nice beer and onion sauce (you can add a little flour or sauce thickener if you like).",
+        "Add the pan fried meat back to the pan and cover to keep warm."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/byolko1782500400.jpg"
+    },
+    {
+      "id": "30",
+      "title": "Amok Trey – Cambodian Fish Curry",
+      "description": "Homestyle seafood ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 lb Fish fillet",
+        "1 Can Coconut Milk",
+        "2 tablespoons Red Curry Paste",
+        "1 tablespoon Fish Sauce",
+        "1 tsp Brown Sugar",
+        "1 cup Chicken Stock",
+        "1 Egg",
+        "2 Kaffir Lime Leaves",
+        "1 tablespoon Vegetable Oil",
+        "Handful Banana Leaves",
+        "Garnish Cilantro",
+        "Garnish Lime"
+      ],
+      "instructions": [
+        "In a medium bowl, combine the coconut milk, red curry paste, fish sauce, palm sugar, and broth, whisking until smooth—this ensures no lumps in the sauce.",
+        "Heat the vegetable oil in a large skillet over medium heat (about 350°F) for 30 seconds until shimmering.",
+        "Pour the coconut milk mixture into the skillet and bring it to a gentle simmer, stirring occasionally, which should take about 3-4 minutes.",
+        "Add the fish cubes and kaffir lime leaves to the skillet, submerging them fully in the sauce.",
+        "Reduce the heat to low, cover the skillet, and let it cook for 10 minutes until the fish is opaque and flakes easily with a fork—avoid overcooking to keep it tender.",
+        "Stir in the beaten egg slowly, cooking for 2 more minutes until the sauce thickens slightly, which adds a rich, custard-like texture.",
+        "While the curry simmers, prepare the banana leaves by briefly passing them over a gas flame for 10 seconds to make them pliable, or use parchment paper as a handy alternative.",
+        "Spoon the curry into the center of each banana leaf square, folding the edges to form a tight packet to trap steam.",
+        "Place the packets in a steamer basket over boiling water and steam for 10 minutes until heated through and fragrant.",
+        "Carefully unwrap the packets and garnish with fresh cilantro and lime wedges before serving"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/diuub11782687570.jpg"
+    },
+    {
+      "id": "31",
+      "title": "Arepa",
+      "description": "Homestyle side ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "1 tsp Salt",
+        "1 cup Corn Flour",
+        "1 1/4 cup Warm Water"
+      ],
+      "instructions": [
+        "Put the corn flour in a bowl and add the salted water little by little, mixing with the flour until all the water has been used and the flour has become a dough.",
+        "Let it rest for five minutes.",
+        "Now, shape the dough into round rolls about 3 inches in diameter and 1/2 inch thick.",
+        "In a lightly greased skillet, slowly cook the arepas until a crust forms on each side.",
+        "Now place them into a casserole and bake in the oven at 350 degrees for approximately 20 minutes, until the arepas sound hollow when tapped.",
+        "To enhance taste: instead of using just water, use chicken or beef broth."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/ejht7k1780092390.jpg"
+    },
+    {
+      "id": "32",
+      "title": "Black Bean soup",
+      "description": "Homestyle starter ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "2 tablespoons Extra Virgin Olive Oil",
+        "1 medium Red Onions",
+        "1 Jalapeno",
+        "2 cloves minced Garlic",
+        "1 tablespoon Tomato Puree",
+        "Pinch Kosher Salt",
+        "Pinch Black Pepper",
+        "1/2 tsp Ground Cumin",
+        "1 tsp Chilli Powder",
+        "3 cans Black Beans",
+        "3 Cups Chicken Stock",
+        "1 Bay Leaf",
+        "Garnish Sour Cream",
+        "Garnish Avocado",
+        "Garnish Cilantro",
+        "To serve Lime"
+      ],
+      "instructions": [
+        "Step 1",
+        "In a large pot over medium heat, heat oil.",
+        "Add onion and cook until soft and translucent, about 5 minutes.",
+        "Add jalapeños and garlic and cook until fragrant, about 2 minutes.",
+        "Add tomato paste, stir to coat vegetables, and cook about a minute more.",
+        "Season with salt, pepper, cumin, and chili powder and stir to coat.",
+        "Step 2",
+        "Add black beans and broth.",
+        "Stir soup, add bay leaf, and bring to a boil.",
+        "Immediately reduce to a simmer and let simmer until slightly reduced and thickened, 15 to 20 minutes.",
+        "(If a thinner soup is desired, add more broth as needed.)",
+        "Step 3"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/x0mreq1784577446.jpg"
+    },
+    {
+      "id": "33",
+      "title": "Red onion pickle",
+      "description": "Norway vegan with bold flavor.",
+      "servings": 2,
+      "ingredients": [
+        "3 Large Red Onions",
+        "2 tsp Sea Salt",
+        "200ml Cider Vinegar",
+        "50g Granulated Sugar",
+        "1 tsp Black Pepper",
+        "4 Bay Leaves"
+      ],
+      "instructions": [
+        "Peel the onions, cut them in half from top to bottom and finely slice into half-moon pieces.",
+        "Put in a colander placed over a bowl and sprinkle with salt, lightly turning over the onion pieces with your hands so the surfaces are all covered.",
+        "Set aside for an hour or so to brine.",
+        "Meanwhile put the vinegar, 50ml/2fl oz water and the sugar in a saucepan. Bring to a simmer, stirring to help the sugar dissolve, and cook for a couple of minutes. Set aside.",
+        "Pack the onions into the sterilised jars, sprinkling in a little pepper as you go.",
+        "Cover with the warm vinegar and finish by tucking a couple of bay leaves down the side of the jars.",
+        "Seal.",
+        "The onions are best kept in the fridge and used within to 4 weeks."
+      ],
+      "dietary_attributes": [
+        "vegan",
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/ppodrp1762325183.jpg"
+    },
+    {
+      "id": "34",
+      "title": "Carrot and Bean Fritters",
+      "description": "Homestyle vegetarian ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "400g Carrots",
+        "200g Canned Beans",
+        "4 cloves Garlic",
+        "1 tablespoon Flour",
+        "1 cup Breadcrumbs",
+        "Pinch Thyme",
+        "Pinch Parsley",
+        "Pinch Salt",
+        "Pinch Pepper",
+        "Pinch Thyme",
+        "Splash Oil"
+      ],
+      "instructions": [
+        "Pour the beans into the sieve, remove liquid.",
+        "Grate carrots and add beans, Mix and mash together. Season with garlic, thyme, salt and pepper.",
+        "Form the dough into round buns, dip them slightly into the bread crumbs, and press the fritters.",
+        "Fry fritters in hot oil for a short time until the fritters are browned.  Place on the greased or /baking paper-lined oven plate and bake at 200C for 10 minutes."
+      ],
+      "dietary_attributes": [
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/xjii2g1784836867.jpg"
+    },
+    {
+      "id": "35",
+      "title": "Beef pumpkin Stew",
+      "description": "Homestyle beef ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "3 Lbs Beef",
+        "1/2 cup All purpose flour",
+        "3  tablespoons Butter",
+        "1 cup Onion",
+        "1 clove peeled crushed Garlic",
+        "4 cups Beef Stock",
+        "3 Cups Pumpkin Puree",
+        "1 tablespoon Worcestershire Sauce",
+        "1 tablespoon Kosher Salt",
+        "1 teaspoon Black Pepper",
+        "3 Lbs Potatoes",
+        "1 lb Carrots",
+        "4 sprigs Thyme"
+      ],
+      "instructions": [
+        "Cut the beef into 1-inch chunks. Dredge the beef in the flour until all of the beef sides are covered.",
+        "In a large soup pot, melt the butter over medium high-heat.",
+        "In small quantities, brown the beef on all sides, removing the browned beef and setting it aside in a large bowl as you go.",
+        "When the beef is browned, add the onion and the garlic to the pot.",
+        "Sauté the onion and garlic for one minute, scraping the bottom of the pot as you stir.",
+        "Return the browned beef to the pot and add the beef stock, pumpkin puree, Worcestershire sauce, salt, and pepper.",
+        "Stir well and bring to a boil.",
+        "Once the liquid is boiling, reduce heat to medium-low and simmer for 3 hours, stirring occasionally.",
+        "Add the potatoes, carrots and thyme sprigs to the pot and increase heat to medium. Cook for an additional 30 minutes. Salt to taste and serve."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/k07k271782502861.jpg"
+    },
+    {
+      "id": "36",
+      "title": "Grits",
+      "description": "Homestyle breakfast ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1/4 cup Grits",
+        "1 tsp Salt",
+        "1 cup Water"
+      ],
+      "instructions": [
+        "Bring water with salt to a boil then add grits; reduce heat and cover. occasionally stirring. Cook approximately 15 minutes or until grits have desired consistency. Cool then serve"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/bfok4w1780242078.jpg"
+    },
+    {
+      "id": "37",
+      "title": "Chicken Liver Pate Recipe",
+      "description": "Homestyle chicken ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "1lb Chicken Liver",
+        "1/2 lb Bacon",
+        "1 clove Garlic",
+        "1 large Onion",
+        "2 tsp Ground Mustard",
+        "To taste Salt",
+        "To taste Pepper",
+        "Splash Milk",
+        "1 tablespoon Sherry"
+      ],
+      "instructions": [
+        "Clean livers of sinews and gall.",
+        "Put into a fireproof casserole with all other ingredients roughly chopped.",
+        "Season and cover with milk.",
+        "Put the lid on the casserole and cook in a slow oven (300ºF) for 2 hours.",
+        "Liquidize in a blender.",
+        "Adjust seasoning.",
+        "Add sherry or brandy.",
+        "Put in a dish and cover with melted butte"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/hob03q1780264260.jpg"
+    },
+    {
+      "id": "38",
+      "title": "Arnhemse meisjes",
+      "description": "Homestyle dessert ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "5 Slices Puff Pastry",
+        "100g vanilla sugar",
+        "1/2 tsp Cinnamon",
+        "1/2 Cardamom",
+        "Zest of 1 Lime"
+      ],
+      "instructions": [
+        "Take your puff pastry from the freezer and defrost.",
+        "Sprinkle some flour on the kitchen counter. Stack the sheets of puff pastry on top of each other and roll them out with a rolling pin. You want those five sheets to end up being as thin as one sheet.",
+        "Using a round or oval form press into the puff pastry and try to be as economical doing that as possible. You want to have as many cookies as you can.",
+        "Mix the vanilla sugar with the cinnamon, cardemom and limezest in a little bowl",
+        "Remove the flour from the counter and sprinkle with a bit of the sugar mix.",
+        "Brush your puff pastry with a little bit of eggwash and than dip into the sugar mix and roll them softly to press the sugar in.",
+        "Put your sugary puff pastry on a baking sheet (greased or with baking paper) and leave the dough to rest for about 20 to 25 minutes. this will make the cookies even crisper.",
+        "Preheat the oven in the meantime to 180 C and put the baking tray in the oven.",
+        "bake the cookies golden brown in about 25 minutes and make sure the sugar is caramelised nicely",
+        "And voila, Girls from Arnhem with an Almeerse twist",
+        "Voila, Arnhemse Meisjes met een Almeerse twist."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/y4t9zg1777628842.jpg"
+    },
+    {
+      "id": "39",
+      "title": "Mastawa Lamb and Rice",
+      "description": "Homestyle lamb ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "700g Lamb",
+        "3 Medium Onion",
+        "1 tsp Turmeric",
+        "1 large Orange",
+        "150g Rice",
+        "500g Natural Yoghurt",
+        "4 Cloves Crushed Garlic Clove",
+        "1 tblsp Vegetable Oil",
+        "1 tablespoon Dried Dill",
+        "1 tablespoon Black Pepper",
+        "1 Can Chickpeas",
+        "To taste Salt"
+      ],
+      "instructions": [
+        "Place the meat cut into pieces, in a large pan with the onions. Add the turmeric and enough water to cover. Bring to the boil then cook gently until the meat is very tender and can easily be removed from the bones.",
+        "While the meat is cooking, cut the orange peel into thin match style pieces, removing as much pith as possible. Leave to soak in a bowl of water.",
+        "When the meat is tender, remove from the pan and when cool enough, remove the meat from the bones and shred the meat into strips with your hands. Return the meat to the pan.",
+        "Wash the short grain rice and then add to the pan with salt according to taste.",
+        "The juices should cover the rice by about 2cm, add more water if necessary.",
+        "Bring back to the boil, then reduce the heat to medium and cook with the lid off, stirring from time to time until the rice is \"al dente\" and the liquid is absorbed.",
+        "Add the natural yoghurt, and stir in well but carefully. Fry the crushed cloves of garlic in the oil and add to the dish along with the dill, black pepper, the chickpeas and extra salt to taste.",
+        "Mix in well, then cover the top of the pan with a clean thick cloth and the lid. Leave on a low heat for about half an hour to allow the flavours to absorb.",
+        "Enjoy with some warm nan bread for extra comfort."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/4kzx4d1779554755.jpg"
+    },
+    {
+      "id": "40",
+      "title": "Bolita di Keshi",
+      "description": "Homestyle miscellaneous ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 lb Cheddar Cheese",
+        "1 lb Feta",
+        "1 beaten Eggs",
+        "5 tablespoons Cornstarch"
+      ],
+      "instructions": [
+        "Grate finely and toss together.",
+        "1 lb. sharp yellow cheese (cheddar or oude boerenkaas)",
+        "1 lb. keshi di buriko (or any white cheese such as fromage blanc, queso blanco, ricotto, feta etc.)",
+        "Stir in:",
+        "6 eggs, beaten",
+        "5 Tbs. Cornstarch",
+        "Shape the mixture into small balls. These may be kept indefinitely in the freezer. Drop the balls into deep, hot fat and fry until golden. Serve piping hot on toothpicks."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/skzd0x1780091674.jpg"
+    },
+    {
+      "id": "41",
+      "title": "Chilli prawn linguine",
+      "description": "Italian pasta with bold flavor.",
+      "servings": 2,
+      "ingredients": [
+        "280g Linguine Pasta",
+        "200g Sugar Snap Peas",
+        "2 tblsp Olive Oil",
+        "2 cloves chopped Garlic Clove",
+        "1 large Red Chilli",
+        "24 Skinned King Prawns",
+        "12 Cherry Tomatoes",
+        "Handful Basil Leaves",
+        "Leaves Lettuce",
+        "to serve Bread",
+        "2 tbsp Fromage Frais",
+        "Grated Zest of 2 Lime",
+        "2 tsp Caster Sugar"
+      ],
+      "instructions": [
+        "Mix the dressing ingredients in a small bowl and season with salt and pepper. Set aside.",
+        "Cook the pasta according to the packet instructions. Add the sugar snap peas for the last minute or so of cooking time.",
+        "Meanwhile, heat the oil in a wok or large frying pan, toss in the garlic and chilli and cook over a fairly gentle heat for about 30 seconds without letting the garlic brown.",
+        "Tip in the prawns and cook over a high heat, stirring frequently, for about 3 minutes until they turn pink.",
+        "Add the tomatoes and cook, stirring occasionally, for 3 minutes until they just start to soften.",
+        "Drain the pasta and sugar snaps well, then toss into the prawn mixture.",
+        "Tear in the basil leaves, stir, and season with salt and pepper.",
+        "Serve with salad leaves drizzled with the lime dressing, and warm crusty bread."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/usywpp1511189717.jpg"
+    },
+    {
+      "id": "42",
+      "title": "Cambodian Stir-fried Morning Glory with Pork, Fermented Soybeans, and Garlic",
+      "description": "Homestyle pork ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1  bunch Morning Glory",
+        "150g Minced Pork",
+        "2 tablespoons Soya Bean",
+        "4 Cloves Chopped Garlic",
+        "For frying Oil",
+        "Dash Fish Sauce",
+        "Dash Sugar",
+        "Sprinkling Chilli"
+      ],
+      "instructions": [
+        "In a wok or large pan, heat 1 tablespoon of vegetable oil over medium heat. Once the oil is hot, add the garlic and stir-fry for about 30 seconds, until fragrant but not burnt.",
+        "Add the minced pork to the pan and break it up with a spatula. Stir-fry until the pork is fully cooked and browned, about 2-3 minutes.",
+        "Stir in the fermented soy beans and cook for another minute, mixing it thoroughly with the pork.",
+        "Toss in the cut morning glory and stir-fry for 2-3 minutes to retain its bright green colour and crisp texture.",
+        "Check the seasoning and adjust with fish sauce or sugar if needed. Transfer to a serving dish and serve immediately with steamed rice."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/wympxc1779734808.jpg"
+    },
+    {
+      "id": "43",
+      "title": "Bahia-style Moqueca prawn stew",
+      "description": "Homestyle seafood ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "450g Raw King Prawns",
+        "75 ml Lime juice",
+        "3 cloves Chopped Garlic",
+        "3  tablespoons Coconut Oil",
+        "4 Chopped Spring Onions",
+        "1 Onion",
+        "1 chopped Red Pepper",
+        "1 tsp Chilli Flakes",
+        "2 tsp Paprika",
+        "3 chopped Plum Tomatoes",
+        "400ml Coconut Milk",
+        "2 tbs chopped Coriander",
+        "To serve Rice"
+      ],
+      "instructions": [
+        "step 1",
+        "Place the prawns in a bowl with 2 tbsp of the lime juice, 1 tsp of salt and 1 tbsp of the chopped garlic. Chill for 1 hr.",
+        "step 2",
+        "Heat the coconut oil in a large saucepan. Add the spring onion and onion and fry for 5 mins, then add the red pepper, chilli flakes, paprika and remaining garlic.",
+        "step 3",
+        "Pour in the tomatoes, coconut milk and a little salt.",
+        "Bring to a simmer and let reduce for 10 mins.",
+        "Add the prawns, all the marinade and remaining lime juice.",
+        "Gently simmer until the prawns turn white, about 3 mins.",
+        "Serve with the fresh coriander and rice."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/e2kcut1782591669.jpg"
+    },
+    {
+      "id": "44",
+      "title": "Bajan Salt Bread Recipe",
+      "description": "Homestyle side ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "2 tubs Yeast",
+        "2 tsp Sugar",
+        "1 tsp Salt",
+        "2 tablespoons Vegetable Oil",
+        "6 cups Flour",
+        "2 1/2 cups Warm Water"
+      ],
+      "instructions": [
+        "Sift half the flour, mix with salt and yeast in a large mixing bowl, and slowly add warm water until the mixture forms a stiff dough. Add more sifted flour until you have a stiff enough dough to knead.",
+        "Lightly flour the work surface, knead the dough for 10 minutes until it is smooth and elastic, and then place it in a greased bowl.",
+        "Now place the bowl warmly for 40-50 minutes until it has doubled.",
+        "You know the dough is ready when you poke a finger, and the indentation remains.",
+        "Preheat oven to 425 degrees F or 220 degrees C.",
+        "Now divide the dough into 12 equal portions, roll each into a fist size ball, and place on a greased baking sheet. Now place in a warm place again for a further 40 minutes or again until the dough has doubled in size.",
+        "Now place in the oven’s center and bake for 25-30 minutes until golden brown rolls sound hollow when tapped."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/sr7chd1780264758.jpg"
+    },
+    {
+      "id": "45",
+      "title": "Colombian Style Stuffed Potatoes",
+      "description": "Homestyle starter ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "For frying Vegetable Oil",
+        "5 Potatoes",
+        "1/4 tsp Salt",
+        "1 tablespoon Olive Oil",
+        "1 cup Tomato",
+        "1/3 cup Onion",
+        "1/3 cup Scallions",
+        "1 clove peeled crushed Garlic",
+        "1/2 tsp Ground Cumin",
+        "1/2 tsp Sazon Goya With Azafran",
+        "1/4 tsp Salt",
+        "1/4 tsp Black Pepper",
+        "1/2 lb Ground Beef",
+        "1 Egg",
+        "1/4 cup All purpose flour",
+        "Pinch Salt",
+        "1/2 tbs Sazon Goya With Azafran",
+        "1/4 cup Milk"
+      ],
+      "instructions": [
+        "Peel the potatoes and cut them into chunks, put them in a medium pot and cover with water and ¼ teaspoon of salt.",
+        "Bring the potatoes to a boil over medium high heat, then reduce the heat to medium and cook until fork tender about 20 minutes.",
+        "Drain the potatoes and mash with a fork or masher and set aside.",
+        "Filling:",
+        "In a large sauce pan, heat 1 tablespoon olive oil over medium heat and add the onion, tomato, scallions, garlic, cumin, azafran, pepper and salt.",
+        "Cook for 5 minutes or until the onions are translucent, add the beef and cook stirring occasionally about 10 – 15 minutes.",
+        "Set aside to cool.",
+        "To make the batter:",
+        "In a medium bowl place all the batter ingredients and whisk until smooth and set aside.",
+        "To Form the Stuffed Potatoes",
+        "Divide the potato mash into 10 equal sized portions, about ⅓ cup each, and form each portion into a ball by rolling between the palms of your hands.",
+        "Flatten into patties and place 1 ½ tablespoons of the filling in the center of each one."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/zdyurx1783801146.jpg"
+    },
+    {
+      "id": "46",
+      "title": "Padron peppers",
+      "description": "Spanish vegan with bold flavor.",
+      "servings": 4,
+      "ingredients": [
+        "1 tablespoon Olive Oil",
+        "500g Padron peppers"
+      ],
+      "instructions": [
+        "step 1",
+        "Heat the olive oil in a large frying pan over a high heat, or if using an air-fryer, heat to 205C for 3 mins.",
+        "Fry the peppers, stirring frequently, for 5 mins until blistered and wilted.",
+        "The peppers should be soft and slightly charred.",
+        "step 2",
+        "Transfer the peppers to a serving plate and season with some sea salt. Serve with dips or as part of a tapas spread, if you like."
+      ],
+      "dietary_attributes": [
+        "vegan",
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/0ljvc51763248075.jpg"
+    },
+    {
+      "id": "47",
+      "title": "Cottage Cheese And Feta Stuffed Peppers",
+      "description": "Homestyle vegetarian ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "4 Red Pepper",
+        "100g Feta",
+        "200g Cottage Cheese",
+        "1 tablespoon chopped Chives",
+        "1 tablespoon chopped Parsley",
+        "1/4 tsp Salt",
+        "1 tablespoon Lemon Juice"
+      ],
+      "instructions": [
+        "Cut the peppers lengthwise and remove the seeds.",
+        "In a bowl combine 3.5 oz (100 grams) Feta cheese, 7 oz (200 grams) cottage cheese, 1 tbsp chopped chives (optional), 1 tbsp chopped parsley (optional), 1/4 tsp salt (more or less to taste) and 1 tbsp lemon juice.",
+        "Fill the peppers with the mixture. Top with chopped chives and parsley.",
+        "Serve."
+      ],
+      "dietary_attributes": [
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/w0rsga1782683912.jpg"
+    },
+    {
+      "id": "48",
+      "title": "Belgian Meatballs in Liège Syrup Sauce",
+      "description": "Homestyle beef ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "300g Minced Beef",
+        "300g Minced Pork",
+        "1 chopped Onion",
+        "1 clove peeled crushed Garlic",
+        "1 Egg",
+        "4 tablespoons Breadcrumbs",
+        "1 tablespoon Mustard",
+        "1 tablespoon Parsley",
+        "Pinch Salt",
+        "Pinch Pepper",
+        "Splash Oil",
+        "2 sliced Onion",
+        "1 tablespoon Butter",
+        "1 tablespoon Brown Sugar",
+        "2 tablespoons White Wine Vinegar",
+        "2 tablespoons Mustard",
+        "4 tablespoons Sirop De Liège",
+        "1 cup Beef Stock",
+        "1 Bay Leaf",
+        "Splash Beer"
+      ],
+      "instructions": [
+        "Make the meatballs",
+        "Mix the minced meat with the onion, garlic, egg, breadcrumbs, mustard, parsley, salt, and pepper.",
+        "Shape into meatballs. Traditionally, Liège restaurants serve **one or two very large meatballs**, depending on appetite.",
+        "For weeknight cooking, I keep mine smaller so they brown faster and cook through quickly.",
+        "Brown the meatballs",
+        "Heat butter or oil in a large pan.",
+        "Brown the meatballs on all sides until they have a nice crust.",
+        "Remove them from the pan and set aside.",
+        "Start the sauce",
+        "In the same pan, melt 1 tbsp butter.",
+        "Add the sliced onions and cook until soft and lightly caramelised.",
+        "Sprinkle in the brown sugar and let it melt into the onions."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/gjjlzc1782496055.jpg"
+    },
+    {
+      "id": "49",
+      "title": "Torrijas",
+      "description": "Homestyle breakfast ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "1 medium Orange",
+        "1 medium Lemon",
+        "4 cups Whole Milk",
+        "1/2 cup Sugar",
+        "1 Cinnamon Stick",
+        "1/3 cup Dry sherry",
+        "1 Baguette",
+        "1 cup Olive Oil",
+        "4 large Eggs",
+        "To serve Honey"
+      ],
+      "instructions": [
+        "Finely grate the zest of 1 medium orange (about 2 teaspoons) and 1 medium lemon (about 1 teaspoon) into a medium saucepan.",
+        "Add 1 quart whole milk, 1/2 cup granulated sugar, and 1 (3-inch) cinnamon stick.",
+        "Bring to a boil over medium heat.",
+        "Remove the pan from the heat and add 1/3 cup dry sherry.",
+        "Let sit until cool enough to handle.",
+        "Meanwhile, cut 1 (12-ounce) day-old baguette crosswise into 1-inch-thick slices (about 16).",
+        "Arrange in a single layer on a rimmed baking sheet.",
+        "Pour the milk mixture over the bread and let it soak for 5 minutes. Flip each slice of bread. Let the bread sit until it absorbs most of the liquid but isn't falling apart, about 5 minutes more.",
+        "Heat 1 cup olive oil in a large frying pan over medium-high heat until shimmering. Meanwhile, whisk 4 eggs together in a medium bowl.",
+        "Working with 1 slice at a time, dip the bread in the egg mixture to coat.",
+        "Let the excess drip off, then add to the pan.",
+        "Repeat with as many slices as needed until the pan is filled with a single layer."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/927vvp1779732018.jpg"
+    },
+    {
+      "id": "50",
+      "title": "Chicken Lollipop",
+      "description": "Homestyle chicken ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "2 Lbs Chicken Wings",
+        "1 tablespoon Black Pepper",
+        "1 tablespoon Paprika",
+        "1 tablespoon Garlic",
+        "1 tablespoon Salt",
+        "4 tablespoons Cornstarch"
+      ],
+      "instructions": [
+        "Wash chicken with lemon",
+        "Drain and season chicken",
+        "Using shears, cut through the meat at the tip of the drumettes",
+        "Add all seasoning ingredients to the drumettes",
+        "Pour oil into a deep fryer, or saucepan to the level of about 5 inches so that the chicken will be submerged",
+        "Fry until medium brown, add your favorite sauce (I used honey garlic barbecue sauce) to place in the oven",
+        "Or fry until golden brown if you're not putting it in the oven",
+        "Using a silicon brush add sauce to chicken and place in the oven"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/nz0lg71784671684.jpg"
+    },
+    {
+      "id": "51",
+      "title": "Arra të Mbushura me Fik Walnut Stuffed Figs (with Fig Syrup)",
+      "description": "Homestyle dessert ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "4 Figs",
+        "4 Walnuts",
+        "150ml Water",
+        "60g Sugar"
+      ],
+      "instructions": [
+        "1",
+        "Prepare the Figs",
+        "Cut off the hard bits of stalk and then cut the figs in half length ways.",
+        "2",
+        "Place the figs in a small frying pan / saute pan with the cut side face up and add the water around them.",
+        "3",
+        "Cooking",
+        "Leave the figs on a medium heat to cook through, once they become soft remove them from the pan and place onto a serving dish. This will take around 10 - 15 minutes.",
+        "4",
+        "Prepare the Syrup",
+        "In the pan there will be a red water juice left from the figs. Add the sugar while remaining on a medium heat. Stir continuously for a couple of minutes until the juice has turned to a thick syrup. Remove from the heat.",
+        "5"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/dokbyt1779645030.jpg"
+    },
+    {
+      "id": "52",
+      "title": "Presh me Oriz Leek and Rice Bake",
+      "description": "Homestyle lamb ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "500g Leek",
+        "400g Lamb Mince",
+        "1 Diced Onion",
+        "200g Rice",
+        "1 L Lamb Stock",
+        "Pinch Salt",
+        "Pinch Pepper",
+        "Splash Olive Oil"
+      ],
+      "instructions": [
+        "1",
+        "Cooking",
+        "Fry the leeks in a small dash of olive oil for a few minutes until they start to brown.",
+        "2",
+        "Add the onions and mince and fry until everything is browned. Ensure you keep stirring to prevent the leeks catching and burning.",
+        "3",
+        "Add the rice and stir together for a few minutes ensuring the rice is well blended and coated in any juices.",
+        "4",
+        "Add the lamb stock, salt and pepper. Give it a good stir and leave it to come to the boil. Leave to boil for 2 minutes.",
+        "5",
+        "Baking",
+        "Pour the mixture into a large baking tray, place on the bottom self of a preheated oven at 180 degrees. Leave to bake for up to 1 hour. The dish is ready when all the liquid is evaporated and the rice is soft."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/sjfgbc1779647169.jpg"
+    },
+    {
+      "id": "53",
+      "title": "Clear Soup with Semolina Dumplings",
+      "description": "Homestyle miscellaneous ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "120g Semolina",
+        "60g Butter",
+        "1 Egg",
+        "Pinch Salt",
+        "Pinch Nutmeg",
+        "Splash Oil",
+        "1 L Beef Stock",
+        "Chopped Parsley"
+      ],
+      "instructions": [
+        "Step 1",
+        "Allow butter to come to room temperature before beating in a bowl until creamed. Season with salt and a small, delicate pinch of nutmeg.",
+        "Step 2",
+        "Add in the egg, stirring vigorously. Sprinkle the semolina over this, and mix it in well until the surface is smooth. Cover with saran wrap and leave to rest for 15 – 20 minutes.",
+        "Step 3",
+        "Use two spoons, dipped regularly into hot water throughout, to press or shape dumplings from the paste.",
+        "You can also place these on a lightly oiled board or plate and again leave them to stand for a short while (this allows the dumplings to rise even more).",
+        "Step 4",
+        "Heat a generous quantity of salted water in a large pan.",
+        "Place the dumplings into the water and bring them back to a boil before turning down the heat and leaving to simmer gently for 10 – 15 minutes (do not boil).",
+        "Carefully turn the dumplings occasionally.",
+        "Step 5"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/qserum1780156275.jpg"
+    },
+    {
+      "id": "54",
+      "title": "Fettuccine Alfredo",
+      "description": "Italian pasta with bold flavor.",
+      "servings": 4,
+      "ingredients": [
+        "1 lb Fettuccine",
+        "1/2 cup Heavy Cream",
+        "1/2 cup Butter",
+        "1/2 cup Parmesan",
+        "2 tbsp Parsley",
+        "Black Pepper"
+      ],
+      "instructions": [
+        "Cook pasta according to package instructions in a large pot of boiling water and salt.",
+        "Add heavy cream and butter to a large skillet over medium heat until the cream bubbles and the butter melts.",
+        "Whisk in parmesan and add seasoning (salt and black pepper).",
+        "Let the sauce thicken slightly and then add the pasta and toss until coated in sauce.",
+        "Garnish with parsley, and it's ready."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/0jv5gx1661040802.jpg"
+    },
+    {
+      "id": "55",
+      "title": "Chilean Empanada",
+      "description": "Homestyle pork ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "1 tablespoon Butter",
+        "1 large Onion",
+        "1 tsp minced Garlic",
+        "1 tsp Dried Oregano",
+        "1 tsp Cumin",
+        "1/2 tsp Salt",
+        "1/2 tsp Black Pepper",
+        "1 lb Ground Pork",
+        "1 cup Raisins",
+        "1 cup Black Olives",
+        "3 Large Eggs",
+        "1 cup Water",
+        "1 cup Shortening",
+        "5 Cups All purpose flour",
+        "2 tsp Salt",
+        "2 Beaten Eggs"
+      ],
+      "instructions": [
+        "Make the filling: Melt butter in a large skillet over medium heat.",
+        "Add onion, garlic, oregano, cumin, salt, and pepper; cook and stir until onion is golden brown, 5 to 7 minutes.",
+        "Add pork and cook until completely browned and crumbly, 7 to 10 minutes more.",
+        "Drain fat from the skillet.",
+        "Stir in raisins, olives, and hard-cooked eggs.",
+        "Whisk water and cornstarch together in a small bowl; pour into the skillet and stir until liquid thickens. Remove from the heat and set aside.",
+        "Make the dough: Whisk milk and melted shortening together in a bowl until evenly blended.",
+        "Stir flour and salt together in a separate large bowl.",
+        "Pour milk mixture into flour mixture; whisk until well combined and a dough forms.",
+        "Let rest for 10 minutes.",
+        "Preheat the oven to 400 degrees F (200 degrees C). Line a baking sheet with parchment paper.",
+        "Roll dough on a lightly floured surface to a thickness of 1/8 inch."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/q4xgij1782851193.jpg"
+    },
+    {
+      "id": "56",
+      "title": "Balchi di Pisca",
+      "description": "Homestyle seafood ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 Salt Cod",
+        "3 Medium Potatoes",
+        "1 Tomato",
+        "1/2 Green Pepper",
+        "1 medium Onion",
+        "1 clove peeled sliced Garlic",
+        "1/2 tsp Tobasco Sauce",
+        "Dash Nutmeg",
+        "To taste Salt",
+        "To taste Pepper",
+        "1 Egg"
+      ],
+      "instructions": [
+        "These delectable fish balls can also be made with salmon or fish fillets. Substitute one large can of salmon or one pound of any white fish for the cod.",
+        "Soak for twenty-four hours:",
+        "1 salted cod, or bakijow Discard the water.",
+        "Place cod in saucepan with fresh water to cover.",
+        "Simmer gently until the fish flakes easily when tested with the tines of a fork.",
+        "Strain, reserving a bit of the broth.",
+        "De bone the cod and set it aside for later use.",
+        "In a saucepan, bring to boil in water to cover: 3 medium potatoes, peeled and diced When the potatoes are tender, drain them well.",
+        "Add the cod and mash the two ingredients thoroughly together.",
+        "Place in the container of an electric blender:",
+        "1 tomato, peeled and chopped",
+        "1/2 green pepper, chopped"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/qqwhw51780093126.jpg"
+    },
+    {
+      "id": "57",
+      "title": "Bajan Sweet Bread",
+      "description": "Homestyle side ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "2 1/2 cups Coconut",
+        "1/2 cup Melted Butter",
+        "4 cups Flour",
+        "1 tablespoon Shortening",
+        "1 tablespoon Baking Powder",
+        "1 tsp Salt",
+        "3/4 cup Sugar",
+        "1 cup Raisins",
+        "1 beaten Egg",
+        "1 1/4 cup Evaporated Milk",
+        "1 tsp Almond Essence"
+      ],
+      "instructions": [
+        "Add all the flour, baking powder, and salt to a large mixing bowl.",
+        "Melt the butter in a saucepan.",
+        "Mix the coconut and most of the sugar in another bowl – leave some back to cover the loaves later, raisins, egg, milk, almond essence, vanilla essence, and melted butter.",
+        "Mix well until you have a creamy paste.",
+        "Add this to the bowl with the flour, baking powder, and salt. Mix until you form a stiff dough.",
+        "Now divide the mixture between the baking tins.",
+        "Now boil the water.",
+        "Mix two tablespoons of sugar with some hot water and brush the top of each loaf.",
+        "Bake in the center of the oven for 1 hour.",
+        "Leave to cool in tins before serving; slice and serve with a fresh pot of tea."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/5vhbzt1782239221.jpg"
+    },
+    {
+      "id": "58",
+      "title": "Dominican Bakes",
+      "description": "Homestyle starter ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "4 cups All purpose flour",
+        "1 tablespoon Baking Powder",
+        "1 tablespoon Salt",
+        "1/2 tbs Sugar",
+        "2 cups Milk",
+        "1 ½ tbsp Butter",
+        "2 cups Vegetable Oil"
+      ],
+      "instructions": [
+        "Combine dry ingredients and mix (flour, salt, and baking powder)",
+        "Add lightly melted butter mix.",
+        "Gradually add lukewarm milk.",
+        "Gently knead the dough with hands.",
+        "The dough should not be firm but with a sticky consistency.",
+        "Separate into small portions in the shapes of balls based on the desired size.",
+        "Let the balls rest for 15 – 20 minutes covered with a towel or saran wrap.",
+        "Flatten dough using hands, using your thumb to press dough in",
+        "Deep fry in a saucepan (I use a saucepan because the frying pan is too wide, and I'll need to use too much oil to deep fry). Use medium heat.",
+        "Turn over on the other side when dough strarts getting brown, then turn over to brown the other side",
+        "Enjoy with your favorite side"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/cbfy1c1784672521.jpg"
+    },
+    {
+      "id": "59",
+      "title": "Roast fennel and aubergine paella",
+      "description": "Spanish vegan with bold flavor.",
+      "servings": 2,
+      "ingredients": [
+        "6 small Baby Aubergine",
+        "4 small Fennel",
+        "1 thinly sliced Red Pepper",
+        "1 medium Courgettes",
+        "1 finely chopped Onion",
+        "300g Paella Rice",
+        "1 tsp Paprika",
+        "pinch Saffron",
+        "200ml White Wine",
+        "700ml Vegetable Stock",
+        "100g Frozen Peas",
+        "1 chopped Lemon",
+        "Handful Parsley",
+        "pinch Salt",
+        "pinch Black Pepper"
+      ],
+      "instructions": [
+        "1 Put the fennel, aubergine, pepper and courgette in a roasting tray.",
+        "Add a glug of olive oil, season with salt and pepper and toss around to coat the veggies in the oil.",
+        "Roast in the oven for 20 minutes, turning a couple of times until the veg are pretty much cooked through and turning golden.",
+        "2 Meanwhile, heat a paella pan or large frying pan over a low– medium heat and add a glug of olive oil.",
+        "Sauté the onion for 8–10 minutes until softened.",
+        "Increase the heat to medium and stir in the rice, paprika and saffron.",
+        "Cook for around 1 minute to start toasting the rice, then add the white wine.",
+        "Reduce by about half before stirring in two-thirds of the stock.",
+        "Reduce to a simmer and cook for 10 minutes without a lid, stirring a couple of times.",
+        "3 Stir in the peas, add some seasoning, then gently mix in the roasted veg. Pour over the remaining stock, arrange the lemon wedges on top and cover with a lid or some aluminium foil. Cook for a further 10 minutes.",
+        "4 To ensure you get the classic layer of toasted rice at the bottom of the pan, increase the heat to high until you hear a slight crackle.",
+        "Remove from the heat and sit for 5 minutes before sprinkling over the parsley and serving."
+      ],
+      "dietary_attributes": [
+        "vegan",
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/1520081754.jpg"
+    },
+    {
+      "id": "60",
+      "title": "Creamy Aji green sauce",
+      "description": "Homestyle vegetarian ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "Bunch Coriander",
+        "2 Jalapeno",
+        "2 Spring Onions",
+        "1 clove Garlic",
+        "1 tablespoon White Wine Vinegar",
+        "Juice of 1 Lime",
+        "Pinch Cumin",
+        "4 tablespoons Mayonnaise"
+      ],
+      "instructions": [
+        "step 1",
+        "Put all the ingredients in a blender or food processor and mix into a sauce. Add seasoning, then pour into a serving bowl."
+      ],
+      "dietary_attributes": [
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/81j8iu1782590903.jpg"
+    },
+    {
+      "id": "61",
+      "title": "Black bean & meat stew - feijoada",
+      "description": "Homestyle beef ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "250g Black Beans",
+        "100g Bacon",
+        "500g Pork Back Ribs",
+        "3 Chorizo",
+        "500g Pork Shoulder",
+        "3 chopped Onion",
+        "4 Cloves Chopped Garlic",
+        "Pinch Chilli Flakes",
+        "Drizzle Oil",
+        "2 Bay Leaf"
+      ],
+      "instructions": [
+        "step 1",
+        "Heat a large heavy-based saucepan with a fitted lid, add the bacon and fry until crisp. Remove and keep the oil in the pan. In batches sear the ribs, sausages and pork shoulder. Season each batch with salt and pepper.",
+        "step 2",
+        "Remove the meat and set aside. Add the onion, garlic and chilli to the pan. Pour in a little olive oil if it needs more. Season with salt and pepper and fry for 8 mins or until soft.",
+        "step 3",
+        "Add the meat, bay leaves, white wine vinegar and drained beans.",
+        "Cover with just enough water to cover, about 650ml.",
+        "Bring to a boil and reduce the heat to a low simmer.",
+        "Cover and cook for 2 hrs, or until the beans are soft and the meat is tender.",
+        "If there is too much liquid in the pot take the lid off in the last hr.",
+        "You can also use a slow cooker on the short method (4 hr) or make a quick version using a pressure cooker in batches for 30 mins each.",
+        "Another method is to cook it in the oven for 3-4 hrs at 160C/140C fan/gas 3."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/xrxz7h1782592711.jpg"
+    },
+    {
+      "id": "62",
+      "title": "English Breakfast",
+      "description": "British breakfast with bold flavor.",
+      "servings": 4,
+      "ingredients": [
+        "2 Sausages",
+        "3 Bacon",
+        "2 Mushrooms",
+        "2 Tomatoes",
+        "1 Slice Black Pudding",
+        "2 Eggs",
+        "1 Slice Bread"
+      ],
+      "instructions": [
+        "Heat the flat grill plate over a low heat, on top of 2 rings/flames if it fits, and brush sparingly with light olive oil.",
+        "Cook the sausages first.",
+        "Add the sausages to the hot grill plate/the coolest part if there is one and allow to cook slowly for about 15-20 minutes, turning occasionally, until golden.",
+        "After the first 10 minutes, increase the heat to medium before beginning to cook the other ingredients.",
+        "If you are struggling for space, completely cook the sausages and keep hot on a plate in the oven.",
+        "Snip a few small cuts into the fatty edge of the bacon.",
+        "Place the bacon straight on to the grill plate and fry for 2-4 minutes each side or until your preferred crispiness is reached.",
+        "Like the sausages, the cooked bacon can be kept hot on a plate in the oven.",
+        "For the mushrooms, brush away any dirt using a pastry brush and trim the stalk level with the mushroom top.",
+        "Season with salt and pepper and drizzle over a little olive oil.",
+        "Place stalk-side up on the grill plate and cook for 1-2 minutes before turning and cooking for a further 3-4 minutes.",
+        "Avoid moving the mushrooms too much while cooking, as this releases the natural juices, making them soggy."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/utxryw1511721587.jpg"
+    },
+    {
+      "id": "63",
+      "title": "Chicken Salad With Mushrooms and Bacon",
+      "description": "Homestyle chicken ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "300g Chicken Breast",
+        "1 Shallots",
+        "3  tablespoons Mayonnaise",
+        "4 tablespoons Creme Fraiche",
+        "3 tsp Dijon Mustard",
+        "1 tablespoon Apple Cider Vinegar",
+        "100g Bacon",
+        "250g Mushrooms",
+        "Sprigs of fresh Parsley",
+        "To taste Salt",
+        "To taste Pepper"
+      ],
+      "instructions": [
+        "Place chicken breast in a saucepan and cover with water. Bring to a boil, add 1 tsp salt and simmer for approximately 15 minutes. Allow chicken to cool and then shred meat with two forks.",
+        "Finely chop shallot/red onion.",
+        "Stir mayonnaise, crème fraîche, Dijon mustard and apple cider vinegar to combine. Season with salt, pepper and extra Dijon mustard to taste. Combine with onion and chicken.",
+        "Fry bacon until crisp and transfer to plate lined with paper towels.",
+        "Rinse mushrooms, slice and fry in the same pan as bacon until golden (approximately 5 minutes). Season with a bit of salt and pepper.",
+        "Arrange your chicken salad in a serving dish, topped with crisp bacon, mushrooms and chopped parsley. Serve on a slice of light or dark bread."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/t5rgav1784659936.jpg"
+    },
+    {
+      "id": "64",
+      "title": "Arroz con Leche Recipe",
+      "description": "Homestyle dessert ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 cup Rice",
+        "4 Cinnamon Stick",
+        "2 cups Water",
+        "4 cups Milk",
+        "Pinch Salt",
+        "2 tablespoons Butter",
+        "2 tablespoons Vanilla Extract",
+        "1 cup Sugar",
+        "12 ounces Condensed Milk"
+      ],
+      "instructions": [
+        "In a small pot, add water and cinnamon sticks, bring to a boil and cook for 10 minutes. Set aside and discard cinnamon sticks.",
+        "Place the rice and the cinnamon water in a large saucepan, over medium heat and cook for 5 minutes.",
+        "Add salt, butter, vanilla extract, 2 cups of milk, and sugar. Stir well to mix and cook uncovered for approximately 15 minutes.",
+        "Reduce heat to medium low. Add the remaining milk and condensed milk. Stir with a wooden spoon. Cook for 1 hour and 15 minutes, or until the rice pudding thickens to desire consistency.",
+        "Stir well and remove from heat, and let it cool at room temperature. The consistency should be very creamy. Refrigerate for a least 1 hour or overnight."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/jp09191782856005.jpg"
+    },
+    {
+      "id": "65",
+      "title": "Tavë Kosi Baked Lamb and Yogurt",
+      "description": "Homestyle lamb ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "600g Lamb",
+        "20g Butter",
+        "2 tablespoons Olive Oil",
+        "70g Rice",
+        "2 tsp Oregano",
+        "450ml Boiling Water",
+        "2 cloves chopped Garlic",
+        "Pinch Salt",
+        "Pinch Pepper",
+        "50g Butter",
+        "2 tablespoons Flour",
+        "750g Greek Yogurt",
+        "6 Eggs",
+        "Pinch Salt",
+        "Pinch Pepper"
+      ],
+      "instructions": [
+        "1",
+        "Baking the Lamb",
+        "In a large pan (with a lid) melt the butter and olive oil together then add the diced lamb. Brown the lamb on a medium heat, this will take around 5 minutes.",
+        "2",
+        "Add the garlic, oregano, 300ml of water and season with salt and pepper. Mix well before covering with the lid. Leave to simmer for 50 minutes mixing a couple of times ensuring the lamb doesn’t start to burn.",
+        "3",
+        "The juices should have nearly all boiled away so another 150ml of water should be added along with the rice.",
+        "Mix altogether, bring to the boil, place the lid on and leave for just 10 minutes.",
+        "It’s advised to check at around 8 minutes – you want the liquid to be evaporated with just moist coating of oily water left over the lamb and rice.",
+        "4",
+        "Place the lamb and rice into a casserole dish, the mixture should fully cover the base and have at least 2 inches spare for the yogurt. Alternatively you can split into four ceramic bowls.",
+        "5"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/a1mi7t1779643816.jpg"
+    },
+    {
+      "id": "66",
+      "title": "Frog Legs Recipe in Garlic Butter",
+      "description": "Homestyle miscellaneous ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "300g Frogs Legs",
+        "3 Cups Milk",
+        "1 tablespoon Olive Oil",
+        "1/2 tbs Garlic",
+        "2 tablespoons Butter",
+        "1 tablespoon Parsley",
+        "Pinch Salt",
+        "Pinch Pepper"
+      ],
+      "instructions": [
+        "Let the frog legs soak in the milk in the fridge for an hour (optional).",
+        "Rinse the legs and pat them dry with kitchen paper.",
+        "Add the olive oil and half of the garlic butter to a large wok or frying pan. Place it over high heat until the butter starts to foam. Don't let it burn.",
+        "Add the frog legs to the pan. Pan fry them for about 10 minutes until they are golden brown on both sides. Turn the over regularly.",
+        "Add the rest of the garlic butter right in the end together with the freshly chopped parsley. Season with a pinch of pepper and salt to taste.",
+        "Divide the frog legs over plates. Serve with grilled bread and a green salad."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/qcprt21782497529.jpg"
+    },
+    {
+      "id": "67",
+      "title": "Fettucine alfredo",
+      "description": "Italian pasta with bold flavor.",
+      "servings": 2,
+      "ingredients": [
+        "227g Clotted Cream",
+        "25g Butter",
+        "1 tsp Corn Flour",
+        "100g Parmesan Cheese",
+        "Grated Nutmeg",
+        "250g Fettuccine",
+        "Chopped Parsley"
+      ],
+      "instructions": [
+        "In a medium saucepan, stir the clotted cream, butter and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm.",
+        "Meanwhile, put the cheese and nutmeg in a small bowl and add a good grinding of black pepper, then stir everything together (don’t add any salt at this stage).",
+        "Put the pasta in another pan with 2 tsp salt, pour over some boiling water and cook following pack instructions (usually 3-4 mins).",
+        "When cooked, scoop some of the cooking water into a heatproof jug or mug and drain the pasta, but not too thoroughly.",
+        "Add the pasta to the pan with the clotted cream mixture, then sprinkle over the cheese and gently fold everything together over a low heat using a rubber spatula.",
+        "When combined, splash in 3 tbsp of the cooking water.",
+        "At first, the pasta will look wet and sloppy: keep stirring until the water is absorbed and the sauce is glossy.",
+        "Check the seasoning before transferring to heated bowls.",
+        "Sprinkle over some chives or parsley, then serve immediately."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg"
+    },
+    {
+      "id": "68",
+      "title": "Chuletas de Cerdo a la Criolla (Pork Chops in Creole Sauce)",
+      "description": "Homestyle pork ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "4 Pork Chops",
+        "2 tablespoons Vegetable Oil",
+        "3 Cloves Crushed Garlic",
+        "Melted Mustard",
+        "1 tablespoon Ground Cumin",
+        "3 diced Tomato",
+        "2 sliced Onions",
+        "1/4 cup Cilantro",
+        "To taste Salt",
+        "To taste Black Pepper"
+      ],
+      "instructions": [
+        "Place the pork chops in a zip lock plastic bag. Add the mustard, cumin, garlic, salt and pepper.",
+        "Refrigerate for 1 hour or overnight. Be sure the pork chops are evenly covered.",
+        "In a large skillet, heat the oil over medium heat. Place the pork chops into the skillet and cook for 3 minutes per side. Remove the pork from the pan and keep aside on a warm plate.",
+        "Add the onions and tomatoes to the same skillet where the pork was browned, adding an additional tablespoon of oil if needed.",
+        "Cook over high heat for about 5-7 minutes or until browned and softened, stirring frequently to avoid burning.",
+        "Add the reserved cooked pork chops and cover, reduce the heat to medium-low and simmer until the pork is tender and barely pink in the center, about 15 minutes.",
+        "Divide the chops among plates, spoon the sauce over the top, add the cilantro and serve immediately."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/087fu71783802698.jpg"
+    },
+    {
+      "id": "69",
+      "title": "Bangladeshi fish curry with daikon",
+      "description": "Homestyle seafood ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "450g White Fish",
+        "450g Daikon Radish",
+        "4 tablespoons Vegetable Oil",
+        "4 cloves Garlic",
+        "1 medium Onion",
+        "2 tsp Salt",
+        "1 tsp Ground Turmeric",
+        "2 tsp Ground Coriander",
+        "2 tsp Chilli Powder",
+        "2 Green Chilli",
+        "Handful Coriander Leaves",
+        "1 Lime"
+      ],
+      "instructions": [
+        "If you are using rohu fish it will usually be frozen.",
+        "Soak it in cold water for 30-45 minutes to defrost and while still a little firm, descale and cut each steak into quarters and wash in cold saltwater a few times.",
+        "Drain and set aside.",
+        "If using an alternative such as cod, cut into 2 ½ inch chunks then rinse, drain and set aside",
+        "2",
+        "Top and tail the daikon and peel using a potato peeler. Cut in half widthways then cut each half down the middle, lengthways. Now slice into 2cm-thick half-moon pieces. Rinse and set aside",
+        "3",
+        "Place a large, shallow saucepan over a medium heat and add the oil. When the oil is hot add the crushed garlic and stir for a minute until pale golden",
+        "4",
+        "Add the onion paste and salt and cook for 3-5 minutes, until the onion softens and becomes translucent, stirring occasionally",
+        "5",
+        "Pour in 200ml of water then cover and cook for 10 minutes, stirring once or twice"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/r7mcjm1780261264.jpg"
+    },
+    {
+      "id": "70",
+      "title": "Baked Yuca Fries",
+      "description": "Homestyle side ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "2 large Yuca",
+        "2 tablespoons Extra Virgin Olive Oil",
+        "1 tsp Chilli Powder",
+        "Pinch Kosher Salt",
+        "Pinch Ground Black Pepper",
+        "1 large Avocado",
+        "1/4 cup Sour Cream",
+        "Juice of 1 Lime",
+        "1/4 cup Cilantro"
+      ],
+      "instructions": [
+        "Step 1",
+        "Preheat oven to 450°.",
+        "Bring a large pot of water to a boil.",
+        "Trim ends of yuca and cut each one in half, widthwise.",
+        "Stand them on their ends and use a sharp knife to cut the waxy peel off.",
+        "Cut each piece in half lengthwise and then cut in half lengthwise one more time to create 16 pieces total.",
+        "Trim the fibrous center out of each piece.",
+        "Step 2",
+        "Place cut yuca into boiling water and let boil until fork tender, 8 to 10 minutes. Using a slotted spoon, remove from pot and place on a paper towel lined cutting board. Pat dry with another paper towel.",
+        "Step 3",
+        "Place dried yuca into a large bowl and toss with oil. Season with chili powder, salt, and pepper and toss again to evenly coat. Place yuca on a large baking sheet in an even layer.",
+        "Step 4"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/j223gc1784579841.jpg"
+    },
+    {
+      "id": "71",
+      "title": "Mantu Afghan Dumpling",
+      "description": "Homestyle starter ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "450g Plain Flour",
+        "225ml Water",
+        "450g Lamb",
+        "1 Green Chilli",
+        "450g Onions",
+        "2 tblsp Black Pepper",
+        "1 tablespoon Vegetable Oil",
+        "1 tablespoon Tomato Puree",
+        "425ml Strained Yoghurt",
+        "Pinch Coriander"
+      ],
+      "instructions": [
+        "To prepare the dough, sift the flour with 1tsp of salt into a mixing bowl.",
+        "Slowly mix in as much of the water is required, until a stiff dough is formed.",
+        "Knead on a clean work surface for 5-10 minutes, until the dough is elastic and shiny.",
+        "Cover with a damp cloth and set aside for about an hour.",
+        "Put the chopped lamb, onions, chilli, 1 tsp salt, ground pepper and spices in a bowl and mix thoroughly.",
+        "Divide the dough into 4 small balls, and roll out to a thickness of 1.5mm, cutting into 10cm squares. Into each square, place 1 heaped teaspoon of the lamb mixture.",
+        "Take two opposite corners and bring them to join in the centre by nipping together firmly between your fingers, and then bring together to other two corners in the same manner.",
+        "Note that the mantu should not be entirely closed, as the steam has to be penetrate and cook the filling!",
+        "Using fat to grease the shelves of the steamer, place your mantu so that there is a small space between each one. Steam for 30-45 minutes over a medium heat.",
+        "Meanwhile, make the tomato sauce. Heat the oil in a pan, add tomato puree, and bring to the boil. Stir and simmer on a low heat until the mantu are ready.",
+        "Remove the mantu carefully from the steamer and place on a large, warm dish. Spoon the tomato sauce over the top, followed by the strained yoghurt, and sprinkle with chopped coriander to garnish."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/oemdp11779556068.jpg"
+    },
+    {
+      "id": "72",
+      "title": "Fasoliyyeh Bi Z-Zayt (Syrian Green Beans with Olive Oil)",
+      "description": "Syrian vegan with bold flavor.",
+      "servings": 4,
+      "ingredients": [
+        "16 ounces Green Beans",
+        "1/4 cup Olive Oil",
+        "Dash Salt",
+        "1 clove Garlic",
+        "1/4 cup Cilantro"
+      ],
+      "instructions": [
+        "Place the green beans into a large pot, and drizzle with olive oil.",
+        "Season with salt to taste, and put the lid on the pot.",
+        "Cook over medium-high heat, stirring occasionally, until beans are cooked to your desired doneness.",
+        "Syrians like it cooked until the green beans are turning brownish in color.",
+        "The idea is not to saute them, but to let them steam in the moisture released by the ice crystals.",
+        "Add cilantro and garlic to the beans, and continue to cook just until the cilantro has started to wilt. Eat as a main course by scooping up with warm pita bread or serve as a side dish."
+      ],
+      "dietary_attributes": [
+        "vegan",
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/21yc5s1760524759.jpg"
+    },
+    {
+      "id": "73",
+      "title": "Creamy Corn Soup Recipe",
+      "description": "Homestyle vegetarian ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "4 Corn On The Cob",
+        "6 cups Water",
+        "2 Chicken Stock Cube",
+        "2 cloves chopped Garlic",
+        "1/2 tsp Salt",
+        "1/2 tsp Pepper",
+        "2 tablespoons Cilantro",
+        "1/2 cup Potatoes",
+        "1/2 cup Scallions",
+        "1 cup Heavy Cream"
+      ],
+      "instructions": [
+        "Place the corn, water, chicken or vegetable bouillon, garlic, salt, pepper, cilantro, potatoes and scallions in a large pot and bring to a boil.",
+        "Reduce heat to medium low and simmer for approximately 4 minutes or until the corn is tender.",
+        "Remove from the heat. Puruée the soup in a blender and return to the pot, add the cream and heat over medium heat for 15 minutes, stirring occasionally.",
+        "Pour into bowls, garnish with cilantro and potato sticks.",
+        "Notes",
+        "*Fresh corn or frozen corn will work for this soup recipe. I usually use fresh corn, but I use organic corn kernels in the winter to make this soup.",
+        "*To store: Place cooled corn soup in an airtight container and store in the fridge for up to 3 days."
+      ],
+      "dietary_attributes": [
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/yf5eyw1783804464.jpg"
+    },
+    {
+      "id": "74",
+      "title": "Breaded Steak Recipe (Lomo de Res Apanado)",
+      "description": "Homestyle beef ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "2 Lbs Beef",
+        "1 cup Alinos Sauce",
+        "1 cup All purpose flour",
+        "2 cups Breadcrumbs",
+        "1 tsp Ground Cumin",
+        "3 Eggs",
+        "To taste Salt",
+        "To taste Black Pepper",
+        "2 tablespoons Parsley",
+        "For frying Oil"
+      ],
+      "instructions": [
+        "Place each piece of steak in between two large pieces of plastic and using a mallet, pound it until it is about ¼″ to ½″ thick.",
+        "Place the pounded steak in a glass container, add the aliños sauce and let it rest for about 3 hours or overnight in the fridge.",
+        "Add the flour, bread crumbs, spices and parsley to a plate or bowl.",
+        "Cover the steak on all sides with the flour mixture, then the eggs, and finally the flour mixture again.",
+        "Once the pieces of steak are coated, you can either add them right to a pan with oil for cooking or layer them on parchment paper until ready to fry.",
+        "Add the oil to a large skillet over medium heat.",
+        "As soon as it begins to smoke lightly, add the breaded steak and cook it for about 3 to 4 minutes per side or until golden brown.",
+        "Take them out of the oil and place on a plate lined with paper towels to drain off any excess oil and serve."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/lmwaf61783805434.jpg"
+    },
+    {
+      "id": "75",
+      "title": "Full English Breakfast",
+      "description": "British breakfast with bold flavor.",
+      "servings": 2,
+      "ingredients": [
+        "4 Sausages",
+        "4 Bacon",
+        "4 Mushrooms",
+        "3 Tomatoes",
+        "2 sliced Black Pudding",
+        "2 Eggs",
+        "1 Slice Bread",
+        "100g Baked Beans"
+      ],
+      "instructions": [
+        "Heat the flat grill plate over a low heat, on top of 2 rings/flames if it fits, and brush sparingly with light olive oil.",
+        "Cook the sausages first.",
+        "Add the sausages to the hot grill plate/the coolest part if there is one and allow to cook slowly for about 15-20 minutes, turning occasionally, until golden.",
+        "After the first 10 minutes, increase the heat to medium before beginning to cook the other ingredients.",
+        "If you are struggling for space, completely cook the sausages and keep hot on a plate in the oven.",
+        "Snip a few small cuts into the fatty edge of the bacon.",
+        "Place the bacon straight on to the grill plate and fry for 2-4 minutes each side or until your preferred crispiness is reached.",
+        "Like the sausages, the cooked bacon can be kept hot on a plate in the oven.",
+        "For the mushrooms, brush away any dirt using a pastry brush and trim the stalk level with the mushroom top.",
+        "Season with salt and pepper and drizzle over a little olive oil.",
+        "Place stalk-side up on the grill plate and cook for 1-2 minutes before turning and cooking for a further 3-4 minutes.",
+        "Avoid moving the mushrooms too much while cooking, as this releases the natural juices, making them soggy."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/sqrtwu1511721265.jpg"
+    },
+    {
+      "id": "76",
+      "title": "Chicken and Potato Roti",
+      "description": "Homestyle chicken ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 lb Flour",
+        "3  tablespoons Shortening",
+        "Pinch Salt",
+        "Splash Water",
+        "6 Chicken Breast",
+        "Pinch Parsley",
+        "Pinch Thyme",
+        "Pinch Jerk",
+        "Pinch Salt",
+        "Pinch Sugar",
+        "Pinch Black Pepper",
+        "2 large Onion",
+        "4 cloves Garlic",
+        "1 Scotch Bonnet",
+        "1/2 lb Potatoes"
+      ],
+      "instructions": [
+        "Add a pint of chicken stock to the simmer and put three tablespoons of sugar into a large saucepan on high; cook until the sugar caramelizes, then add the cubed chicken breasts and stir until the chicken browns.",
+        "Add chopped onions, garlic, parsley, thyme, jerk seasoning, salt, and the whole scotch bonnet pepper – do not cut up the pepper! Reduce the heat to low and let this simmer for 25 minutes.",
+        "In a large mixing bowl, sift the flour, and add a pinch of salt to taste.",
+        "Now add the first tablespoon of shortening, and with your fingers, rub the flour into the shortening until it forms a breadcrumb-like consistency.",
+        "Then add the second tablespoon of shortening and rub against the flour until it looks like breadcrumbs.",
+        "Now add the third tablespoon of shortening and repeat the process.",
+        "You should by now have used all the flour. Your bowl should be all breadcrumb-like; if you still have fresh flour, use another tablespoon of shortening until your fresh flour is all used up.",
+        "Add a small amount of water and mix with a butter knife; keep adding small amounts until your mixture forms a soft dough.",
+        "Now dust your surface with flour and roll out your pastry; you want to roll wafer-thin rounds – this mixture should make at least 12 roti skins.",
+        "Cover with a tea towel while returning to the pot.",
+        "Now peel the potatoes and cube them into small bite-size pieces.",
+        "After 25 minutes of simmering, add 1/2 pint of water and the potatoes to the pool."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/mp9z0i1782238092.jpg"
+    },
+    {
+      "id": "77",
+      "title": "Authentic Laos Tapioca Pudding with Bananas",
+      "description": "Homestyle dessert ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "1 cup Warm Water",
+        "4 cups Water",
+        "3  tablespoons Tapioca",
+        "14 oz jar Coconut Milk",
+        "2 tablespoons Sugar",
+        "3 Cups Banana",
+        "4 cups Water",
+        "To taste Salt"
+      ],
+      "instructions": [
+        "In a bowl of warm water, add tapioca pearls and allow them to soak for 20 minutes.",
+        "Prepare bananas by peeling them and cutting them into ½ inch slices. Set the slices aside",
+        "On a stove, pour in 4 cups of water and bring it to a boil. Add in the banana slices.",
+        "After 20 minutes, drain the tapioca pearls in cold water to allow the pearls to separate from each other.",
+        "Add the tapioca pearls into the the pot. Allow to simmer for 3 minutes or until the tapioca pearls turn clear.",
+        "Next, add in sugar and pour in the coconut cream. Stir the ingredients gently for 3 minutes to incorporate the flavors.",
+        "Add salt to taste."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/5pmn0g1779813285.jpg"
+    },
+    {
+      "id": "78",
+      "title": "Chorba Hamra bel Frik (Algerian Lamb, Tomato, and Freekeh Soup)",
+      "description": "Algerian lamb with bold flavor.",
+      "servings": 4,
+      "ingredients": [
+        "1 cup Freekeh",
+        "12 ounces Lamb",
+        "1 finely chopped Onion",
+        "1 tsp Black Pepper",
+        "1 tsp Paprika",
+        "1 tsp Ground Cinnamon",
+        "To taste Salt",
+        "3  tablespoons Vegetable Oil",
+        "1  bunch Cilantro",
+        "1  bunch Mint",
+        "1 Celery",
+        "14 oz jar Chickpeas",
+        "4 cups Water",
+        "1 Diced Zucchini",
+        "1 Diced Carrots",
+        "1 tablespoon Tomato Puree",
+        "3 Medium Tomato",
+        "1 Diced Potatoes"
+      ],
+      "instructions": [
+        "Place freekeh in a small bowl and cover with cold water. Set aside.",
+        "Combine lamb, onion, black pepper, paprika, cinnamon, and salt in a pot.",
+        "Stir in oil, 1/2 the cilantro, 1/2 the mint, and celery stalk until combined.",
+        "Simmer over low heat for 15 minutes.",
+        "Stir in chickpeas; pour in just enough water to cover, and return to a simmer.",
+        "Stir in zucchini, carrot, and tomato paste.",
+        "Set a steamer over the pot; add tomatoes. Cover and steam tomatoes until soft, about 5 minutes. Crush tomatoes using a wooden spoon, so pulp drips into soup. Remove the steamer and discard leftover tomato peels.",
+        "Add potato to soup and just enough water to cover. Simmer until potato is soft, about 10 minutes.",
+        "Drain freekeh and add to soup. Simmer until soft, about 15 minutes. Remove celery stalk and discard. Sprinkle soup with remaining 1/2 cilantro and remaining 1/2 mint before serving."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/p9tebp1764118792.jpg"
+    },
+    {
+      "id": "79",
+      "title": "Madombi: Dumplings from Botswana",
+      "description": "Homestyle miscellaneous ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "1 1/4 cup Warm Water",
+        "2 tsp Sugar",
+        "2 1/2 Tsp Yeast",
+        "3 Cups All purpose flour",
+        "1 1/2 tsp Salt"
+      ],
+      "instructions": [
+        "This recipe requires a stew to steam the dumplings on top of, at abour 180℃ or 350℉, give or take (it doesn't have to be specific, but can't be very high or very love heat).",
+        "You will add the dumplings in during the last thirty minutes of your stew's cooking time, They need to steam covered, so the stew should be in a lidded pot that is oven-proof.",
+        "Mix the dumpling dough",
+        "In a measuring cup, combine the warm water, sugar, and yeast. Leave until foamy, about 5 minutes.",
+        "To a stand mixer bowl, or a large bowl if mixing by hand, add the flour and salt. Stream in the water-yeast mixture while kneading.",
+        "Knead for several minutes after the dough comes together, until a smooth ball of dough forms.",
+        "Leave the dumpling dough to rise",
+        "Place the ball of dough in an oiled dough, cover, and leave to rise until doubled, about 1 hour.",
+        "Shape the dumplings",
+        "Divide the risen ball of dough into 10 equal portions for large dumplings, or 12-14 portions for smaller dumplings.",
+        "Shape each portion of dough into a smooth, round ball.",
+        "Steam the dumplings"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/bjeq6g1782505296.jpg"
+    },
+    {
+      "id": "80",
+      "title": "Lasagne",
+      "description": "Italian pasta with bold flavor.",
+      "servings": 4,
+      "ingredients": [
+        "1 tblsp Olive Oil",
+        "2 Bacon",
+        "1 finely chopped Onion",
+        "1 Stick Celery",
+        "1 medium Carrots",
+        "2 cloves chopped Garlic",
+        "500g Minced Beef",
+        "1 tbls Tomato Puree",
+        "800g Chopped Tomatoes",
+        "1 tblsp Honey",
+        "500g Lasagne Sheets",
+        "400ml Creme Fraiche",
+        "125g Mozzarella Balls",
+        "50g Parmesan Cheese",
+        "Topping Basil Leaves"
+      ],
+      "instructions": [
+        "Heat the oil in a large saucepan.",
+        "Use kitchen scissors to snip the bacon into small pieces, or use a sharp knife to chop it on a chopping board.",
+        "Add the bacon to the pan and cook for just a few mins until starting to turn golden.",
+        "Add the onion, celery and carrot, and cook over a medium heat for 5 mins, stirring occasionally, until softened.",
+        "Add the garlic and cook for 1 min, then tip in the mince and cook, stirring and breaking it up with a wooden spoon, for about 6 mins until browned all over.",
+        "Stir in the tomato purée and cook for 1 min, mixing in well with the beef and vegetables.",
+        "Tip in the chopped tomatoes.",
+        "Fill each can half full with water to rinse out any tomatoes left in the can, and add to the pan.",
+        "Add the honey and season to taste.",
+        "Simmer for 20 mins.",
+        "Heat oven to 200C/180C fan/gas 6.",
+        "To assemble the lasagne, ladle a little of the ragu sauce into the bottom of the roasting tin or casserole dish, spreading the sauce all over the base."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/wtsvxx1511296896.jpg"
+    },
+    {
+      "id": "81",
+      "title": "Cuban Sandwich",
+      "description": "Homestyle pork ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "1 lb Pork Chops",
+        "Pinch Kosher Salt",
+        "2 tablespoons Vegetable Oil",
+        "Juice/zest of one Orange",
+        "Juice/zest of one Lime",
+        "2 tsp Dried Oregano",
+        "1 tsp Ground Black Pepper",
+        "1 tsp Garlic Powder",
+        "2 tablespoons Dijon Mustard",
+        "2 tablespoons Mayonnaise",
+        "8 oz Cuban Bread",
+        "1 tablespoon Unsalted Butter",
+        "4 oz Swiss Cheese",
+        "8 oz Deli Ham",
+        "2 Dill Pickles"
+      ],
+      "instructions": [
+        "Step 1",
+        "Place pork chops in a 3-qt. glass baking dish. Using a fork, poke holes into pork all over; season all over with 1 tsp. salt. Drizzle with oil and toss to coat.",
+        "Step 2",
+        "In a small bowl, combine orange zest and juice, lime zest and juice, oregano, pepper, garlic powder, cumin, and onion powder. Add half of marinade to pork and let rest 10 to 15 minutes.",
+        "Step 3",
+        "Meanwhile, arrange a rack in center of oven; preheat to 425°. Add mustard and mayonnaise to remaining marinade and stir until smooth.",
+        "Step 4",
+        "Transfer pork to oven and roast until an instant-read thermometer inserted into thickest part registers 140°, 15 to 20 minutes.",
+        "Step 5",
+        "To build sandwiches, cut loaf in half crosswise, then cut each piece in half lengthwise for 4 pieces total.",
+        "Spread butter on outside of bread on the top and bottom.",
+        "Spread mustard mixture on cut sides of bread."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/djdg8l1784578885.jpg"
+    },
+    {
+      "id": "82",
+      "title": "Camaro Grelhado Com Molho Cru (Grilled Prawns with Green Onion Sauce)",
+      "description": "Homestyle seafood ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 lb Prawns",
+        "2 cloves minced Garlic",
+        "1/2 cup Spring Onions",
+        "1 tsp Ground Cumin",
+        "1/4 tsp Salt",
+        "4 tablespoons White Vinegar",
+        "4 tablespoons Water"
+      ],
+      "instructions": [
+        "Make the sauce by combining all the ingredients and grinding them into a paste.",
+        "Put the prawns on the skewers and brush with sauce.",
+        "Grill until done (they should lose their translucent color), about 3-4 minutes on each side.",
+        "Serve with extra sauce on the side."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/jg4r991779916649.jpg"
+    },
+    {
+      "id": "83",
+      "title": "Bolani with Potato Filling",
+      "description": "Homestyle side ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "450g Plain Flour",
+        "225ml Water",
+        "3 tsp Salt",
+        "900g Potatoes",
+        "50g Spring Onions",
+        "1 tsp Black Pepper",
+        "For frying Vegetable Oil"
+      ],
+      "instructions": [
+        "Put the flour and teaspoon of salt in a mixing bowl. Slowly adding as much water as is required. Mix to form a stiff dough.",
+        "Place the dough on a clean work surface and knead for about 5-10 minutes until the dough is elastic, smooth and shiny. Form the dough into a ball, cover with a damp cloth and set aside for at least half an hour.",
+        "Peel and wash the potatoes and boil them in salted water until soft. Drain off the water and mash thoroughly. Add the spring onions, salt and black pepper.",
+        "Divide the dough into 3 or 4 balls. Roll out each ball as thinly as possible on a lightly floured surface (the thickness should be no more than 1.5mm - if the dough is too thick the Bolani will be tough)",
+        "Take a round cutter of 13-15cm (I often use a pan lid or tid lid), and cut as many rounds as possible. On each round spread 1-2 tablespoons of the mashed potato. Moisten the edges of the dough, fold over and seal shut.",
+        "The Bolani should be spread out on a lightly floured surface until ready to fry. Heat enough vegetable oil in a frying-pan and shallow fry one or two Bolani at a time, browning on both sides.",
+        "Make sure to keep the fried Bolani warm until all are finished, and serve straight away."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/de0sns1779555283.jpg"
+    },
+    {
+      "id": "84",
+      "title": "Oyster Mushroom Soup",
+      "description": "Homestyle starter ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 lb Oyster Mushrooms",
+        "4 tablespoons Butter",
+        "1 tsp Salt",
+        "1 cup Water",
+        "2 tablespoons Flour",
+        "1 cup Milk",
+        "3 cloves Garlic",
+        "1/3 cup Red Wine Vinegar",
+        "Garnish Red Pepper Flakes"
+      ],
+      "instructions": [
+        "Clean mushrooms – I usually wash them under cold water, dry them and remove the stems.",
+        "Cut mushrooms into thin strips.",
+        "Melt butter in a small pot. Add the mushrooms and cook for 10 minutes, until the mushrooms release liquid.",
+        "Combine the flour and water, whisk to remove any lumps and add to the pot. Add the salt and milk.",
+        "Cook for 10 more minutes.",
+        "In a small bowl or jar combine the garlic and vinegar.",
+        "Serve the soup with 1-2 tablespoons (or more) of the garlic and vinegar mixture and hot red pepper."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/0r7y5n1782681336.jpg"
+    },
+    {
+      "id": "85",
+      "title": "Vegan Chocolate Cake",
+      "description": "United States vegan with bold flavor.",
+      "servings": 2,
+      "ingredients": [
+        "1 1/4 cup Self-raising Flour",
+        "1/2 cup coco sugar",
+        "1/3 cup raw cacao",
+        "1 tsp baking powder",
+        "2 flax eggs",
+        "1/2 cup almond milk",
+        "1 tsp vanilla",
+        "1/2 cup boiling water"
+      ],
+      "instructions": [
+        "Simply mix all dry ingredients with wet ingredients and blend altogether. Bake for 45 min on 180 degrees. Decorate with some melted vegan chocolate"
+      ],
+      "dietary_attributes": [
+        "vegan",
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/qxutws1486978099.jpg"
+    },
+    {
+      "id": "86",
+      "title": "Easy White Bean Soup",
+      "description": "Homestyle vegetarian ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 lb Cannellini Beans",
+        "2 medium Onions",
+        "2 tablespoons Vegetable Oil",
+        "2 medium Red Pepper",
+        "1/3 cup Tomato Puree",
+        "2 medium Carrots",
+        "6 cups Water",
+        "1 tsp Dried Mint",
+        "1/2 tsp Thyme",
+        "1 tsp Summer Savoury",
+        "1 tsp Black Pepper",
+        "1 tsp Salt",
+        "Garnish Parsley"
+      ],
+      "instructions": [
+        "Place beans in a large pot and cover with cold water. Soak for at least 4 hours or overnight. Drain and rinse, before you use in the soup.",
+        "Chop one of the onions and leave the other one whole. Chop carrots.",
+        "Heat oil on a large pot over medium heat.",
+        "Add the onion and carrots.",
+        "Cook for 2 minutes.",
+        "Add beans, water, peppers, head of onion, salt, pepper, summer savory, mint, thyme, Vegeta and tomato puree.",
+        "Stir, bring to a boil, then reduce to a simmer and cook for 2 hours, or until the beans are tender.",
+        "Remove the peppers and whole onion. Mash the onion. Peel peppers and chop. Return to the pot.",
+        "Add more salt and pepper, if needed. Garnish with chopped parsley. Serve."
+      ],
+      "dietary_attributes": [
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/p5nzbk1782680889.jpg"
+    },
+    {
+      "id": "87",
+      "title": "Cabbage with Ground Beef",
+      "description": "Homestyle beef ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "2 tablespoons Olive Oil",
+        "1 lb Ground Beef",
+        "1 small Onion",
+        "2 medium Carrots",
+        "1 medium Red Pepper",
+        "1 tablespoon Tomato Puree",
+        "2 cloves Garlic",
+        "1/2 tbs Salt",
+        "1/2 tbs Black Pepper",
+        "1 tsp Smoked Paprika",
+        "1/4 tsp Ground Cumin",
+        "1/2 Cabbage",
+        "1 tsp Apple Cider Vinegar",
+        "1 cup Water",
+        "2 tbs chopped Parsley"
+      ],
+      "instructions": [
+        "Heat a large skillet or braiser over medium heat on the stovetop. Add the olive oil.",
+        "A braiser with cooked ground beef",
+        "Cook the Meat:",
+        "Add the ground meat to the pan. Use a potato masher or wooden spoon to break it into small pieces. Cook for 3–4 minutes until browned.",
+        "Add Vegetables and Seasoning:",
+        "Stir in the onion, carrots, red pepper, garlic, and tomato paste. Season with salt, black pepper, smoked paprika, ground cumin, and Italian seasoning (if using). Cook for 2–3 minutes, stirring frequently.",
+        "A braiser with cooked ground beef, carrots, onions, peppers, garlic and seasoning.",
+        "Add Cabbage and Liquid:",
+        "Add the chopped cabbage, apple cider vinegar or lemon juice (if using), and water.",
+        "Stir well to combine.",
+        "Reduce the heat to medium-low, cover, and cook for 30 minutes.",
+        "Stir occasionally to prevent the cabbage from sticking to the bottom of the pan."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/brmxra1782681940.jpg"
+    },
+    {
+      "id": "88",
+      "title": "Breakfast Potatoes",
+      "description": "Canadian breakfast with bold flavor.",
+      "servings": 4,
+      "ingredients": [
+        "3 Medium Potatoes",
+        "1 tbs Olive Oil",
+        "2 strips Bacon",
+        "Minced Garlic Clove",
+        "1 tbs Maple Syrup",
+        "Garnish Parsley",
+        "Pinch Salt",
+        "Pinch Pepper",
+        "To taste Allspice"
+      ],
+      "instructions": [
+        "Before you do anything, freeze your bacon slices that way when you're ready to prep, it'll be so much easier to chop!",
+        "Wash the potatoes and cut medium dice into square pieces. To prevent any browning, place the already cut potatoes in a bowl filled with water.",
+        "In the meantime, heat 1-2 tablespoons of oil in a large skillet over medium-high heat. Tilt the skillet so the oil spreads evenly.",
+        "Once the oil is hot, drain the potatoes and add to the skillet. Season with salt, pepper, and Old Bay as needed.",
+        "Cook for 10 minutes, stirring the potatoes often, until brown. If needed, add a tablespoon more of oil.",
+        "Chop up the bacon and add to the potatoes. The bacon will start to render and the fat will begin to further cook the potatoes. Toss it up a bit! The bacon will take 5-6 minutes to crisp.",
+        "Once the bacon is cooked, reduce the heat to medium-low, add the minced garlic and toss. Season once more. Add dried or fresh parsley. Control heat as needed.",
+        "Let the garlic cook until fragrant, about one minute.",
+        "Just before serving, drizzle over the maple syrup and toss. Let that cook another minute, giving the potatoes a caramelized effect.",
+        "Serve in a warm bowl with a sunny side up egg!"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/1550441882.jpg"
+    },
+    {
+      "id": "89",
+      "title": "Chicken in Orange Sauce Recipe (Pollo a la Naranja)",
+      "description": "Homestyle chicken ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "4 Chicken Legs",
+        "2 tablespoons Olive Oil",
+        "2 tablespoons Butter",
+        "1/2 cup Onion",
+        "1 Red Pepper",
+        "3 cloves Chopped Garlic",
+        "1 tsp Salt",
+        "1/2 tsp Black Pepper",
+        "1 cup Chicken Stock",
+        "1/2 cup Orange Juice",
+        "3  tablespoons Brown Sugar",
+        "1/4 cup Cilantro"
+      ],
+      "instructions": [
+        "Place the olive oil and butter in a large sauce pan over medium heat. Add the chopped onions, red bell pepper and garlic. Cook for about 3 minutes, stirring often until the vegetables are soft.",
+        "Add the chicken legs and season with salt and pepper. Cook for about 1 minute on each side.",
+        "Add the chicken broth, orange juice and cook for about 2 minutes scraping the bottom of the pan with a wooden spoon.",
+        "Add the brown sugar and cover the pot.",
+        "Reduce the heat to medium and cook for about 45 minutes or until chicken is cooked.",
+        "Spoon the sauce over the chicken and serve over white rice. Garnish with fresh cilantro."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/uuns781783804024.jpg"
+    },
+    {
+      "id": "90",
+      "title": "Baghlaw-e-Khanagi",
+      "description": "Homestyle dessert ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "600g Flour",
+        "3 Eggs",
+        "450ml Milk",
+        "75 ml Vegetable Oil",
+        "1 tsp Baking Powder",
+        "50g Ground Walnuts",
+        "10g Cardamom",
+        "300g Sugar",
+        "1 L Water"
+      ],
+      "instructions": [
+        "Place flour in a bowl, and create a hole in the middle of the flour. Whisk eggs, and then pour whisked eggs into the well.",
+        "Add milk, and combine. Then, stir in the ground walnuts, baking powder and cardamom, and add to the mixture. Fold ingredients into the mixture until it forms an elastic dough consistency.",
+        "Take dough and with a rolling pin, roll out into a thin rectangle on a clean surface.",
+        "Then, from the longest side of the rectangle, fold the dough into 3cm-wide lines, until the dough is fully rolled in a long line.",
+        "Cut folded dough horizontally into 3cm pieces",
+        "Heat a deep pan of the vegetable oil, and wait till it reaches frying temperature.",
+        "Whilst you are waiting.",
+        "Fill a deep pan with 1 litre of water, and bring to the boil.",
+        "Then, pour in the sugar, and stir gently until it becomes thick and syrup-like.",
+        "Turn down the heat and leave to simmer.",
+        "Carefully lower each piece of dough into the frying oil. Fry until golden brown.",
+        "When golden brown, take the Baghlaw pieces out of the oil, and place them into the sugar syrup to coat."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/bjtjyl1779552068.jpg"
+    },
+    {
+      "id": "91",
+      "title": "Lamb and Potato pie",
+      "description": "British lamb with bold flavor.",
+      "servings": 2,
+      "ingredients": [
+        "500g Lamb Shoulder",
+        "1 tbls Flour",
+        "Dash Vegetable Oil",
+        "1 sliced Onion",
+        "2 sliced Carrots",
+        "350ml/12fl Vegetable Stock",
+        "500g Potatoes",
+        "450g Shortcrust Pastry",
+        "To Glaze Eggs"
+      ],
+      "instructions": [
+        "Dust the meat with flour to lightly coat.",
+        "Heat enough vegetable oil in a large saucepan to fill the base, and fry the onion and meat until lightly browned. Season with salt and pepper.",
+        "Add the carrots, stock and more seasoning to taste.",
+        "Bring to the boil, cover and reduce the heat to a simmer. Simmer for at least an hour or until the meat is tender. Take your time cooking the meat, the longer you leave it to cook, the better the flavour will be.",
+        "Preheat the oven to 180C/350F/Gas 4.",
+        "Add the drained potato cubes to the lamb.",
+        "Turn the mixture into a pie dish or casserole and cover with the shortcrust pastry. Make three slits in the top of the pastry to release any steam while cooking.",
+        "Brush with beaten egg and bake for about 40 minutes, until the pastry is golden brown.",
+        "Serve."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/sxrpws1511555907.jpg"
+    },
+    {
+      "id": "92",
+      "title": "Muraba-E-Kadu (Pumpkin Jam)",
+      "description": "Homestyle miscellaneous ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "1 kg Pumpkin",
+        "1 kg Orange",
+        "750g Sugar",
+        "60g Cardamom"
+      ],
+      "instructions": [
+        "Remove the skin of the pumpkin. Also remove the inner seeds.",
+        "Cut the flesh into 2cm cubes.",
+        "Take the zest off the oranges, with as little pith as possible, and cut into matchstick-sized strips.",
+        "Extract the juice from the oranges. Remove the seeds from the cardamom pods and reserve.",
+        "Place the pumpkin, orange juice, orange strips, sugar and whole cardamom pod seeds in a large pan, mix well and leave to marinate for about 10 hours or overnight. Stir occasionally.",
+        "Bring the mixture to the boil, then reduce the heat and simmer until the liquid has thickened and become syrupy. This can take about an hour or a little bit longer.",
+        "Leave to cool then place in clean, dry jars. Enjoy!"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/ug6bwk1779556566.jpg"
+    },
+    {
+      "id": "93",
+      "title": "Pilchard puttanesca",
+      "description": "Italian pasta with bold flavor.",
+      "servings": 2,
+      "ingredients": [
+        "300g Spaghetti",
+        "1 tbls Olive Oil",
+        "1 finely chopped Onion",
+        "2 cloves minced Garlic",
+        "1 Red Chilli",
+        "1 tbls Tomato Puree",
+        "425g Pilchards",
+        "70g Black Olives",
+        "Shaved Parmesan"
+      ],
+      "instructions": [
+        "Cook the pasta following pack instructions.",
+        "Heat the oil in a non-stick frying pan and cook the onion, garlic and chilli for 3-4 mins to soften.",
+        "Stir in the tomato purée and cook for 1 min, then add the pilchards with their sauce.",
+        "Cook, breaking up the fish with a wooden spoon, then add the olives and continue to cook for a few more mins.",
+        "Drain the pasta and add to the pan with 2-3 tbsp of the cooking water. Toss everything together well, then divide between plates and serve, scattered with Parmesan."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/vvtvtr1511180578.jpg"
+    },
+    {
+      "id": "94",
+      "title": "Flemish Hutsepot",
+      "description": "Homestyle pork ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "600g Floury Potatoes",
+        "200g Carrots",
+        "200g Turnips",
+        "250g Leek",
+        "4 Sausages",
+        "1 small Onion",
+        "3 cloves Garlic",
+        "2 Bay Leaf",
+        "4 sprigs Thyme",
+        "600ml Chicken Stock",
+        "1 tablespoon Mustard",
+        "1 tablespoon Unsalted Butter",
+        "Pinch Salt",
+        "Pinch Pepper"
+      ],
+      "instructions": [
+        "Peel and chop the onion and garlic. Add both to a large pan with the butter and place it over medium heat.",
+        "Let the onion and garlic sweat for 5 minutes. Then add the chopped potatoes, bay leaves and thyme and stir well. Cook for another 5 minutes.",
+        "In the meantime peel and slice the carrots.",
+        "Peel the turnip.",
+        "Dice it into bite-size pieces.",
+        "Slice the leek in half lengthwise.",
+        "Rinse it well to remove any sand.",
+        "Add the vegetables to the potatoes and onion.",
+        "Also add the mustard and chicken stock and season with pepper and salt.",
+        "Stir all the ingredients well and cover the pan with a lid.",
+        "Cook the hutsepot for about 20 to 25 minutes or until all the vegetables and potatoes are tender.",
+        "Stir regularly."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/2lywl71782496853.jpg"
+    },
+    {
+      "id": "95",
+      "title": "Cayman-Style Lobster",
+      "description": "Homestyle seafood ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "6 Lobster",
+        "1/2 cup Chicken Stock",
+        "1/2 cup Red Pepper",
+        "1/2 cup Green Pepper",
+        "1/2 cup Onion",
+        "2 cloves minced Garlic",
+        "1/2 Scotch Bonnet",
+        "To taste Salt",
+        "To taste Pepper",
+        "To taste Thyme",
+        "2 tsp Cornstarch",
+        "2 tablespoons Olive Oil"
+      ],
+      "instructions": [
+        "Rinse lobster under cold running water. Bring water and salt to boil in a 12 quart pot. Quickly plunge lobsters, headfirst, into boiling water. Cover and boil for 20 minutes or until lobsters turn red.",
+        "Remove lobster and allow it to cool.",
+        "Remove lobster tails and cut shell down to middle to remove the meat.",
+        "Cut the tail meat down the middle to remove the vein inside.",
+        "Remove large claws and smaller legs by twisting them away from the body.",
+        "A nut cracker can be used to crush the claw and legs to remove the meat inside.",
+        "Chop lobster meat.",
+        "Heat butter or olive oil in large pan over low heat.",
+        "Sauté red, green and scotch bonnet peppers, thyme and garlic.",
+        "Add salt and chicken stock to pan.",
+        "Then, add lobster meat and sauté for 10 to 15 minutes.",
+        "Thicken sauce with the corn starch and water mixture."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/wkhwqr1782774765.jpg"
+    },
+    {
+      "id": "96",
+      "title": "Brazilian cheese bread (pão de queijo)",
+      "description": "Homestyle side ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "Drizzle Oil",
+        "250ml Whole Milk",
+        "125g Unsalted Butter",
+        "1 tsp Salt",
+        "300g Tapioca",
+        "2 Eggs",
+        "100g Parmesan"
+      ],
+      "instructions": [
+        "step 1",
+        "Heat the oven to 220C/200C fan/gas 7. Oil or butter a baking sheet and set aside.",
+        "step 2",
+        "Heat the milk, butter and salt in a medium saucepan and bring to a boil. Remove from the heat and add the tapioca flour. Stir vigorously, then leave to cool a little.",
+        "step 3",
+        "Pour the dough into a standing mix to beat the dough until its cool, or use a wooden spoon and beat by hand.",
+        "Beat the eggs in one at a time, waiting until each is completely incorporated before adding the next.",
+        "When the dough is glossy and mixed, add the parmesan.",
+        "Beat again until mixed.",
+        "step 4",
+        "Spoon the dough onto the baking sheet in 1 tbsp balls, 5cm apart. Bake for 30 mins until crisp and golden. Remove from the oven and eat while still warm."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/sl7cr91782588539.jpg"
+    },
+    {
+      "id": "97",
+      "title": "Paracuca (Roasted Peanuts)",
+      "description": "Homestyle starter ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "5 Cups Unsalted Peanuts",
+        "1 cup Sugar",
+        "1 cup Water",
+        "1/4 tsp Salt"
+      ],
+      "instructions": [
+        "1",
+        "In a large heavy saucepan, combine the peanuts, sugar and water. Bring to a boil; cook until syrup has evaporated, about 10 minutes.",
+        "2",
+        "Spread peanuts in a single layer in a greased 15x10x1-in. baking pan; sprinkle with salt.",
+        "3",
+        "Bake at 300° for 30-35 minutes or until dry and lightly browned. Cool completely. Store in an airtight container."
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/vgsipt1779917593.jpg"
+    },
+    {
+      "id": "98",
+      "title": "Vegan banh mi",
+      "description": "Vietnamese vegan with bold flavor.",
+      "servings": 4,
+      "ingredients": [
+        "150g Raw Vegetables",
+        "3  tablespoons Vegan White Wine Vinegar",
+        "1 tsp Golden Caster Sugar",
+        "1 large Baguette",
+        "100g Hummus",
+        "175g Tempeh",
+        "Handful Coriander",
+        "Handful Mint",
+        "To serve Hotsauce"
+      ],
+      "instructions": [
+        "step 1",
+        "Put the shredded veg in a bowl and add the vinegar, sugar and 1 tsp salt. Toss everything together, then set aside to pickle quickly while you prepare the rest of the sandwich.",
+        "step 2",
+        "Heat oven to 180C/160C fan/gas 4.",
+        "Cut the baguette into four, then slice each piece horizontally in half.",
+        "Put the baguette pieces in the oven for 5 mins until lightly toasted and warm.",
+        "Spread each piece with a layer of hummus, then top four pieces with the tempeh slices and pile the pickled veg on top.",
+        "To serve, sprinkle over the herbs and squeeze over some hot sauce, then top with the other baguette pieces to make sandwiches."
+      ],
+      "dietary_attributes": [
+        "vegan",
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/sonirb1763782831.jpg"
+    },
+    {
+      "id": "99",
+      "title": "Empanadas Fritas de Queso",
+      "description": "Homestyle vegetarian ready for the table.",
+      "servings": 2,
+      "ingredients": [
+        "3 Cups All purpose flour",
+        "1 tsp Baking Powder",
+        "1/2 tsp Salt",
+        "2 tablespoons Lard",
+        "1 cup Milk",
+        "1 beaten Egg",
+        "1 cup Swiss Cheese"
+      ],
+      "instructions": [
+        "Sift the flour, baking powder, and salt into a large mixing bowl.",
+        "Combine the lard and milk in a saucepan, and heat until the milk is hot.",
+        "Pour the hot milk into the flour mixture, and stir until a dough forms.",
+        "Turn out onto a floured surface, and knead until smooth and elastic.",
+        "Cover, and allow to rest for 15 minutes.",
+        "Preheat oven to 375 degrees F (190 degrees C).",
+        "Roll the dough out on a floured surface 1/4-inch thick.",
+        "Cut into 4-inch rounds.",
+        "Brush the outer edges of each circle with beaten egg, and fill with a small mound of cheese.",
+        "Fold each circle in half to form a half-moon; press the edges with your fingers or a fork to seal.",
+        "Place the empanadas onto a parchment paper-lined baking sheet.",
+        "Brush the tops with remaining egg."
+      ],
+      "dietary_attributes": [
+        "vegetarian"
+      ],
+      "image_url": "https://www.themealdb.com/images/media/meals/9tllzd1782853513.jpg"
+    },
+    {
+      "id": "100",
+      "title": "Lakra me Mish Cabbage and Meat Stew",
+      "description": "Homestyle beef ready for the table.",
+      "servings": 4,
+      "ingredients": [
+        "500g Beef",
+        "1 Diced Cabbage",
+        "2 tsp Paprika",
+        "3 tsp Tomato Puree",
+        "2 diced Red Pepper",
+        "1 Diced Onion",
+        "1/4 tsp Chilli Flakes",
+        "Pinch Salt",
+        "Pinch Pepper",
+        "Splash Olive Oil",
+        "1 L Boiling Water"
+      ],
+      "instructions": [
+        "1",
+        "Cooking",
+        "Add some olive oil to a saute pan or saucepan (one with a lid). One heated add in the onions, diced beef, red peppers and fry for 5 minutes stirring occasionally. The meat should be fully browned.",
+        "2",
+        "Add the paprika, tomato puree, chilli flakes and season with salt and pepper. Mix together and continue to fry for 2 minutes.",
+        "3",
+        "Add the cabbage and stir the mixture together. Fry the mixture while stirring occasionally for 3-5 minutes. Most of the oil should have burned away.",
+        "4",
+        "Pour the boiling water into the pan, ensuring that the water level completely covers the cabbage, plus about 1 inch above it. Put on the lid and bring to the boil.",
+        "5",
+        "Leave to simmer for 2.5 hours. The stew is ready when the cabbage is soft and meat tender.",
+        "6"
+      ],
+      "dietary_attributes": [],
+      "image_url": "https://www.themealdb.com/images/media/meals/mobh1l1779648766.jpg"
+    }
+  ]
+}

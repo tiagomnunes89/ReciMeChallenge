@@ -2,6 +2,7 @@ package com.recime.challenge.ui.home
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.AndroidUiDispatcher
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasSetTextAction
 import androidx.compose.ui.test.junit4.v2.createComposeRule
@@ -15,12 +16,16 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.recime.challenge.R
 import com.recime.challenge.designsystem.theme.ReciMeTheme
 import com.recime.challenge.domain.model.Recipe
-import com.recime.challenge.R
 import java.io.IOException
+import java.net.UnknownHostException
+import java.util.concurrent.atomic.AtomicBoolean
+import kotlin.coroutines.ContinuationInterceptor
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -37,6 +42,18 @@ class HomeScreenTest {
 
     private fun string(id: Int) = RuntimeEnvironment.getApplication().getString(id)
 
+    // Robolectric drops the async message AndroidUiDispatcher uses to clear its scheduled flag
+    // after the search field takes focus, so a later Paging collection never calls load.
+    @Before
+    fun resetUiDispatcher() {
+        val dispatcher = AndroidUiDispatcher.Main[ContinuationInterceptor] ?: return
+        listOf("scheduledTrampolineDispatch", "scheduledFrameDispatch").forEach { fieldName ->
+            val field = dispatcher.javaClass.getDeclaredField(fieldName)
+            field.isAccessible = true
+            field.setBoolean(dispatcher, false)
+        }
+    }
+
     private fun setScreen(
         recipes: @Composable () -> LazyPagingItems<Recipe> = { rememberPreviewPagingItems() },
         filters: SearchFilters = SearchFilters(),
@@ -46,7 +63,7 @@ class HomeScreenTest {
         composeRule.setContent {
             ReciMeTheme {
                 HomeScreen(
-                    filters = { filters },
+                    filters = filters,
                     recipes = recipes(),
                     onFiltersChange = onFiltersChange,
                     onRecipeClick = onRecipeClick,
@@ -75,7 +92,7 @@ class HomeScreenTest {
     fun `refresh failure shows an error and retry loads the recipes`() {
         setScreen(recipes = { rememberFlakyPagingItems() })
 
-        composeRule.onNodeWithText(string(R.string.common_error_generic)).assertIsDisplayed()
+        composeRule.onNodeWithText(string(R.string.common_error_offline)).assertIsDisplayed()
         composeRule.onNodeWithText(string(R.string.common_try_again)).performClick()
 
         composeRule.onNodeWithText("Spaghetti Aglio e Olio").assertIsDisplayed()
@@ -91,6 +108,30 @@ class HomeScreenTest {
 
         composeRule.onNodeWithText("Spaghetti Aglio e Olio").assertIsDisplayed()
         composeRule.onNodeWithText(string(R.string.common_error_generic)).assertIsDisplayed()
+        composeRule.onNodeWithText(string(R.string.common_try_again)).assertIsDisplayed()
+    }
+
+    @Test
+    fun `refresh failure keeps the loaded recipes and offers a retry`() {
+        lateinit var items: LazyPagingItems<Recipe>
+        composeRule.setContent {
+            ReciMeTheme {
+                items = rememberRefreshFailureItems()
+                HomeScreen(
+                    filters = SearchFilters(),
+                    recipes = items,
+                    onFiltersChange = {},
+                    onRecipeClick = {},
+                )
+            }
+        }
+
+        composeRule.onNodeWithText("Spaghetti Aglio e Olio").assertIsDisplayed()
+        items.refresh()
+        composeRule.waitForIdle()
+
+        composeRule.onNodeWithText("Spaghetti Aglio e Olio").assertIsDisplayed()
+        composeRule.onNodeWithText(string(R.string.common_error_offline)).assertIsDisplayed()
         composeRule.onNodeWithText(string(R.string.common_try_again)).assertIsDisplayed()
     }
 
@@ -111,7 +152,7 @@ class HomeScreenTest {
 
         composeRule.onNode(hasSetTextAction()).performTextInput("sushi")
 
-        assertEquals(SearchFilters(text = "sushi"), filters)
+        assertEquals(SearchFilters(searchText = "sushi"), filters)
     }
 
     @Test
@@ -141,7 +182,34 @@ class HomeScreenTest {
         composeRule.onNodeWithText(string(R.string.home_filter_servings)).assertDoesNotExist()
     }
 
-    /** A real [Pager] whose first load fails, so the screen's retry path is exercised end to end. */
+    @Test
+    fun `vegetarian filter never hides loaded recipes on the client`() {
+        setScreen(filters = SearchFilters(vegetarianOnly = true))
+
+        composeRule.onNodeWithText("Spaghetti Aglio e Olio").assertIsDisplayed()
+        composeRule.onNodeWithText("Chicken Caesar Salad").assertIsDisplayed()
+    }
+
+    @Composable
+    private fun rememberRefreshFailureItems(): LazyPagingItems<Recipe> {
+        val flow = remember {
+            val hasLoaded = AtomicBoolean(false)
+            Pager(PagingConfig(pageSize = 20)) { RefreshFailurePagingSource(hasLoaded) }.flow
+        }
+        return flow.collectAsLazyPagingItems()
+    }
+
+    private class RefreshFailurePagingSource(
+        private val hasLoaded: AtomicBoolean,
+    ) : PagingSource<Int, Recipe>() {
+        override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Recipe> {
+            if (!hasLoaded.compareAndSet(false, true)) return LoadResult.Error(UnknownHostException())
+            return LoadResult.Page(previewRecipes, prevKey = null, nextKey = null)
+        }
+
+        override fun getRefreshKey(state: PagingState<Int, Recipe>): Int? = null
+    }
+
     @Composable
     private fun rememberFlakyPagingItems(): LazyPagingItems<Recipe> {
         val flow = remember {
@@ -157,10 +225,9 @@ class HomeScreenTest {
         override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Recipe> {
             if (hasFailed) return LoadResult.Page(previewRecipes, prevKey = null, nextKey = null)
             hasFailed = true
-            return LoadResult.Error(IOException("offline"))
+            return LoadResult.Error(UnknownHostException())
         }
 
         override fun getRefreshKey(state: PagingState<Int, Recipe>): Int? = null
     }
-
 }

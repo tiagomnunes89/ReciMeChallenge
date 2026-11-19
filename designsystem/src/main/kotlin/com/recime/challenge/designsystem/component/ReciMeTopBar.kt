@@ -26,7 +26,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.unit.dp
 import com.recime.challenge.designsystem.R
 import com.recime.challenge.designsystem.theme.ReciMeTokens
 
@@ -48,7 +47,7 @@ fun ReciMeHomeBar(
                 imageVector = Icons.Outlined.Menu,
                 contentDescription = null,
                 tint = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.size(24.dp),
+                modifier = Modifier.size(ReciMeTokens.iconSize),
             )
         }
     }
@@ -58,6 +57,7 @@ fun ReciMeHomeBar(
 fun ReciMeDetailBar(
     onBackClick: () -> Unit,
     isFavorite: Boolean = false,
+    enabled: Boolean = true,
     onFavoriteClick: () -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
@@ -65,7 +65,7 @@ fun ReciMeDetailBar(
         modifier = modifier
             .fillMaxWidth()
             .statusBarsPadding()
-            .padding(horizontal = 41.dp, vertical = 8.dp),
+            .padding(horizontal = ReciMeTokens.barHorizontalPadding, vertical = ReciMeTokens.inlinePadding),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -74,11 +74,12 @@ fun ReciMeDetailBar(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                 contentDescription = null,
                 tint = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.size(24.dp),
+                modifier = Modifier.size(ReciMeTokens.iconSize),
             )
         }
         AlignedIconButton(
             onClick = onFavoriteClick,
+            enabled = enabled,
             contentDescription = stringResource(
                 if (isFavorite) R.string.designsystem_favorite_remove else R.string.designsystem_favorite_add,
             ),
@@ -88,7 +89,7 @@ fun ReciMeDetailBar(
                 imageVector = if (isFavorite) Icons.Filled.Favorite else Icons.Outlined.FavoriteBorder,
                 contentDescription = null,
                 tint = if (isFavorite) ReciMeTokens.orange else MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.size(24.dp),
+                modifier = Modifier.size(ReciMeTokens.iconSize),
             )
         }
     }
@@ -104,7 +105,7 @@ fun ReciMeTitleBar(
         modifier = modifier
             .fillMaxWidth()
             .statusBarsPadding()
-            .padding(horizontal = 41.dp, vertical = 8.dp),
+            .padding(horizontal = ReciMeTokens.barHorizontalPadding, vertical = ReciMeTokens.inlinePadding),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         AlignedIconButton(onClick = onBackClick, contentDescription = stringResource(R.string.designsystem_back)) {
@@ -112,14 +113,14 @@ fun ReciMeTitleBar(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                 contentDescription = null,
                 tint = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.size(24.dp),
+                modifier = Modifier.size(ReciMeTokens.iconSize),
             )
         }
         Text(
             text = title,
             style = MaterialTheme.typography.headlineMedium,
             color = MaterialTheme.colorScheme.onBackground,
-            modifier = Modifier.padding(start = 16.dp),
+            modifier = Modifier.padding(start = ReciMeTokens.barTitleSpacing),
         )
     }
 }
@@ -128,16 +129,18 @@ fun ReciMeTitleBar(
 private fun AlignedIconButton(
     onClick: () -> Unit,
     contentDescription: String,
+    enabled: Boolean = true,
     alignStart: Boolean = true,
     content: @Composable () -> Unit,
 ) {
     Box(
         modifier = Modifier
-            .size(48.dp)
+            .size(ReciMeTokens.iconButtonSize)
             .semantics { this.contentDescription = contentDescription }
             .clickable(
+                enabled = enabled,
                 interactionSource = remember { MutableInteractionSource() },
-                indication = ripple(bounded = false, radius = 24.dp),
+                indication = ripple(bounded = false, radius = ReciMeTokens.iconSize),
                 role = Role.Button,
                 onClickLabel = contentDescription,
                 onClick = onClick,

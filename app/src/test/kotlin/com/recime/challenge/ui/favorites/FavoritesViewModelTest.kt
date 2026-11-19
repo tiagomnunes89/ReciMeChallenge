@@ -1,9 +1,7 @@
 package com.recime.challenge.ui.favorites
 
-import com.recime.challenge.domain.usecase.ObserveFavoriteRecipesUseCase
 import com.recime.challenge.R
 import com.recime.challenge.testing.FakeFavoritesRepository
-import com.recime.challenge.testing.FakeRecipeRepository
 import com.recime.challenge.ui.home.previewRecipes
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -21,7 +19,6 @@ import org.junit.Test
 @OptIn(ExperimentalCoroutinesApi::class)
 class FavoritesViewModelTest {
 
-    private val recipes = FakeRecipeRepository()
     private val favorites = FakeFavoritesRepository(previewRecipes.map { it.id }.toSet())
 
     @Before
@@ -31,7 +28,7 @@ class FavoritesViewModelTest {
     fun tearDown() = Dispatchers.resetMain()
 
     private fun TestScope.createViewModel(): FavoritesViewModel {
-        val viewModel = FavoritesViewModel(ObserveFavoriteRecipesUseCase(recipes, favorites))
+        val viewModel = FavoritesViewModel(favorites)
         backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) { viewModel.uiState.collect {} }
         return viewModel
     }
@@ -61,11 +58,11 @@ class FavoritesViewModelTest {
 
     @Test
     fun `retry resubscribes after a failure`() = runTest {
-        recipes.failure = IllegalStateException("network")
+        favorites.observeFailure = IllegalStateException("database")
         val viewModel = createViewModel()
         assertEquals(FavoritesUiState.Error(R.string.common_error_generic), viewModel.uiState.value)
 
-        recipes.failure = null
+        favorites.observeFailure = null
         viewModel.onRetry()
 
         assertEquals(FavoritesUiState.Success(previewRecipes), viewModel.uiState.value)

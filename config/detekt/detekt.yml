@@ -16,16 +16,35 @@ naming:
 
 style:
   MagicNumber:
-    active: false
+    active: true
+    ignoreAnnotation: true
+    ignoreCompanionObjectPropertyDeclaration: true
+    ignoreConstantDeclaration: true
+    ignorePropertyDeclaration: true
+    ignoreNamedArgument: true
+    ignoreExtensionFunctions: true
+    ignoreEnums: true
+    excludes: ['**/test/**', '**/testDebug/**', '**/androidTest/**']
   ReturnCount:
     active: false
   UnusedParameter:
     active: false
-  UnusedPrivateFunction:
-    active: false
+  UnusedPrivateMember:
+    active: true
+    ignoreAnnotated: ['Preview']
   WildcardImport:
     active: false
 
 exceptions:
   TooGenericExceptionCaught:
+    active: false
+
+formatting:
+  ImportOrdering:
+    active: true
+    layout: '*'
+  MaximumLineLength:
+    active: true
+    maxLineLength: 120
+  Wrapping:
     active: false

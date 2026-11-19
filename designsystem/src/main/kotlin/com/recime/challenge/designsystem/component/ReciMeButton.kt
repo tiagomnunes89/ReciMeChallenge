@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.recime.challenge.designsystem.theme.ReciMeTheme
+import com.recime.challenge.designsystem.theme.ReciMeTokens
 
 @Composable
 fun ReciMeButton(
@@ -19,17 +20,18 @@ fun ReciMeButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
+    isError: Boolean = false,
 ) {
     Button(
         onClick = onClick,
         enabled = enabled,
         modifier = modifier
             .fillMaxWidth()
-            .height(70.dp),
+            .height(ReciMeTokens.buttonHeight),
         shape = MaterialTheme.shapes.large,
         colors = ButtonDefaults.buttonColors(
-            containerColor = MaterialTheme.colorScheme.primary,
-            contentColor = MaterialTheme.colorScheme.onPrimary,
+            containerColor = if (isError) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary,
+            contentColor = if (isError) MaterialTheme.colorScheme.onError else MaterialTheme.colorScheme.onPrimary,
         ),
         contentPadding = PaddingValues(0.dp),
         elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp),

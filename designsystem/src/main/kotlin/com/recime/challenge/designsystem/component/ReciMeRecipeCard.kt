@@ -23,12 +23,13 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.recime.challenge.designsystem.R
 import com.recime.challenge.designsystem.theme.ReciMeTheme
 import com.recime.challenge.designsystem.theme.ReciMeTokens
 
 enum class ReciMeRecipeCardSize { Large, Compact }
+
+private const val PHOTO_OVERLAP_DIVISOR = 3
 
 @Composable
 fun ReciMeRecipeCard(
@@ -39,12 +40,11 @@ fun ReciMeRecipeCard(
     imageUrl: String? = null,
     size: ReciMeRecipeCardSize = ReciMeRecipeCardSize.Compact,
 ) {
-    val cardWidth = if (size == ReciMeRecipeCardSize.Large) 220.dp else 156.dp
-    val photoSize = if (size == ReciMeRecipeCardSize.Large) 164.dp else 129.dp
-    val cardHeight = if (size == ReciMeRecipeCardSize.Large) 270.dp else 212.dp
-    val overlap = photoSize / 3
-
-    val widthModifier = if (size == ReciMeRecipeCardSize.Large) Modifier.width(cardWidth) else Modifier.fillMaxWidth()
+    val isLarge = size == ReciMeRecipeCardSize.Large
+    val photoSize = if (isLarge) ReciMeTokens.largeCardPhotoSize else ReciMeTokens.compactCardPhotoSize
+    val cardHeight = if (isLarge) ReciMeTokens.largeCardHeight else ReciMeTokens.compactCardHeight
+    val overlap = photoSize / PHOTO_OVERLAP_DIVISOR
+    val widthModifier = if (isLarge) Modifier.width(ReciMeTokens.largeCardWidth) else Modifier.fillMaxWidth()
     Box(
         modifier = modifier
             .then(widthModifier)
@@ -61,7 +61,7 @@ fun ReciMeRecipeCard(
                 .fillMaxWidth()
                 .height(cardHeight)
                 .shadow(
-                    elevation = 24.dp,
+                    elevation = ReciMeTokens.cardElevation,
                     shape = MaterialTheme.shapes.large,
                     ambientColor = ReciMeTokens.cardShadow,
                     spotColor = ReciMeTokens.cardShadow,
@@ -72,8 +72,11 @@ fun ReciMeRecipeCard(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 12.dp)
-                    .padding(top = photoSize - overlap + 8.dp, bottom = 20.dp),
+                    .padding(horizontal = ReciMeTokens.contentSpacing)
+                    .padding(
+                        top = photoSize - overlap + ReciMeTokens.inlinePadding,
+                        bottom = ReciMeTokens.cardBottomPadding
+                    ),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Text(
@@ -84,7 +87,7 @@ fun ReciMeRecipeCard(
                     overflow = TextOverflow.Ellipsis,
                     color = MaterialTheme.colorScheme.onSurface,
                 )
-                Spacer(Modifier.height(12.dp))
+                Spacer(Modifier.height(ReciMeTokens.contentSpacing))
                 Text(
                     text = accent,
                     style = MaterialTheme.typography.titleMedium,
@@ -95,11 +98,10 @@ fun ReciMeRecipeCard(
         }
         ReciMeRecipeImage(
             imageUrl = imageUrl,
-            // The title is already read by the card, so the photo is decorative.
             contentDescription = null,
             modifier = Modifier
                 .size(photoSize)
-                .shadow(12.dp, CircleShape)
+                .shadow(ReciMeTokens.cardPhotoElevation, CircleShape)
                 .clip(CircleShape),
         )
     }

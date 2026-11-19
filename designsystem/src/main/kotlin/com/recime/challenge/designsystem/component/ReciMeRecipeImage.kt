@@ -10,11 +10,10 @@ import androidx.compose.ui.platform.LocalContext
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
+import java.net.URI
 
-/**
- * Remote image with memory/disk caching and automatic downsampling to the composable's size,
- * so large photos never inflate memory while scrolling long lists.
- */
+private const val ANDROID_ASSET_PREFIX = "file:///android_asset/"
+
 @Composable
 fun ReciMeRecipeImage(
     imageUrl: String?,
@@ -22,7 +21,10 @@ fun ReciMeRecipeImage(
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
-    val request = remember(imageUrl) { ImageRequest.Builder(context).data(imageUrl).crossfade(true).build() }
+    val safeImageUrl = remember(imageUrl) { safeImageUrl(imageUrl) }
+    val request = remember(safeImageUrl) {
+        ImageRequest.Builder(context).data(safeImageUrl).crossfade(true).build()
+    }
     val fallback = ColorPainter(MaterialTheme.colorScheme.surfaceVariant)
     AsyncImage(
         model = request,
@@ -34,3 +36,29 @@ fun ReciMeRecipeImage(
         contentScale = ContentScale.Crop,
     )
 }
+
+internal fun safeImageUrl(imageUrl: String?): String? =
+    imageUrl?.trim()?.takeIf(String::isNotBlank)?.let { candidate ->
+        if (candidate.startsWith(ANDROID_ASSET_PREFIX)) {
+            val assetPath = candidate.removePrefix(ANDROID_ASSET_PREFIX)
+            if (
+                assetPath.isNotBlank() &&
+                !assetPath.contains("..") &&
+                !assetPath.contains('\\')
+            ) {
+                candidate
+            } else {
+                null
+            }
+        } else {
+            safeHttpsImageUrl(candidate)
+        }
+    }
+
+private fun safeHttpsImageUrl(imageUrl: String): String? =
+    runCatching { URI(imageUrl) }.getOrNull()?.takeIf { uri ->
+        uri.scheme.equals("https", ignoreCase = true) &&
+            !uri.host.isNullOrBlank() &&
+            uri.userInfo == null &&
+            uri.fragment == null
+    }?.toString()

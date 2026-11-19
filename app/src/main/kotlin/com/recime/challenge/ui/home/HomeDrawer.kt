@@ -17,9 +17,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
-import com.recime.challenge.designsystem.theme.ReciMeTokens
 import com.recime.challenge.R
+import com.recime.challenge.designsystem.theme.ReciMeTokens
 
 @Composable
 internal fun HomeDrawer(
@@ -32,12 +31,15 @@ internal fun HomeDrawer(
         drawerState = drawerState,
         drawerContent = {
             ModalDrawerSheet(drawerContainerColor = MaterialTheme.colorScheme.background) {
-                Spacer(Modifier.height(32.dp))
+                Spacer(Modifier.height(ReciMeTokens.drawerTopSpacing))
                 Text(
                     text = stringResource(R.string.home_drawer_title),
                     style = MaterialTheme.typography.headlineMedium,
                     color = ReciMeTokens.orange,
-                    modifier = Modifier.padding(horizontal = 28.dp, vertical = 16.dp),
+                    modifier = Modifier.padding(
+                        horizontal = ReciMeTokens.drawerHorizontalPadding,
+                        vertical = ReciMeTokens.contentSpacing,
+                    ),
                 )
                 DrawerItem(
                     label = stringResource(R.string.home_drawer_all_recipes),
@@ -64,7 +66,16 @@ private fun DrawerItem(
     selected: Boolean = false,
 ) {
     NavigationDrawerItem(
-        label = { Text(label) },
+        label = {
+            Text(
+                text = label,
+                color = if (selected) {
+                    ReciMeTokens.orange
+                } else {
+                    MaterialTheme.colorScheme.onBackground
+                },
+            )
+        },
         icon = icon,
         selected = selected,
         onClick = onClick,
@@ -73,6 +84,8 @@ private fun DrawerItem(
             selectedContainerColor = ReciMeTokens.orange.copy(alpha = 0.12f),
             selectedIconColor = ReciMeTokens.orange,
             selectedTextColor = ReciMeTokens.orange,
+            unselectedIconColor = MaterialTheme.colorScheme.onBackground,
+            unselectedTextColor = MaterialTheme.colorScheme.onBackground,
         ),
     )
 }

@@ -5,8 +5,8 @@ import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import com.recime.challenge.designsystem.theme.ReciMeTheme
 import com.recime.challenge.R
+import com.recime.challenge.designsystem.theme.ReciMeTheme
 import com.recime.challenge.ui.home.previewRecipes
 import org.junit.Assert.assertEquals
 import org.junit.Rule
@@ -65,10 +65,29 @@ class FavoritesScreenTest {
         var retries = 0
         setScreen(FavoritesUiState.Error(R.string.common_error_generic), onRetry = { retries++ })
 
+        composeRule.onNodeWithText(string(R.string.common_error_title)).assertIsDisplayed()
         composeRule.onNodeWithText(string(R.string.common_error_generic)).assertIsDisplayed()
         composeRule.onNodeWithText(string(R.string.common_try_again)).performClick()
 
         assertEquals(1, retries)
+    }
+
+    @Test
+    fun `error remains visible with retry action in dark theme`() {
+        composeRule.setContent {
+            ReciMeTheme(darkTheme = true) {
+                FavoritesScreen(
+                    uiState = FavoritesUiState.Error(R.string.common_error_generic),
+                    onBackClick = {},
+                    onRecipeClick = {},
+                    onRetry = {},
+                )
+            }
+        }
+
+        composeRule.onNodeWithText(string(R.string.common_error_title)).assertIsDisplayed()
+        composeRule.onNodeWithText(string(R.string.common_error_generic)).assertIsDisplayed()
+        composeRule.onNodeWithText(string(R.string.common_try_again)).assertIsDisplayed()
     }
 
     @Test

@@ -6,6 +6,8 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 
 private val LightColorScheme = lightColorScheme(
     primary = OrangePrimary,
@@ -20,8 +22,8 @@ private val LightColorScheme = lightColorScheme(
     surfaceVariant = SearchFill,
     onSurfaceVariant = TabInactive,
     outline = TabInactive,
-    error = OrangePrimary,
-    onError = ButtonLabel,
+    error = ErrorLight,
+    onError = OnErrorLight,
 )
 
 private val DarkColorScheme = darkColorScheme(
@@ -37,8 +39,8 @@ private val DarkColorScheme = darkColorScheme(
     surfaceVariant = SearchFillDark,
     onSurfaceVariant = TabInactiveDark,
     outline = TabInactiveDark,
-    error = OrangeDark,
-    onError = Ink,
+    error = ErrorDark,
+    onError = OnErrorDark,
 )
 
 @Composable
@@ -61,4 +63,39 @@ object ReciMeTokens {
     val tabInactive: Color get() = TabInactive
     val inkMuted: Color get() = InkMuted
     val screenAlt: Color get() = ScreenBackgroundAlt
+    val screenPadding: Dp get() = 24.dp
+    val screenBottomPadding: Dp get() = 32.dp
+    val gridSpacing: Dp get() = 16.dp
+    val gridRowSpacing: Dp get() = 24.dp
+    val gridMinCellWidth: Dp get() = 160.dp
+    val sectionSpacing: Dp get() = 24.dp
+    val contentSpacing: Dp get() = 12.dp
+    val inlinePadding: Dp get() = 8.dp
+    val tightPadding: Dp get() = 4.dp
+    val drawerTopSpacing: Dp get() = 32.dp
+    val drawerHorizontalPadding: Dp get() = 28.dp
+    val detailHorizontalPadding: Dp get() = 50.dp
+    val detailImageSize: Dp get() = 241.dp
+    val cardElevation: Dp get() = 24.dp
+    val ingredientMarkerSize: Dp get() = 14.dp
+    val ingredientMarkerStroke: Dp get() = 1.5.dp
+    val iconSize: Dp get() = 24.dp
+    val iconButtonSize: Dp get() = 48.dp
+    val barHorizontalPadding: Dp get() = 41.dp
+    val barTitleSpacing: Dp get() = 16.dp
+    val searchBarHeight: Dp get() = 60.dp
+    val buttonHeight: Dp get() = 70.dp
+    val largeCardWidth: Dp get() = 220.dp
+    val largeCardHeight: Dp get() = 270.dp
+    val largeCardPhotoSize: Dp get() = 164.dp
+    val compactCardHeight: Dp get() = 212.dp
+    val compactCardPhotoSize: Dp get() = 129.dp
+    val cardPhotoElevation: Dp get() = 12.dp
+    val cardBottomPadding: Dp get() = 20.dp
+    val tabSpacing: Dp get() = 32.dp
+    val tabIndicatorWidth: Dp get() = 87.dp
+    val tabIndicatorThickness: Dp get() = 3.dp
+    val emptyStateVerticalPadding: Dp get() = 32.dp
+    val emptyStateSpacing: Dp get() = 16.dp
+    val emptyStateIconSize: Dp get() = 120.dp
 }

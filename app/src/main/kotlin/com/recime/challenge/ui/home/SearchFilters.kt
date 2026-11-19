@@ -3,20 +3,20 @@ package com.recime.challenge.ui.home
 import com.recime.challenge.domain.model.RecipeQuery
 
 data class SearchFilters(
-    val text: String = "",
+    val searchText: String = "",
     val vegetarianOnly: Boolean = false,
     val servings: String = "",
     val includeIngredients: String = "",
     val excludeIngredients: String = "",
-    val instructionText: String = "",
+    val instructionContains: String = "",
 ) {
     fun toQuery(): RecipeQuery = RecipeQuery(
-        text = text,
+        text = searchText,
         vegetarianOnly = vegetarianOnly,
         servings = servings.toIntOrNull(),
         includeIngredients = includeIngredients.toIngredientList(),
         excludeIngredients = excludeIngredients.toIngredientList(),
-        instructionContains = instructionText,
+        instructionContains = instructionContains,
     )
 }
 

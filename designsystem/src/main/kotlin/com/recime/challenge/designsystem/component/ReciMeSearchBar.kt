@@ -2,7 +2,6 @@ package com.recime.challenge.designsystem.component
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -18,7 +17,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.recime.challenge.designsystem.R
 import com.recime.challenge.designsystem.theme.ReciMeTheme
 import com.recime.challenge.designsystem.theme.ReciMeTokens
@@ -35,7 +33,7 @@ fun ReciMeSearchBar(
         onValueChange = onQueryChange,
         modifier = modifier
             .fillMaxWidth()
-            .height(60.dp),
+            .height(ReciMeTokens.searchBarHeight),
         placeholder = {
             Text(
                 text = placeholder,
@@ -50,7 +48,7 @@ fun ReciMeSearchBar(
             )
         },
         singleLine = true,
-        shape = RoundedCornerShape(30.dp),
+        shape = MaterialTheme.shapes.large,
         textStyle = MaterialTheme.typography.bodyLarge,
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
         keyboardActions = KeyboardActions(onSearch = { }),

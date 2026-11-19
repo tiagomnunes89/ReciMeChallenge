@@ -17,7 +17,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.recime.challenge.designsystem.theme.ReciMeTheme
 import com.recime.challenge.designsystem.theme.ReciMeTokens
 
@@ -29,19 +28,23 @@ fun ReciMeEmptyState(
     icon: ImageVector = Icons.Default.Search,
     actionLabel: String? = null,
     onAction: (() -> Unit)? = null,
+    isError: Boolean = false,
 ) {
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 50.dp, vertical = 32.dp),
+            .padding(
+                horizontal = ReciMeTokens.detailHorizontalPadding,
+                vertical = ReciMeTokens.emptyStateVerticalPadding
+            ),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+        verticalArrangement = Arrangement.spacedBy(ReciMeTokens.emptyStateSpacing),
     ) {
         Icon(
             imageVector = icon,
             contentDescription = null,
-            modifier = Modifier.size(120.dp),
-            tint = ReciMeTokens.tabInactive,
+            modifier = Modifier.size(ReciMeTokens.emptyStateIconSize),
+            tint = if (isError) MaterialTheme.colorScheme.error else ReciMeTokens.tabInactive,
         )
         Text(
             text = title,
@@ -51,11 +54,12 @@ fun ReciMeEmptyState(
         )
         Text(
             text = message,
-            style = MaterialTheme.typography.bodyLarge.copy(color = ReciMeTokens.inkMuted),
+            style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Center,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         if (actionLabel != null && onAction != null) {
-            ReciMeButton(text = actionLabel, onClick = onAction)
+            ReciMeButton(text = actionLabel, onClick = onAction, isError = isError)
         }
     }
 }
