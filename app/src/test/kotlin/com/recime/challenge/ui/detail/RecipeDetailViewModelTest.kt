@@ -139,8 +139,25 @@ class RecipeDetailViewModelTest {
         collectState(viewModel)
 
         viewModel.onFavoriteClick()
+        runCurrent()
 
         assertEquals(recipe.id, favorites.lastToggledId)
-        assertEquals(RecipeDetailUiState.Success(recipe), viewModel.uiState.value)
+        assertEquals(RecipeDetailUiState.Success(recipe, isFavorite = true), viewModel.uiState.value)
+    }
+
+    @Test
+    fun `favorite action immediately updates the detail state`() = runTest {
+        val viewModel = createViewModel()
+        collectState(viewModel)
+
+        viewModel.onFavoriteClick()
+        runCurrent()
+
+        assertEquals(RecipeDetailUiState.Success(recipe, isFavorite = true), viewModel.uiState.value)
+
+        viewModel.onFavoriteClick()
+        runCurrent()
+
+        assertEquals(RecipeDetailUiState.Success(recipe, isFavorite = false), viewModel.uiState.value)
     }
 }
