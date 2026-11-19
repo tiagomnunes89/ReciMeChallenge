@@ -189,9 +189,9 @@ Captured on a Pixel emulator from the debug build.
 
 | Home | Filters | Empty search |
 |:---:|:---:|:---:|
-| ![Home grid with search and category tabs](docs/screenshots/home.png) | ![Expanded servings, ingredient and instruction filters](docs/screenshots/home-filters.png) | ![Empty search result](docs/screenshots/home-empty.png) |
+| <img src="docs/screenshots/home.png" alt="Home grid with search and category tabs" width="220"> | <img src="docs/screenshots/home-filters.png" alt="Expanded servings, ingredient and instruction filters" width="220"> | <img src="docs/screenshots/home-empty.png" alt="Empty search result" width="220"> |
 | Recipe detail | Favorites | |
-| ![Recipe detail with ingredients and instructions](docs/screenshots/detail.png) | ![Favorites with a saved recipe](docs/screenshots/favorites.png) | |
+| <img src="docs/screenshots/detail.png" alt="Recipe detail with ingredients and instructions" width="220"> | <img src="docs/screenshots/favorites.png" alt="Favorites with a saved recipe" width="220"> | |
 
 ---
 
