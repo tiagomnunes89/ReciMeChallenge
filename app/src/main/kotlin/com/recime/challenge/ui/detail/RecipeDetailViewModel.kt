@@ -59,8 +59,6 @@ class RecipeDetailViewModel @Inject constructor(
     fun onRetry() = retryCount.update { it + 1 }
 
     fun onFavoriteClick() {
-        val isFavorite = (uiState.value as? RecipeDetailUiState.Success)?.isFavorite ?: false
-        optimisticFavorite.value = !isFavorite
         viewModelScope.launch {
             val isFavorite = (uiState.value as? RecipeDetailUiState.Success)?.isFavorite == true
             favoriteOverride.value = !isFavorite
