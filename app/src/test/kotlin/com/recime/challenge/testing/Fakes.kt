@@ -55,5 +55,10 @@ internal class FakeFavoritesRepository(
     override suspend fun toggleFavorite(id: String) {
         toggleFailure?.let { throw it }
         lastToggledId = id
+        favoriteIds.value = if (id in favoriteIds.value) {
+            favoriteIds.value - id
+        } else {
+            favoriteIds.value + id
+        }
     }
 }
