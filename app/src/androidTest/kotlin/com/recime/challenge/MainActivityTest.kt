@@ -45,6 +45,7 @@ class MainActivityTest {
     @Test
     fun favoriteRecipeAppearsInFavoritesScreen() {
         clickText("Spaghetti Aglio e Olio")
+        assertTextVisible("About")
         clickAddToFavorites()
         assertContentDescriptionVisible("Remove from favorites")
 
