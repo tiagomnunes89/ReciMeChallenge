@@ -22,7 +22,7 @@ Coding Challenge. The detailed requirements and architecture are in
 - Quality: **Detekt** (`config/detekt/detekt.yml`, `maxIssues: 0`) and
   **Kover** (selected-class coverage with an advisory 80% target); both run in
   CI (`ci.yml`).
-- minSdk 26, compileSdk 37, targetSdk 36. Build: `./gradlew assembleDebug`;
+- minSdk 26, compileSdk 37, targetSdk 37. Build: `./gradlew assembleDebug`;
   tests: `./gradlew testDebugUnitTest`; lint: `./gradlew detekt`. Use JDK 17.
 
 ## Architecture

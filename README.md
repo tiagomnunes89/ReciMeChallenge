@@ -130,7 +130,7 @@ ReciMeChallenge/
 | Quality | Detekt, Kover, JUnit, Robolectric | [CI](.github/workflows/ci.yml) |
 | Build | Gradle Kotlin DSL, AGP 9.4, JDK 17 | [Version catalog](gradle/libs.versions.toml) |
 
-SDK: `minSdk` 26, `targetSdk` 36, `compileSdk` 37.
+SDK: `minSdk` 26, `targetSdk` 37, `compileSdk` 37.
 
 ---
 

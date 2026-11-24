@@ -61,7 +61,7 @@ Why two modules: the design system has no domain dependency and is the part most
 ## Code conventions
 
 - Dependencies always go through the version catalog (`libs.*`) and between modules via `projects.*`.
-- `minSdk = 26`, `compileSdk = 37` (required by current AndroidX/OkHttp), `targetSdk = 36`, Java/Kotlin target 17.
+- `minSdk = 26`, `compileSdk = 37`, `targetSdk = 37`, Java/Kotlin target 17.
 - Package dependency rule inside `:app`: `ui` → `domain`; `data` → `domain`; `domain` imports neither `data` nor `ui` nor `androidx.compose`. Paging is assembled by `HomeViewModel` and `HomePagingSource`; `HomePagingSource` uses opaque cursor keys and the domain repository exchanges plain `RecipePage(recipes, nextCursor)` values. `:designsystem` never depends on `:app`.
 - DTOs (`*Dto`) live in `data/remote/model` and are mapped to domain models in `data/mapper`; they never leak into `ui`.
 - UI (MVVM + UDF): `*Route` connects the `@HiltViewModel`; `*Screen` is stateless and receives `UiState` + callbacks. ViewModels expose named callbacks (`onFiltersChanged`, `onRetry`, …); navigation callbacks remain route-owned.

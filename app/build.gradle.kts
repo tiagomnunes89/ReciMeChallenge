@@ -36,12 +36,14 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    ksp {
-        arg("room.schemaLocation", "$projectDir/schemas")
-    }
-
     buildFeatures {
         buildConfig = true
+    }
+
+    packaging {
+        jniLibs {
+            keepDebugSymbols += "**/libandroidx.graphics.path.so"
+        }
     }
 
     compileOptions {
@@ -79,7 +81,12 @@ android {
 
 }
 
+ksp {
+    arg("room.schemaLocation", "$projectDir/schemas")
+}
+
 val validateReleaseApiBaseUrl = tasks.register("validateReleaseApiBaseUrl") {
+    description = "Validates the production API URL for release builds."
     val configuredBaseUrl: String? = releaseApiBaseUrl
     doLast {
         val configured = configuredBaseUrl?.trim().orEmpty()
@@ -140,16 +147,10 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.androidx.paging.testing)
     testImplementation(libs.robolectric)
-    testImplementation(libs.androidx.room.testing)
-    testImplementation(libs.androidx.test.ext.junit)
-    testImplementation(libs.okhttp.mockwebserver)
     testImplementation(libs.androidx.compose.ui.test.junit4)
 
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.runner)
-    androidTestImplementation(libs.androidx.room.testing)
 }
 
 kover {
